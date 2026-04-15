@@ -36,6 +36,74 @@ public class Week1 {
     }
 
     
+    public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int m = nums1.length;
+        int n = nums2.length;
+
+        int merge[] = new int [m+n];
+
+        int i = 0 , j= 0 , k = 0;
+        while(i< m && j< n){
+            if(nums1[i] < nums2[j]){
+                merge[k] = nums1[i];
+                k++;
+                i++;
+            }else{
+                merge[k] = nums2[j];
+                k++;
+                j++;
+            }
+        }
+
+        while(i < m){
+            merge[k] = nums1[i];
+            k++;
+            i++;
+        }
+        while(j < n){
+            merge[k] = nums2[j];
+            k++;
+            j++;
+        }
+
+        int total = m + n;
+
+        if(total % 2 == 0){
+            double mid = (merge[total/2 - 1] + merge[total/2]) / 2.0;
+            return mid;
+        }else{
+            return merge[total/2];
+        }
+    }
+
+    public String longestPalindrome(String s) {
+        int start = 0 , end = 0;
+        
+        for(int i = 0; i<s.length(); i++){
+            int len1 = expand(s,i,i);
+            int len2 = expand(s,i,i+1);
+
+            int len = Math.max(len1,len2);
+
+            if(len > end -start){
+                start = i-(len -1 ) / 2;
+                end = i+ len / 2;
+            }
+        }
+        return s.substring(start , end + 1);
+    }
+
+    private int expand(String s , int left , int right){
+        while(left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)){
+            left --; 
+            right++;
+        }
+        return right - left -1;
+    }
+
+
+
+
     public static void main(String[] args) {
         int nums [] = {1,2,3,4,5};
         int target = 5;
@@ -44,5 +112,12 @@ public class Week1 {
 
         String s = "abccbabac";
         System.out.println(lengthOfLongestSubstring(s));
+
+        int nums1[] = {1,2};
+        int nums2[] = {3,4};
+        System.out.println(findMedianSortedArrays(nums1, nums2));
+
+        String s = "babad";
+        
     }
 }
