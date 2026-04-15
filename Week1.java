@@ -76,7 +76,7 @@ public class Week1 {
         }
     }
 
-    public String longestPalindrome(String s) {
+    public static String longestPalindrome(String s) {
         int start = 0 , end = 0;
         
         for(int i = 0; i<s.length(); i++){
@@ -93,7 +93,7 @@ public class Week1 {
         return s.substring(start , end + 1);
     }
 
-    private int expand(String s , int left , int right){
+    private static int expand(String s , int left , int right){
         while(left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)){
             left --; 
             right++;
@@ -117,7 +117,8 @@ public class Week1 {
         int nums2[] = {3,4};
         System.out.println(findMedianSortedArrays(nums1, nums2));
 
-        String s = "babad";
-        
+        String s1 = "babad";
+        System.out.println(longestPalindrome(s1));
+
     }
 }
