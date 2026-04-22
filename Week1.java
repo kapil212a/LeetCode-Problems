@@ -76,6 +76,8 @@ public class Week1 {
         }
     }
 
+    /////Longest Palindromic Substring//////
+
     public static String longestPalindrome(String s) {
         int start = 0 , end = 0;
         
@@ -102,6 +104,36 @@ public class Week1 {
     }
 
 
+    public String convert(String s, int numRows) {
+        if(numRows == 1 || s.length() <= numRows){
+            return s;
+        }
+        StringBuilder[] row = new StringBuilder[numRows];
+
+        for(int i = 0; i< numRows; i++){
+            row[i] = new StringBuilder();
+        }
+        int currRow = 0;
+        int down = 1;
+
+        for(char c : s.toCharArray()){
+            row[currRow].append(c);
+
+            if(currRow == 0){
+                down =1;
+            }
+            else if(currRow == numRows -1){
+                down = -1;
+            }
+            currRow += down;
+        }
+
+        String result = "";
+        for(int i = 0; i<numRows; i++){
+            result += row[i].toString();
+        }
+        return result;
+    }
 
 
     public static void main(String[] args) {
