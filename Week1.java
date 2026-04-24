@@ -104,7 +104,8 @@ public class Week1 {
     }
 
 
-    public String convert(String s, int numRows) {
+    ////Zic-Zac String Conversion/////
+    public static String convert(String s, int numRows) {
         if(numRows == 1 || s.length() <= numRows){
             return s;
         }
@@ -135,6 +136,24 @@ public class Week1 {
         return result;
     }
 
+    public int reverse(int x) {
+        int rev = 0;
+        while(x != 0){
+            int last = x % 10;
+            
+            if(rev > Integer.MAX_VALUE / 10 || (rev == Integer.MAX_VALUE / 10 && last > 7)){
+                return 0;
+            }
+            if(rev < Integer.MIN_VALUE / 10 || (rev == Integer.MIN_VALUE / 10 && last < -8)){
+                return 0;
+            }
+
+            rev = rev * 10 + last;
+             x = x/10;
+        }
+        return rev;
+    }
+
 
     public static void main(String[] args) {
         int nums [] = {1,2,3,4,5};
@@ -151,6 +170,10 @@ public class Week1 {
 
         String s1 = "babad";
         System.out.println(longestPalindrome(s1));
+
+        String s3 = "PAYPALISHIRING";
+        int numRows = 3;
+        System.out.println(convert(s3, numRows));
 
     }
 }
