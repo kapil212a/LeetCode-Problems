@@ -136,7 +136,7 @@ public class Week1 {
         return result;
     }
 
-    public int reverse(int x) {
+    public static int reverse(int x) {
         int rev = 0;
         while(x != 0){
             int last = x % 10;
@@ -174,6 +174,9 @@ public class Week1 {
         String s3 = "PAYPALISHIRING";
         int numRows = 3;
         System.out.println(convert(s3, numRows));
+
+        int x = -123;
+        System.out.println(reverse(x));
 
     }
 }
