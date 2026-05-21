@@ -136,7 +136,7 @@ public class Week1 {
         return result;
     }
 
-//// REVERSE INTEGER ////
+//// REVERSE INTEGER //// 
 
     public static int reverse(int x) {
         int rev = 0;
@@ -156,6 +156,42 @@ public class Week1 {
         return rev;
     }
 
+    //////////// String TO Integer (Atoi) 
+    
+    public static int myAtoi(String s) {
+        s = s.trim();
+
+        if(s.length() == 0){
+            return 0;
+        }
+
+        int sign = 1;
+        int indx = 0;
+
+        if(s.charAt(0) == '-'){
+            sign = -1;
+            indx++;
+        }
+        else if(s.charAt(0) == '+'){
+            indx++;
+        }
+
+        int num = 0;
+        while(indx < s.length() && Character.isDigit(s.charAt(indx))){
+            int digit = s.charAt(indx) - '0';
+
+            if(num > Integer.MAX_VALUE /10 || (num == Integer.MAX_VALUE / 10 && digit > 7)){
+                if(sign == 1){
+                    return Integer.MAX_VALUE;
+                }else{
+                    return Integer.MIN_VALUE;
+                }
+            }
+            num = num * 10 + digit;
+            indx++;
+        }
+        return num * sign;
+    }
 
     public static void main(String[] args) {
         int nums [] = {1,2,3,4,5};
@@ -179,6 +215,9 @@ public class Week1 {
 
         int x = -123;
         System.out.println(reverse(x));
+
+        String s4 = "-042ab125";
+        System.err.println(myAtoi(s4));
 
     }
 }
