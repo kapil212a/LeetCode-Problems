@@ -210,6 +210,31 @@ public class Week1 {
         return num == rev;
     }
 
+    ///// Collecting Rain Water //////
+    
+    public static int maxArea(int[] height) {
+        int left = 0;
+        int right = height.length -1;
+
+        int maxwater = 0;
+
+        while(left < right){
+            int width = right - left;
+            int minHeight = Math.min(height[left] , height[right]);
+            int area = minHeight * width;
+            maxwater = Math.max(maxwater , area);
+
+            if(height[left] < height[right]){
+                left++;
+            }
+            else{
+                right--;
+            }
+        }
+        return maxwater;
+    }
+
+
     public static void main(String[] args) {
         int nums [] = {1,2,3,4,5};
         int target = 5;
@@ -238,6 +263,9 @@ public class Week1 {
 
         int num3 = -131;
         System.out.println(isPalindrome(num3));
+
+        int arr[] = {1,8,6,2,5,4,8,3,7};
+        System.out.println(maxArea(arr));
 
     }
 }
