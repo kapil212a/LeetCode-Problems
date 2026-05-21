@@ -193,6 +193,23 @@ public class Week1 {
         return num * sign;
     }
 
+
+    ///// Number Is Palindrome or not /////
+    
+    public static boolean isPalindrome(int x) {
+        if(x < 0){
+            return false;
+        }
+        int num = x;
+        int rev = 0;
+        while(x != 0){
+            int digit = x % 10;
+            rev = rev * 10 + digit;
+            x = x/10;
+        }
+        return num == rev;
+    }
+
     public static void main(String[] args) {
         int nums [] = {1,2,3,4,5};
         int target = 5;
@@ -218,6 +235,9 @@ public class Week1 {
 
         String s4 = "-042ab125";
         System.err.println(myAtoi(s4));
+
+        int num3 = -131;
+        System.out.println(isPalindrome(num3));
 
     }
 }
