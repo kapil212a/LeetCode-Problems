@@ -26,9 +26,43 @@ public class Week2 {
         return res.toString();
     }
 
+    //// Roman To Integer /////
+    
+    public static int value(char ch){
+        if(ch == 'I') return 1;
+        if(ch == 'V') return 5;
+        if(ch == 'X') return 10;
+        if(ch == 'L') return 50;
+        if(ch == 'C') return 100;
+        if(ch == 'D') return 500;
+        return 1000;
+    }
+
+    
+    public static int romanToInt(String s) {
+        int total = 0;
+
+        for(int i = 0; i< s.length(); i++){
+            int curr = value(s.charAt(i));
+
+            if(i+1 < s.length() && curr < value(s.charAt(i+1))){
+                total = total - curr;
+            }
+            else{
+                total = total + curr;
+            }
+        }
+        return total;
+    }
+
+    
+
     public static void main(String[] args) {
         int num = 12357;
         System.out.println(intToRoman(num));
+
+        String s = "MCMXCIV";
+        System.out.println(romanToInt(s));
     }
 }
 
