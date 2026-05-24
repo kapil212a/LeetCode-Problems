@@ -1,9 +1,10 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+    
 
 public class Week2 {
-    
+
     ////// Integer To Roman//////
     
     public static String intToRoman(int num) {
@@ -149,6 +150,36 @@ public class Week2 {
         return res;
     }
 
+    /// Latter Combination Of Phone Number ////
+    
+     static List <String> res = new ArrayList<>();
+
+        static String[] comb = {
+            "","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"
+        };
+    
+    public static List<String> letterCombinations(String digits) {
+
+        if(digits.length() == 0){
+            return res;
+        }
+
+        backtrack(digits,0,"");
+        return res;
+
+    }
+    public static void backtrack(String digits , int idx, String curr){
+        if(idx== digits.length()){
+            res.add(curr);
+            return;
+        }
+        String letter = comb[digits.charAt(idx)- '0'];
+        for(int i =0; i<letter.length(); i++){
+            backtrack(digits,idx +1, curr+letter.charAt(i));
+        }
+    }
+
+
 
     public static void main(String[] args) {
         int num = 12357;
@@ -166,6 +197,9 @@ public class Week2 {
         int arr2[] = {-1,2,1,-4};
         int target = 1;
         System.out.println(threeSumClosest(arr2, target));
+
+        String s1 = "23";
+        System.out.println(letterCombinations(s1));
     }
 }
 
