@@ -65,6 +65,47 @@ public class Street {
         }
         return count <= 1;
     }
+    
+    ////jump Game V/////
+    
+    public static int maxJumps(int[] arr, int d) {
+        int n =arr.length;
+        int dp[] = new int[n];
+        int ans =1;
+
+        for(int i = 0; i< n; i++){
+            ans = Math.max(ans, dfs(arr, d, i, dp));
+        }
+
+        return ans;
+    }
+
+    public static int dfs(int[] arr, int d, int index, int[] dp){
+
+        if(dp[index] != 0){
+            return dp[index];
+        }
+
+        int max = 1;
+
+        for(int i = index + 1; i<= Math.min(arr.length - 1, index + d); i++){
+            if(arr[i] >= arr[index]){
+                break;
+            }
+
+            max = Math.max(max , 1 + dfs(arr, d, i, dp));
+        }
+
+        for(int i = index - 1; i>=Math.max(0, index -d); i--){
+            if(arr[i] >= arr[index]){
+                break;
+            }
+            max = Math.max(max , 1 + dfs(arr, d, i, dp));
+        }
+
+        dp[index] = max;
+        return max;
+    }
 
 
 
@@ -77,6 +118,10 @@ public class Street {
 
         int arr1[] = {3,4,5,1,2};
         System.out.println(check(num));
+
+        int arr2[] = {6,4,14,6,8,13,9,7,10,6,12};
+        int d = 2;
+        System.out.println(maxJumps(arr2, d));
     }
 }
 
