@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
     
 
 public class Week2 {
@@ -228,6 +229,31 @@ public class Week2 {
         return res;
     }
 
+    //// valid Parenthesis ////
+    
+    public static boolean isValid(String s) {
+        Stack<Character> st = new Stack<>();
+
+        for(char ch : s.toCharArray()){
+            if(ch == '(' || ch == '{' || ch == '['){
+                st.push(ch);
+            }
+            else{
+                if(st.isEmpty()){
+                    return false;
+                }
+                char top = st.pop();
+                if((ch == ')' && top != '(') ||
+                  (ch == '}' && top != '{') ||
+                  (ch == ']' && top != '[')){
+                    return false;
+                }
+            }
+        }
+        return st.isEmpty();
+    }
+
+
 
     public static void main(String[] args) {
         int num = 12357;
@@ -252,6 +278,9 @@ public class Week2 {
         int arr3[] = {1,0,-1,0,-2,2};
         int target1 = 0;
         System.out.println(fourSum(arr3, target1));
+
+        String s2 = "()";
+        System.out.println(isValid(s2));
     }
 }
 
