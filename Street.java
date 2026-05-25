@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Street {
     //// Search In rotated Sorted Array //////
    
@@ -107,6 +110,35 @@ public class Street {
         return max;
     }
 
+///// Jump Game VII ///////
+
+    public static boolean canReach(String s, int minJump, int maxJump) {
+        int n = s.length();
+
+        Queue<Integer> que = new LinkedList<>();
+
+        que.offer(0);
+        int fast = 0;
+
+        while(!que.isEmpty()){
+            int curr = que.poll();
+
+            int start = Math.max(curr + minJump, fast + 1);
+
+            int end = Math.min(curr + maxJump , n-1);
+
+            for(int i = start; i <= end; i++){
+                if(s.charAt(i) == '0'){
+                    if(i == n -1){
+                        return true;
+                    }
+                    que.offer(i);
+                }
+            }
+            fast = curr + maxJump;
+        }
+        return n == 1;
+    }
 
 
     public static void main(String[] args) {
@@ -122,6 +154,11 @@ public class Street {
         int arr2[] = {6,4,14,6,8,13,9,7,10,6,12};
         int d = 2;
         System.out.println(maxJumps(arr2, d));
+
+        String s = "011010";
+        int max = 2;
+        int min = 3;
+        System.out.println(canReach(s, min, max));
     }
 }
 
