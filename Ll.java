@@ -1,3 +1,4 @@
+import java.util.PriorityQueue;
 
 public class Ll {
 
@@ -70,6 +71,32 @@ public class Ll {
         return dm.next;
     }
 
+    ////// Merge K Sorted List \\\\
+ 
+    public static Node mergeKLists(Node[] lists) {
+        PriorityQueue<Node> pq = new PriorityQueue<>((a,b) -> a.data - b.data);
+
+        for(Node node : lists){
+            if(node != null){
+                pq.offer(node);
+            }
+        }
+        Node dm = new Node(-1);
+        Node curr = dm;
+
+        while(!pq.isEmpty()){
+            Node small = pq.poll();
+
+            curr.next = small;
+            curr = curr.next;
+
+            if(small.next != null){
+                pq.offer(small.next);
+            }
+        }
+        return dm.next;
+    }
+
 
     public static void main(String[] args) {
         Node head = new Node(1);
@@ -93,6 +120,21 @@ public class Ll {
 
         
         printLL(mergeTwoLists(head1 , head2));
-   }
+
+        Node l1 = new Node(1);
+        l1.next = new Node(4);
+        l1.next.next = new Node(5);
+
+        Node l2 = new Node(1);
+        l2.next = new Node(3);
+        l2.next.next = new Node(4);
+
+        Node l3 = new Node(2);
+        l3.next = new Node(6);
+
+        Node[] lists = { l1, l2, l3 };
+        //mergeKLists(lists);
+        printLL(mergeKLists(lists));
+    }
 
 }
