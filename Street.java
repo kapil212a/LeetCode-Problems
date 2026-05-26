@@ -1,5 +1,7 @@
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Set;
 
 public class Street {
     //// Search In rotated Sorted Array //////
@@ -140,7 +142,10 @@ public class Street {
         return n == 1;
     }
 
+    ////// Count the number of spacial character I \\\\\
     
+    
+
 
     public static void main(String[] args) {
         int num [] = {4,5,6,7,0,1,2};
@@ -160,6 +165,9 @@ public class Street {
         int max = 2;
         int min = 3;
         System.out.println(canReach(s, min, max));
+
+        String word = "aaAbcBC";
+        System.out.println(numberOfSpecialChars(word)); 
     }
 }
 

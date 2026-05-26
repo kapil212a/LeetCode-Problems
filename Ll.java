@@ -42,6 +42,35 @@ public class Ll {
         return head;
     }
 
+    ///// Merge Two Sorted List \\\\\\\\
+
+
+    public static Node mergeTwoLists(Node list1, Node list2) {
+        Node dm = new Node(-1);
+
+        Node curr = dm;
+
+        while(list1 != null && list2 != null){
+            if(list1.data <= list2.data){
+                curr.next = list1;
+                list1 = list1.next;
+            }
+            else{
+                curr.next = list2;
+                list2 = list2.next;
+            }
+            curr = curr.next;
+        }
+        if(list1 != null){
+            curr.next = list1;
+        }
+        if(list2 != null){
+            curr.next = list2;
+        }
+        return dm.next;
+    }
+
+
     public static void main(String[] args) {
         Node head = new Node(1);
         head.next = new Node(2);
@@ -53,6 +82,17 @@ public class Ll {
         int n = 2;
         removeNthFromEnd(head , n);
         printLL(head);
-    }
+
+        Node head1 = new Node(1);
+        head1.next = new Node(2);
+        head1.next.next = new Node(4);
+
+        Node head2 = new Node(1);
+        head2.next = new Node(3);
+        head2.next.next = new Node(4);
+
+        
+        printLL(mergeTwoLists(head1 , head2));
+   }
 
 }
