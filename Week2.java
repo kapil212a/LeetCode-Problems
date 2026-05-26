@@ -253,7 +253,25 @@ public class Week2 {
         return st.isEmpty();
     }
 
-
+    ///////// Generate Parenthesis \\\\\\\\
+    
+    static List<String> result = new ArrayList<>();
+    public static List<String> generateParenthesis(int n) {
+        backtrack("",0,0,n);
+        return result;
+    }
+    public static void backtrack(String curr , int open , int close , int n){
+        if(curr.length() == n * 2){
+            result.add(curr);
+            return;
+        }
+        if(open < n){
+            backtrack(curr + "(" , open +1 , close , n);
+        }
+        if(close < open){
+            backtrack(curr + ")" , open , close + 1 , n);
+        }
+    }
 
     public static void main(String[] args) {
         int num = 12357;
@@ -281,6 +299,10 @@ public class Week2 {
 
         String s2 = "()";
         System.out.println(isValid(s2));
+
+        int n =3;
+        System.out.println(generateParenthesis(n));
+
     }
 }
 
