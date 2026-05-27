@@ -99,7 +99,7 @@ public class Ll {
 
     ///// Swip Node In pair \\\\\\
 
-    public Node swapPairs(Node head) {
+    public static Node swapPairs(Node head) {
         Node dm = new Node(0);
         dm.next = head;
 
@@ -155,8 +155,16 @@ public class Ll {
         l3.next = new Node(6);
 
         Node[] lists = { l1, l2, l3 };
-        //mergeKLists(lists);
+        
         printLL(mergeKLists(lists));
+
+        Node head3 = new Node(1);
+        head3.next = new Node(2);
+        head3.next.next = new Node(3);
+        head3.next.next.next = new Node(4);
+        printLL(head3);
+        swapPairs(head3);
+        printLL(head3);
     }
 
 }
