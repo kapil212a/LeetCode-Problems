@@ -97,6 +97,28 @@ public class Ll {
         return dm.next;
     }
 
+    ///// Swip Node In pair \\\\\\
+
+    public Node swapPairs(Node head) {
+        Node dm = new Node(0);
+        dm.next = head;
+
+        Node prev = dm;
+
+        while(head != null && head.next != null){
+            Node first = head;
+            Node second = head.next;
+
+            prev.next = second;
+            first.next = second.next;
+            second.next = first;
+
+            prev = first;
+            head = first.next;
+        }
+        return dm.next;
+    }
+
 
     public static void main(String[] args) {
         Node head = new Node(1);
