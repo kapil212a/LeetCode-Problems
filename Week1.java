@@ -22,7 +22,7 @@ public class Week1 {
         Map <Character , Integer> map = new HashMap<>();
         int left = 0 ,length = 0;
 
-        for(int i = 0; i<s.length() ; i++){
+        for(int i = 0; i<s.length(); i++){
             char ch = s.charAt(i);
 
             if(map.containsKey(ch)){
@@ -32,6 +32,7 @@ public class Week1 {
             map.put(ch , i);
             length = Math.max(length , i - left +1);
         }
+        System.out.println(map);
         return length;
     }
 

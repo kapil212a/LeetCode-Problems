@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -167,6 +168,10 @@ public class Street {
         return count;
     }
 
+    ////// Count the number of Spacial Character II \\\\\\\\\
+
+    
+
 
     public static void main(String[] args) {
         int num [] = {4,5,6,7,0,1,2};
@@ -189,6 +194,9 @@ public class Street {
 
         String word = "aaAbcBC";
         System.out.println(numberOfSpecialChars(word)); 
+
+        String s1 = "aaAbcBC";
+        System.out.println(numberOfSpecialChars2(word));
     }
 }
 
