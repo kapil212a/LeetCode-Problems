@@ -118,6 +118,33 @@ public class Ll {
         }
         return dm.next;
     }
+ //////// REVERSE NODE IN K GROUP \\\\\\\\ 
+ 
+    public  static Node reverseKGroup(Node head, int k) {
+        Node temp = head;
+
+        for(int i = 0; i<k; i++){
+            if(temp == null){
+                return head;
+            }
+            temp = temp.next;
+        }
+
+        Node prev = null , curr = head,  next = null;
+        int count = 0;
+
+        while(curr != null && count < k){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+
+            count++;
+
+        }
+        head.next = reverseKGroup(curr , k);
+        return prev;
+    }
 
 
     public static void main(String[] args) {
@@ -165,6 +192,16 @@ public class Ll {
         printLL(head3);
         swapPairs(head3);
         printLL(head3);
+
+        Node head4 = new Node(1);
+        head4.next = new Node(2);
+        head4.next.next = new Node(3);
+        head4.next.next.next = new Node(4);
+        head4.next.next.next.next = new Node(5);
+        printLL(head4);
+        int n1 = 3;
+        reverseKGroup(head4, n1);
+        printLL(head4);
     }
 
 }
