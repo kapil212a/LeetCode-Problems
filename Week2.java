@@ -281,7 +281,7 @@ public class Week2 {
         }
     }
     
-    /////// REMOVE DUBLICATE FROM SORTED ARRAY \\\\\\\\\\
+    /////// REMOVE DUBLICATE FROM SORTED ARRAY AND RETURN COUNT  \\\\\\\\\\
     
      public static int removeDuplicates(int[] nums) {
         int i =0;
@@ -293,6 +293,20 @@ public class Week2 {
             }
         }
     return i+1;
+    }
+
+    //// REMOVE ELEMENT NOT EQUAL TO N  AND RETUEN \\\\
+    public static int removeElement(int[] nums, int val) {
+       int a = 0;
+
+       for(int i = 0; i < nums.length ; i++){
+            if(nums[i] != val){
+                nums[a] = nums[i];
+                a++;
+            }
+        
+       }
+       return a; 
     }
 
     public static void main(String[] args) {
@@ -325,9 +339,13 @@ public class Week2 {
         int n =3;
         System.out.println(generateParenthesis(n));
 
-        int arr[] = {1,1,2,2,3};
+        int arr[] = {1,2,2,3,3};
         System.out.println(removeDuplicates(arr));
         printArray(arr);
+
+        int arr4[] = {3,2,2,3};
+        int n1 = 3;
+        System.out.println(removeElement(arr4, n1));
 
     }
 }
