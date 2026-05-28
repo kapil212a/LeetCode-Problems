@@ -18,9 +18,45 @@ public class week3 {
         return -1;
     }
 
+    ///// DIVIDE TWO INTEGER WITHOUT USING /, * , OPERATOR \\\\\\\
+
+    public static int divide(int dividend, int divisor) {
+        boolean neg = (dividend < 0) ^ (divisor < 0);
+
+        if(dividend == Integer.MIN_VALUE && divisor == -1){
+            return Integer.MAX_VALUE;
+        }
+
+        long dvd = Math.abs((long) dividend);
+        long dvs = Math.abs((long)divisor);
+
+        int ans = 0;
+        while(dvd >= dvs){
+            long temp = dvs;
+            int mul = 1;
+
+            while(dvd >= (temp << 1)){
+                temp <<= 1;
+                mul <<= 1;
+            }
+            dvd -= temp;
+            ans += mul;
+        }
+        if(neg){
+            return -ans;
+        }
+        else{
+            return ans;
+        }
+    }
+
     public static void main(String[] args) {
         String haystack = "sadbutsad";
         String needle = "sad";
         System.out.println(strStr(haystack, needle));
+
+        int dividend = 100;
+        int divisor = 15;
+        System.out.println(divide(dividend, divisor));
     }
 }
