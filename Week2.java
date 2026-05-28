@@ -6,6 +6,14 @@ import java.util.Stack;
 
 public class Week2 {
 
+    ////// PRINT ARRAY \\\\\\
+
+    public static void printArray(int arr[]){
+        for(int i =0; i<arr.length; i++){
+            System.out.print(arr[i] + " ");
+        }
+    }
+
     ////// Integer To Roman//////
     
     public static String intToRoman(int num) {
@@ -272,6 +280,20 @@ public class Week2 {
             backtrack(curr + ")" , open , close + 1 , n);
         }
     }
+    
+    /////// REMOVE DUBLICATE FROM SORTED ARRAY \\\\\\\\\\
+    
+     public static int removeDuplicates(int[] nums) {
+        int i =0;
+
+        for(int j = 1; j<nums.length; j++){
+            if(nums[i] != nums[j]){
+                i++;
+                nums[i] = nums[j];
+            }
+        }
+    return i+1;
+    }
 
     public static void main(String[] args) {
         int num = 12357;
@@ -302,6 +324,10 @@ public class Week2 {
 
         int n =3;
         System.out.println(generateParenthesis(n));
+
+        int arr[] = {1,1,2,2,3};
+        System.out.println(removeDuplicates(arr));
+        printArray(arr);
 
     }
 }
