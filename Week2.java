@@ -341,12 +341,12 @@ public class Week2 {
 
         int arr[] = {1,2,2,3,3};
         System.out.println(removeDuplicates(arr));
-        printArray(arr);
+        //printArray(arr);
 
         int arr4[] = {3,2,2,3};
         int n1 = 3;
         System.out.println(removeElement(arr4, n1));
-
+        //printArray(arr4);
     }
 }
 
