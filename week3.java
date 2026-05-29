@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class week3 {
     /////// PRINT ARRSY \\\\\\\\
 
@@ -5,6 +9,7 @@ public class week3 {
         for(int num : arr){
             System.out.print(num + " ");
         }
+        System.out.println();
     }
     ///// FIND THE INDEX OF THE FIRST OCCURENCE IN A STRING \\\\
     
@@ -74,6 +79,51 @@ public class week3 {
         return min;
     }
 
+    //// SUBSTRING WITHCONCATINATION OF ALL WORD \\\\\\
+
+    public static List<Integer> findSubstring(String s, String[] words) {
+        List<Integer> ans = new ArrayList<>();
+
+        if(s.length() == 0 || words.length == 0){
+            return ans;
+        }
+        int wordLen = words[0].length();
+        int totalWords = words.length;
+        int windowSize = wordLen * totalWords;
+
+        HashMap<String , Integer > map = new HashMap<>();
+
+        for(String word : words){
+            map.put(word , map.getOrDefault(word , 0) + 1);
+            
+        }
+        for(int i = 0; i<= s.length() - windowSize; i++){
+
+            HashMap <String , Integer> seen = new HashMap<>();
+
+            int j = 0;
+            while(j < totalWords){
+                int start = i + j * wordLen;
+
+                String part = s.substring(start , start + wordLen);
+
+                if(!map.containsKey(part)){
+                    break;
+                }
+                seen.put(part , seen.getOrDefault(part , 0) + 1);
+
+                if(seen.get(part) > map.get(part)){
+                    break;
+                }
+                j++;
+            }
+            if(j== totalWords){
+                ans.add(i);
+            }
+        }
+        return ans;
+    }
+ 
 
     public static void main(String[] args) {
         String haystack = "sadbutsad";
@@ -87,5 +137,9 @@ public class week3 {
         int arr[] = {10,12,15,25};
         System.out.println(minElement(arr));
         printArr(arr);
+
+        String s = "barfoothefoobarman";
+        String words[] = {"foo","bar"};
+        System.out.println(findSubstring(s, words));
     }
 }
