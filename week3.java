@@ -1,4 +1,6 @@
 public class week3 {
+
+    
     ///// FIND THE INDEX OF THE FIRST OCCURENCE IN A STRING \\\\
     
      public static int strStr(String haystack, String needle) {
@@ -50,6 +52,24 @@ public class week3 {
         }
     }
 
+    ///// MINIMUM ELEMENT AFTER REPLACEMENT WITH DIGIT SUM IN ARRAY \\\\\\
+
+    public static int minElement(int[] nums) {
+        int min = Integer.MAX_VALUE;
+
+        for(int num : nums){
+            int sum = 0;
+
+            while(num > 0){
+                sum +=  num % 10;
+                num = num / 10;
+            }
+            min = Math.min(min , sum);
+        }
+        return min;
+    }
+
+
     public static void main(String[] args) {
         String haystack = "sadbutsad";
         String needle = "sad";
@@ -58,5 +78,8 @@ public class week3 {
         int dividend = 100;
         int divisor = 15;
         System.out.println(divide(dividend, divisor));
+
+        int arr[] = {10,12,15,25};
+        System.out.println(minElement(arr));
     }
 }

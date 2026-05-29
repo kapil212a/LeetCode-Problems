@@ -16,13 +16,13 @@ public class Week1 {
         return minDistance;
     }
 
-    //// Longest Substring Without Repeating Characters////
+    ///// Longest Substring Without Repeating Characters \\\\\\\
 
     public static int lengthOfLongestSubstring(String s) {
         Map <Character , Integer> map = new HashMap<>();
         int left = 0 ,length = 0;
 
-        for(int i = 0; i<s.length(); i++){
+         for(int i = 0; i<s.length(); i++){
             char ch = s.charAt(i);
 
             if(map.containsKey(ch)){
@@ -30,12 +30,13 @@ public class Week1 {
             }
 
             map.put(ch , i);
-            length = Math.max(length , i - left +1);
+            length = Math.max(length , i - left + 1);
         }
         System.out.println(map);
         return length;
     }
 
+    //////// MIDIAN OF TWO SORTED ARRAY \\\\\\\\
     
     public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int m = nums1.length;
