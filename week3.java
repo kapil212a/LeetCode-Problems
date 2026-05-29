@@ -179,5 +179,9 @@ public class week3 {
         String s = "barfoothefoobarman";
         String words[] = {"foo","bar"};
         System.out.println(findSubstring(s, words));
+
+        int nums[] = {1,2,3};
+        nextPermutation(nums);
+        printArr(nums);    
     }
 }
