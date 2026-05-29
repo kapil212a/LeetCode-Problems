@@ -212,7 +212,7 @@ public class Street {
         System.out.println(maxRotateFunction(arr));
 
         int arr1[] = {3,4,5,1,2};
-        System.out.println(check(num));
+        System.out.println(check(arr1));
 
         int arr2[] = {6,4,14,6,8,13,9,7,10,6,12};
         int d = 2;
@@ -227,7 +227,7 @@ public class Street {
         System.out.println(numberOfSpecialChars(word)); 
 
         String s1 = "aaAbcBC";
-        System.out.println(numberOfSpecialChars2(word));
+        System.out.println(numberOfSpecialChars2(s1));
     }
 }
 
