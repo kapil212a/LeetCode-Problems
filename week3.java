@@ -1,6 +1,11 @@
 public class week3 {
+    /////// PRINT ARRSY \\\\\\\\
 
-    
+    public static void printArr(int [] arr){
+        for(int num : arr){
+            System.out.print(num + " ");
+        }
+    }
     ///// FIND THE INDEX OF THE FIRST OCCURENCE IN A STRING \\\\
     
      public static int strStr(String haystack, String needle) {
@@ -81,5 +86,6 @@ public class week3 {
 
         int arr[] = {10,12,15,25};
         System.out.println(minElement(arr));
+        printArr(arr);
     }
 }
