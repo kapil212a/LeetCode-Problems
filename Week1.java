@@ -16,7 +16,7 @@ public class Week1 {
         return minDistance;
     }
 
-    ///// Longest Substring Without Repeating Characters \\\\\\\
+    ///// LENGTH Longest Substring Without Repeating Characters \\\\\\\
 
     public static int lengthOfLongestSubstring(String s) {
         Map <Character , Integer> map = new HashMap<>();
