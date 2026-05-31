@@ -300,8 +300,9 @@ public class week3 {
         }
         return true;
     }
+
     
-    
+    ///// MAIN METHOD \\\\\\\
     public static void main(String[] args) {
         String haystack = "sadbutsad";
         String needle = "sad";
@@ -348,7 +349,6 @@ public class week3 {
         int mass  = 10;
         int aestroids[] = {3,9,19,5,21};
         System.out.println(asteroidsDestroyed(mass, aestroids));
-
 
     }
 }
