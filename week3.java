@@ -231,5 +231,10 @@ public class week3 {
         int nums[] = {1,2,3};
         nextPermutation(nums);
         printArr(nums);    
+
+        int nums1[] = {5,7,7,8,8,10};
+        int target = 8;
+        int res[] = searchRange(nums1, target);
+        printArr(res);
     }
 }
