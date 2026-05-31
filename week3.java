@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 public class week3 {
@@ -232,6 +233,60 @@ public class week3 {
         }
         return left;
     }
+
+    ///////// VALID SUDOKU \\\\\\\\
+       public static boolean isValidSudoku(char[][] board) {
+        for(int i = 0; i < 9; i++){
+            HashSet<Character> map = new HashSet<>();
+            
+            for(int j = 0; j < 9; j++){
+                char ch = board[i][j];
+
+                if(ch != '.'){
+                    if(map.contains(ch)){
+                        return false;
+                    }
+                    map.add(ch);
+                }
+            }
+        }
+        for(int i = 0;i < 9; i++){
+            HashSet<Character> map = new HashSet<>();
+            for(int j = 0; j < 9; j++){
+                char ch = board[j][i];
+
+                if(ch != '.'){
+                    if(map.contains(ch)){
+                        return false;
+                    }
+                    map.add(ch);
+                }
+            }
+        }
+        for(int row = 0; row < 9; row += 3){
+            for(int col = 0; col < 9; col += 3){
+                HashSet<Character> set = new HashSet<>();
+
+                for(int i =row; i< row + 3; i++){
+                    for(int j = col; j< col + 3; j++){
+
+                        char ch = board[i][j];
+
+                        if(ch != '.'){
+                            if(set.contains(ch)){
+                                return false;
+                            }
+                            set.add(ch);
+                        }
+                    }
+                }
+            }
+        }
+        return true;
+    }
+    
+    
+    
     public static void main(String[] args) {
         String haystack = "sadbutsad";
         String needle = "sad";
@@ -262,6 +317,19 @@ public class week3 {
         int target1 = 5;
         System.out.println(searchInsert(nums2, target1));
 
-        
+        char[][] board = {
+            {'5','3','.','.','7','.','.','.','.'},
+            {'6','.','.','1','9','5','.','.','.'},
+            {'.','9','8','.','.','.','.','6','.'},
+            {'8','.','.','.','6','.','.','.','3'},
+            {'4','.','.','8','.','3','.','.','1'},
+            {'7','.','.','.','2','.','.','.','6'},
+            {'.','6','.','.','.','.','2','8','.'},
+            {'.','.','.','4','1','9','.','.','5'},
+            {'.','.','.','.','8','.','.','7','9'}
+        };
+        System.out.println(isValidSudoku(board));
+
+
     }
 }
