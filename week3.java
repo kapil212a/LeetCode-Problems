@@ -211,6 +211,27 @@ public class week3 {
         return ans;
     }
 
+    ///// FIND INSERTION POINT IN THE ARRAY \\\\\\\
+
+    public static int searchInsert(int[] nums, int target) {
+        int left = 0 , right = nums.length - 1;
+
+        while(left <= right){
+            int mid = left + (right - left) / 2;
+
+            if(nums[mid] == target){
+                return mid;
+            }
+            else if(nums[mid] < target){
+                left = mid + 1;
+
+            }
+            else{
+                right = mid - 1;
+            }
+        }
+        return left;
+    }
     public static void main(String[] args) {
         String haystack = "sadbutsad";
         String needle = "sad";
@@ -236,5 +257,11 @@ public class week3 {
         int target = 8;
         int res[] = searchRange(nums1, target);
         printArr(res);
+
+        int nums2 [] = {1,3,5,6};
+        int target1 = 5;
+        System.out.println(searchInsert(nums2, target1));
+
+        
     }
 }
