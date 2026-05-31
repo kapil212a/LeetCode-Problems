@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -284,7 +285,21 @@ public class week3 {
         }
         return true;
     }
+
+    //////// DESTOYING AESTROIDS \\\\\\
     
+    public static boolean asteroidsDestroyed(int mass, int[] asteroids) {
+        Arrays.sort(asteroids);
+
+        long curr = mass;
+        for(int i : asteroids){
+            if(i > curr){
+                return false;
+            }
+            curr += i;
+        }
+        return true;
+    }
     
     
     public static void main(String[] args) {
@@ -329,6 +344,10 @@ public class week3 {
             {'.','.','.','.','8','.','.','7','9'}
         };
         System.out.println(isValidSudoku(board));
+
+        int mass  = 10;
+        int aestroids[] = {3,9,19,5,21};
+        System.out.println(asteroidsDestroyed(mass, aestroids));
 
 
     }
