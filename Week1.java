@@ -116,6 +116,7 @@ public class Week1 {
         for(int i = 0; i< numRows; i++){
             row[i] = new StringBuilder();
         }
+        
         int currRow = 0;
         int down = 1;
 

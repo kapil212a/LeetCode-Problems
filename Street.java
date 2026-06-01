@@ -202,7 +202,22 @@ public class Street {
         return count;
     }
     
+    /////// MINIMUM COST FOR BUY CANDIES WITH DISCOUNT \\\\\\\
 
+    public static int minimumCost(int[] cost) {
+        Arrays.sort(cost);
+        int n = cost.length -1;
+        int totalcost = 0;
+        for(int i = n; i>=0; i -= 3){
+            totalcost += cost[i];
+
+            if(i - 1 >= 0){
+                totalcost += cost[i -1];
+            }
+        }
+        return totalcost;
+    }
+    
 
     public static void main(String[] args) {
         int num [] = {4,5,6,7,0,1,2};
