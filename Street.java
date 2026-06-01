@@ -218,6 +218,22 @@ public class Street {
         return totalcost;
     }
 
+    public static int minimumCost1(int[] cost) {
+        Arrays.sort(cost);
+        int ans = 0;
+        int count = 0;
+        for(int i = cost.length - 1; i >= 0; i--){
+            count++;
+
+            if(count == 3){
+                count = 0;
+                continue;
+            }
+            ans += cost[i];
+        }
+        return ans;
+    }
+
 
     public static void main(String[] args) {
         int num [] = {4,5,6,7,0,1,2};
@@ -246,6 +262,9 @@ public class Street {
 
         int cost[] = {6,5,7,9,2,2};
         System.out.println(minimumCost(cost));
+
+        int cost1[] = {6,5,7,9,2,2};
+        System.out.println(minimumCost1(cost1));
 
     }
 }
