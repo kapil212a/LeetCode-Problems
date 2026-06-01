@@ -234,6 +234,8 @@ public class Street {
         return ans;
     }
 
+    /////// 
+
 
     public static void main(String[] args) {
         int num [] = {4,5,6,7,0,1,2};
@@ -262,9 +264,7 @@ public class Street {
 
         int cost[] = {6,5,7,9,2,2};
         System.out.println(minimumCost(cost));
-
-        int cost1[] = {6,5,7,9,2,2};
-        System.out.println(minimumCost1(cost1));
+        System.out.println(minimumCost1(cost));
 
     }
 }
