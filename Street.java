@@ -217,7 +217,7 @@ public class Street {
         }
         return totalcost;
     }
-    
+
 
     public static void main(String[] args) {
         int num [] = {4,5,6,7,0,1,2};
@@ -243,6 +243,10 @@ public class Street {
 
         String s1 = "aaAbcBC";
         System.out.println(numberOfSpecialChars2(s1));
+
+        int cost[] = {6,5,7,9,2,2};
+        System.out.println(minimumCost(cost));
+
     }
 }
 
