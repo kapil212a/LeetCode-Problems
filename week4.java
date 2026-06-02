@@ -1,5 +1,6 @@
 public class week4 {
-       public static int earliestFinishTime(int[] landStartTime, int[] landDuration, int[] waterStartTime, int[] waterDuration) {
+    /////////// EARLIER FINISH TIME OF WATER AND LAND \\\\\\\\\
+    public static int earliestFinishTime(int[] landStartTime, int[] landDuration, int[] waterStartTime, int[] waterDuration) {
         int ans = Integer.MAX_VALUE;
 
         for(int i = 0; i< landStartTime.length; i++){
