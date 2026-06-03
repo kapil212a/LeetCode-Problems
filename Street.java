@@ -236,14 +236,14 @@ public class Street {
 
     /////// EARLIER FINISH TIME FOR LAND AND WATER RIDE TIME II \\\\\\\\
 
-    public int earliestFinishTime(int[] landStartTime, int[] landDuration, int[] waterStartTime, int[] waterDuration) {
+    public static int earliestFinishTime(int[] landStartTime, int[] landDuration, int[] waterStartTime, int[] waterDuration) {
         int ans1 = solve(landStartTime, landDuration, waterStartTime, waterDuration);
 
         int ans2 = solve(waterStartTime, waterDuration, landStartTime, landDuration);
 
         return Math.min(ans1, ans2);
     }
-    private int solve(int start1[], int dur1[], int start2[], int dur2[]){
+    private static int solve(int start1[], int dur1[], int start2[], int dur2[]){
         int minEnd = Integer.MAX_VALUE;
 
         for(int i = 0; i < start1.length; i++){
@@ -259,7 +259,7 @@ public class Street {
         }
         return ans;
     }
-    
+
 
     public static void main(String[] args) {
         int num [] = {4,5,6,7,0,1,2};
@@ -289,6 +289,11 @@ public class Street {
         int cost[] = {6,5,7,9,2,2};
         System.out.println(minimumCost(cost));
         System.out.println(minimumCost1(cost));
+
+        int[] landStartTime = {2,8}, landDuration = {4,1};
+        int[] waterStartTime = {6},  waterDuration = {3};
+        System.out.println(earliestFinishTime(landStartTime, landDuration, waterStartTime, waterDuration));
+
 
     }
 }
