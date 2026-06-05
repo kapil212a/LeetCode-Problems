@@ -79,6 +79,8 @@ public class week4 {
        int nums[] = {7,8,9,11,12};
        System.out.println(firstMissingPositive(nums));
 
+        int nums1[] = {2,3,1,1,4};
+       System.out.println(jump(nums1));
 
     }
 }
