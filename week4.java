@@ -54,6 +54,22 @@ public class week4 {
         return n + 1;
     }
 
+    //////// JUMP GAME II \\\\\\\\
+
+    public static int jump(int[] nums) {
+        int jump = 0;
+        int curr = 0;
+        int farth = 0;
+
+        for(int i = 0; i < nums.length - 1; i++){
+            farth = Math.max(farth , i + nums[i]);
+            if(i == curr){
+                jump++;
+                curr = farth;
+            }
+        }
+        return jump;
+    }
 
     public static void main(String[] args) {
        int landStartTime[] = {2,8}, landDuration[] = {4,1};
@@ -62,5 +78,7 @@ public class week4 {
 
        int nums[] = {7,8,9,11,12};
        System.out.println(firstMissingPositive(nums));
+
+
     }
 }
