@@ -74,7 +74,8 @@ public class Street1 {
         int nums[] = {10,4,8,3};
         printArray(leftRightDifference(nums));
 
-       
+        int nums1[] = {1,1,2};
+        System.out.println(permuteUnique(nums1));
 
     }
 }
