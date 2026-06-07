@@ -2,6 +2,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class week4 {
+    /////////// PRINT 2D MATRIX \\\\\\\\\
+    public static void print2d(int matrix[][]){
+        int n = matrix.length;
+
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n; j++){
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
     /////////// EARLIER FINISH TIME OF WATER AND LAND \\\\\\\\\
     public static int earliestFinishTime(int[] landStartTime, int[] landDuration, int[] waterStartTime, int[] waterDuration) {
         int ans = Integer.MAX_VALUE;
@@ -151,6 +162,7 @@ public class week4 {
                          {13,3,6,7},
                          {15,14,12,16}
                       };
-        
+        rotate(matrix);
+        print2d(matrix);
     }
 }
