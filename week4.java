@@ -1,5 +1,8 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class week4 {
     /////////// PRINT 2D MATRIX \\\\\\\\\
@@ -145,6 +148,27 @@ public class week4 {
         }
     }
 
+    /////////// GROUP  ANAGRAM OF STRING \\\\\\\\\
+
+    public static List<List<String>> groupAnagrams(String[] strs) {
+        Map<String, List<String> > map = new HashMap<>();
+
+        for(String str : strs){
+            char[] arr = str.toCharArray();
+            Arrays.sort(arr);
+
+            String key = new String(arr);
+
+            if(!map.containsKey(key)){
+                map.put(key, new ArrayList<>());
+            }
+            map.get(key).add(str);
+        }
+        return new ArrayList<>(map.values());
+    }
+
+
+
     public static void main(String[] args) {
        int landStartTime[] = {2,8}, landDuration[] = {4,1};
        int waterStartTime [] = {6}, waterDuration[] = {3};
@@ -167,5 +191,8 @@ public class week4 {
                       };
         rotate(matrix);
         print2d(matrix);
+
+        String str[] = {"eat","tea","tan","ate","nat","bat"};
+        System.out.println(groupAnagrams(str));
     }
 }
