@@ -120,6 +120,7 @@ public class week4 {
     public static void rotate(int[][] matrix) {
         int n = matrix.length;
 
+        ///// TRANSPOSE OF MATRIX
         for(int i = 0;i < n; i++){
             for(int j = i+1; j < n; j++){
                 int temp = matrix[i][j];
@@ -127,6 +128,8 @@ public class week4 {
                 matrix[j][i] = temp;
             }
         }
+
+        ////// REVERSE THE ROW
         for(int i = 0; i < n; i++){
             int left = 0;
             int right = n - 1;
