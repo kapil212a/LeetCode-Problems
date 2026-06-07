@@ -103,7 +103,34 @@ public class week4 {
         nums[i] = nums[j];
         nums[j] = temp;
     }
+
+    /////////// ROTATE IMAGE OR MATRIX \\\\\\\\\\\\\
      
+    public static void rotate(int[][] matrix) {
+        int n = matrix.length;
+
+        for(int i = 0;i < n; i++){
+            for(int j = i+1; j < n; j++){
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = temp;
+            }
+        }
+        for(int i = 0; i < n; i++){
+            int left = 0;
+            int right = n - 1;
+
+            while(left < right){
+                int temp = matrix[i][left];
+                matrix[i][left] = matrix[i][right];
+                matrix[i][right] = temp;
+
+                left++;
+                right--;
+            }
+        }
+    }
+
     public static void main(String[] args) {
        int landStartTime[] = {2,8}, landDuration[] = {4,1};
        int waterStartTime [] = {6}, waterDuration[] = {3};
@@ -118,5 +145,12 @@ public class week4 {
        int nums2[] = {1,2,3};
        System.out.println(permute(nums2));
 
+       int matrix[][] = {
+                         {5,1,9,11},
+                         {2,4,8,10},
+                         {13,3,6,7},
+                         {15,14,12,16}
+                      };
+        
     }
 }
