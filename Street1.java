@@ -121,6 +121,28 @@ public class Street1 {
         return ans;
     }
 
+    ///////// MAXIMUM SUBARRAY SUM \\\\\\\\
+
+    public static int maxSubArray(int[] nums) {
+        int sum = nums[0];
+        int ms = nums[0];
+
+        for(int i = 1; i < nums.length; i++){
+            int num = nums[i];
+
+            if(sum + num > num){
+                sum = sum + num;
+            }else{
+                sum = num;
+            }
+            if(sum > ms){
+                ms = sum;
+            }
+        }
+        return ms;
+    }
+
+
     public static void main(String[] args) {
         int nums[] = {10,4,8,3};
         printArray(leftRightDifference(nums));
@@ -133,5 +155,8 @@ public class Street1 {
         printArray(pivotArray(nums2, pivot));
 
         System.out.println(myPow(2, 10));
+
+        int nums3 [] = {-2,1,-3,4,-1,2,1,-5,4};
+        System.out.println(maxSubArray(nums3));
     }
 }
