@@ -106,6 +106,8 @@ public class Street1 {
         int nums1[] = {1,1,2};
         System.out.println(permuteUnique(nums1));
 
-        
+        int nums2[] = {9,12,5,10,14,3,10};
+        int pivot = 10;
+        printArray(pivotArray(nums2, pivot));
     }
 }
