@@ -70,6 +70,35 @@ public class Street1 {
         }
     }
 
+    //////// Partition Array According to Given Pivot \\\\\\\\\
+
+     public static int[] pivotArray(int[] nums, int pivot) {
+        int n = nums.length;
+        int [] ans = new int [n];
+
+        int idx = 0;
+
+        for(int num : nums){
+            if(num < pivot){
+                ans[idx] = num;
+                idx++;
+            }
+        }
+        for(int num : nums){
+            if(num == pivot){
+                ans[idx] = num;
+                idx++;
+            }
+        }
+        for(int num : nums){
+            if(num > pivot){
+                ans[idx] = num;
+                idx++;
+            }
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         int nums[] = {10,4,8,3};
         printArray(leftRightDifference(nums));
@@ -77,5 +106,6 @@ public class Street1 {
         int nums1[] = {1,1,2};
         System.out.println(permuteUnique(nums1));
 
+        
     }
 }
