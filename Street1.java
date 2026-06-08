@@ -99,6 +99,28 @@ public class Street1 {
         return ans;
     }
 
+    //////////// POWER OF X ^ n \\\\\\\\\\\\\
+
+    public static double myPow(double x, int n) {
+        long power = n;
+
+        if(power < 0){
+            x = 1 / x;
+            power  = -power;
+        }
+
+        double ans = 1;
+        while(power > 0){
+            if(power % 2 == 1){
+                ans *= x;
+            }
+
+            x *= x;
+            power /= 2;
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         int nums[] = {10,4,8,3};
         printArray(leftRightDifference(nums));
@@ -109,5 +131,7 @@ public class Street1 {
         int nums2[] = {9,12,5,10,14,3,10};
         int pivot = 10;
         printArray(pivotArray(nums2, pivot));
+
+        System.out.println(myPow(2, 10));
     }
 }
