@@ -298,6 +298,24 @@ public class Street {
         return ans.toString();
     }
 
+    ///////// MAXIMUM TOTAL SUBARRAY VALUE \\\\\\\\\\\
+
+    public static long maxTotalValue(int[] nums, int k) {
+        int max = nums[0];
+        int min = nums[0];
+
+        for(int num : nums){
+            if(num > max){
+                max = num;
+            }
+            if(num < min){
+                min = num;
+            }
+        }
+        long diff = max - min;
+        return diff * k;
+    }
+
     public static void main(String[] args) {
         int num [] = {4,5,6,7,0,1,2};
         System.out.println(search(num, 0));
@@ -335,6 +353,10 @@ public class Street {
         String num2 = "456";
 
         System.out.println(multiply(num1, num2));
+
+        int nums3[] = {1,3,2};
+        int k = 2;
+        System.out.println(maxTotalValue(nums3, k));
 
         
 
