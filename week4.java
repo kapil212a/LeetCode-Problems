@@ -233,5 +233,12 @@ public class week4 {
         String str[] = {"eat","tea","tan","ate","nat","bat"};
         System.out.println(groupAnagrams(str));
 
+
+        int matrix1[][] = {
+                            {1,2,3},
+                            {4,5,6},
+                            {7,8,9},
+                        };
+        System.out.println(spiralOrder(matrix1));
     }
 }
