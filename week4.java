@@ -207,6 +207,24 @@ public class week4 {
         return ans;
     }
 
+    ///////// LENGTH OF LAST STRING \\\\\\\\\\\\\\
+
+    public static int lengthOfLastWord(String s) {
+        int n = s.length() -1;
+
+        while(n >= 0 && s.charAt(n) == ' '){
+            n--;
+        }
+
+        int length = 0;
+
+        while(n >= 0 && s.charAt(n) != ' '){
+            length++;
+            n--;
+        }
+        return length;
+    }
+
     public static void main(String[] args) {
        int landStartTime[] = {2,8}, landDuration[] = {4,1};
        int waterStartTime [] = {6}, waterDuration[] = {3};
@@ -240,5 +258,8 @@ public class week4 {
                             {7,8,9},
                         };
         System.out.println(spiralOrder(matrix1));
+
+        String str1 = "Hello World";
+        System.out.println(lengthOfLastWord(str1));
     }
 }
