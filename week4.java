@@ -272,6 +272,44 @@ public class week4 {
         return res.toArray(new int[res.size()][]);
     }
 
+    /////////// GENERATE SPIRAL MATRIX FROM SIZE \\\\\\\\\\\\\\
+
+    public static int[][] generateMatrix(int n) {
+        int [][] matrix = new int[n][n];
+
+        int top = 0;
+        int bottom = n -1;
+
+        int left = 0;
+        int right = n -1;
+
+        int num = 1;
+        int target = n * n;
+
+        while(num <= target){
+            for(int i = left; i <= right && num <= target; i++){
+                matrix[top][i] = num++;
+            }
+            top++;
+
+            for(int i = top; i <= bottom && num <= target; i++){
+                matrix[i][right] = num++;
+            }
+            right--;
+
+            for(int i = right; i >= left && num <= target; i--){
+                matrix[bottom][i] = num++;
+            }
+            bottom--;
+
+            for(int i = bottom; i >= top && num <= target; i--){
+                matrix[i][left] = num++;
+            }
+            left++;
+        }
+        return matrix;
+    }
+
 
     public static void main(String[] args) {
        int landStartTime[] = {2,8}, landDuration[] = {4,1};
@@ -316,6 +354,9 @@ public class week4 {
         int intervals[][] = {{1,3},{2,6},{8,10},{15,18}};
 
         int x[][] = merge(intervals);
+
+        int n = 3;
+        print2d(generateMatrix(n));
         
     }
 }
