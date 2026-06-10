@@ -225,6 +225,27 @@ public class week4 {
         return length;
     }
 
+    ////////// JUMP GAME \\\\\\\\\\\\
+
+    public static boolean canJump(int[] nums) {
+        int fart = 0;
+
+        for(int i = 0; i< nums.length; i++){
+
+            if(i > fart){
+                return false;
+            }
+
+            fart = Math.max(fart, i + nums[i]);
+
+            if(fart >= nums.length - 1){
+                return true;
+            }
+        }
+        return true;
+    }
+
+
     public static void main(String[] args) {
        int landStartTime[] = {2,8}, landDuration[] = {4,1};
        int waterStartTime [] = {6}, waterDuration[] = {3};
@@ -261,5 +282,8 @@ public class week4 {
 
         String str1 = "Hello World";
         System.out.println(lengthOfLastWord(str1));
+
+        int nums3[] = {2,3,1,1,4};
+        System.out.println(canJump(nums3));
     }
 }
