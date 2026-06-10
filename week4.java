@@ -245,6 +245,33 @@ public class week4 {
         return true;
     }
 
+    //////////// MERGE INTERVALS \\\\\\\\\\\\\\\\ 
+
+     public static int[][] merge(int[][] intervals) {
+        if(intervals.length == 0){
+            return new int[0][];
+        }
+        Arrays.sort(intervals, (a,b) ->a[0] - b[0]);
+
+        List<int[]> res = new ArrayList<>();
+
+        int[] curr = intervals[0];
+        res.add(curr);
+
+        for(int i = 1; i < intervals.length; i++){
+            int[] next = intervals[i];
+
+            if(next[0] <= curr[1]){
+                curr[1] = Math.max(curr[1] , next[1]);
+            }
+            else{
+                curr = next;
+                res.add(curr);
+            }
+        }
+        return res.toArray(new int[res.size()][]);
+    }
+
 
     public static void main(String[] args) {
        int landStartTime[] = {2,8}, landDuration[] = {4,1};
@@ -285,5 +312,10 @@ public class week4 {
 
         int nums3[] = {2,3,1,1,4};
         System.out.println(canJump(nums3));
+
+        int intervals[][] = {{1,3},{2,6},{8,10},{15,18}};
+
+        int x[][] = merge(intervals);
+        
     }
 }
