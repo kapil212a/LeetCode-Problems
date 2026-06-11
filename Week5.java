@@ -2,7 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Week5 {
-    public String getPermutation(int n, int k) {
+
+    //////////// PERMUTATION SEQUENCE \\\\\\\\\\\\
+
+    public static String getPermutation(int n, int k) {
         List<Integer> num = new ArrayList<>();
 
         int fact = 1;
@@ -31,6 +34,8 @@ public class Week5 {
         return str.toString();
     }
     public static void main(String[] args) {
-        
+        int n = 3;
+        int k = 3;
+        System.out.println(getPermutation(n , k));
     }
 }
