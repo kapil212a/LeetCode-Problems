@@ -155,7 +155,7 @@ public class Ll {
         int len = 1; 
         Node temp = head;
 
-        while(temp.next != null){
+        while(temp.next != null){            ////// FINDING LAST ELEMENT AND LENTH OF LIST
             temp = temp.next;
             len++;
         }
@@ -165,16 +165,16 @@ public class Ll {
             return head;
         }
 
-        temp.next = head;
-        int step = len - k - 1;
+        temp.next = head;                   /////// MAKING CIRCULAR LIST
+        int step = len - k - 1;             /////// FIND THE STEP FROM WE ROTATE THE LIST
         Node tail = head;
 
-        for(int i = 0; i < step; i++){
+        for(int i = 0; i < step; i++){      /////// REACHING THE ROTATEING PLACE
             tail = tail.next;
         }
 
-        Node newHead = tail.next;
-        tail.next = null;
+        Node newHead = tail.next;           /////// INITIALIZE THE HEAD TO THE NEW NODE 
+        tail.next = null;                    ///// BREAKING THE CIRCULAR LIST
         return newHead; 
     }
 
