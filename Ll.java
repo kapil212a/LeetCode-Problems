@@ -146,6 +146,39 @@ public class Ll {
         return prev;
     }
 
+///////// ROTATE THE LIST FROM K \\\\\\\\\\\\
+
+    public static Node rotateRight(Node head, int k) {
+        if(head == null || head.next == null || k == 0){
+            return head;
+        }
+        int len = 1; 
+        Node temp = head;
+
+        while(temp.next != null){
+            temp = temp.next;
+            len++;
+        }
+
+        k = k % len;
+        if(k == 0){
+            return head;
+        }
+
+        temp.next = head;
+        int step = len - k - 1;
+        Node tail = head;
+
+        for(int i = 0; i < step; i++){
+            tail = tail.next;
+        }
+
+        Node newHead = tail.next;
+        tail.next = null;
+        return newHead; 
+    }
+
+
 
     public static void main(String[] args) {
         Node head = new Node(1);
@@ -202,6 +235,17 @@ public class Ll {
         int n1 = 3;
         reverseKGroup(head4, n1);
         printLL(head4);
+
+
+        Node head5 = new Node(1);
+        head5.next = new Node(2);
+        head5.next.next = new Node(3);
+        head5.next.next.next = new Node(4);
+        head5.next.next.next.next = new Node(5);
+        int k = 3;
+        printLL(head5);
+        rotateRight(head5, k);
+        printLL(head5);
     }
 
 }
