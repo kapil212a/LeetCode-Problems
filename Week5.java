@@ -64,6 +64,22 @@ public class Week5 {
         return dp[n - 1];
     }
 
+    ///////////////// PLUS ONE AT THE LAST OF DIGIT IN ARRAYS \\\\\\\\\\\\
+
+    public static int[] plusOne(int[] digits) {
+        int n = digits.length;
+        for(int i = n -1; i >= 0; i--){
+            if(digits[i] < 9){
+                digits[i]++;
+                return digits;
+            }
+            digits[i] = 0;
+        }
+        int [] ans = new int[n + 1];
+        ans[0] = 1;
+        return ans;
+    }
+
 
     public static void main(String[] args) {
         int n = 3;
@@ -72,5 +88,8 @@ public class Week5 {
 
         int n1 = 3, m1 = 7;
         System.out.println(uniquePaths(m1, n1));
+
+        int digits[] = {4,3,2,1};
+        printArrya(digits);
     }
 }
