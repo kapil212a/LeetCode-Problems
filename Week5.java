@@ -4,6 +4,15 @@ import java.util.List;
 
 public class Week5 {
 
+    ////////// PRINT 1D ARRAYS \\\\\\\\\\\\\\\
+
+    public static void printArray(int arr[]){
+        System.out.print("[");
+        for(int i : arr){
+            System.out.print(i +" ");
+        }System.out.println("]");
+    }
+
     //////////// PERMUTATION SEQUENCE \\\\\\\\\\\\
 
     public static String getPermutation(int n, int k) {
@@ -90,6 +99,6 @@ public class Week5 {
         System.out.println(uniquePaths(m1, n1));
 
         int digits[] = {4,3,2,1};
-        printArrya(digits);
+        printArray(plusOne(digits));
     }
 }
