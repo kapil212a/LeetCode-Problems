@@ -182,6 +182,8 @@ public class Street1 {
         int nums3 [] = {-2,1,-3,4,-1,2,1,-5,4};
         System.out.println(maxSubArray(nums3));
 
-        
+        String words[] = {"abcd","def","xyz"};
+        int weight[] = {5,3,12,14,1,2,3,2,10,6,6,9,7,8,7,10,8,9,6,9,9,8,3,7,7,2};
+        System.out.println(mapWordWeights(words, weight));
     }
 }
