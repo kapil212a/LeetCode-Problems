@@ -142,6 +142,29 @@ public class Street1 {
         return ms;
     }
 
+    /////////// Weighted Word Mapping \\\\\\\\\
+
+    public static String mapWordWeights(String[] words, int[] weights) {
+        StringBuilder ans = new StringBuilder();
+
+        for(String word : words){
+            int weight = 0;
+
+            for(char ch : word.toCharArray()){
+                int idx = ch - 'a';
+
+                weight += weights[idx];
+
+            }
+            int rem = weight % 26;
+
+            char map = (char)('z' - rem);
+            ans.append(map);
+        }
+        return ans.toString();
+    }
+
+
 
     public static void main(String[] args) {
         int nums[] = {10,4,8,3};
@@ -158,5 +181,7 @@ public class Street1 {
 
         int nums3 [] = {-2,1,-3,4,-1,2,1,-5,4};
         System.out.println(maxSubArray(nums3));
+
+        
     }
 }
