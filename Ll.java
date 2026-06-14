@@ -282,7 +282,11 @@ public class Ll {
         rotateRight(head5, k);
         printLL(head5);
 
-        
+        Node head6 = new Node(5);
+        head6.next = new Node(4);
+        head6.next.next = new Node(2);
+        head6.next.next.next = new Node(1);
+        System.out.println(pairSum(head6));
     }
 
 }
