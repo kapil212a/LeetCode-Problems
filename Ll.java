@@ -178,6 +178,41 @@ public class Ll {
         return newHead; 
     }
 
+    //////////// Maximum Twin Sum of a Linked List \\\\\\\\\\\\\\\
+
+     public static int pairSum(Node head) {
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        Node prev = null;
+        Node curr = slow;
+        Node next;
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+
+            prev = curr;
+            curr = next;
+        }
+
+        int sum = 0;
+
+        Node first = head;
+        Node sec = prev;
+        while(sec != null){
+            int twin = first.data + sec.data;
+            sum = Math.max(sum, twin);
+
+            first = first.next;
+            sec = sec.next;
+        }
+        return sum;
+    }
 
 
     public static void main(String[] args) {
@@ -246,6 +281,8 @@ public class Ll {
         printLL(head5);
         rotateRight(head5, k);
         printLL(head5);
+
+        
     }
 
 }
