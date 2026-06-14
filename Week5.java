@@ -156,5 +156,8 @@ public class Week5 {
         String b = "1011";
 
         System.out.println(addBinary(a, b));
+
+        int x = 10;
+        System.out.println(mySqrt(x));
     }
 }
