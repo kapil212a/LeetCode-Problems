@@ -305,6 +305,13 @@ public class Ll {
         head6.next.next = new Node(2);
         head6.next.next.next = new Node(1);
         System.out.println(pairSum(head6));
+
+        Node head7 = new Node(1);
+        head7.next = new Node(2);
+        head7.next.next = new Node(3);
+        head7.next.next.next = new Node(4);
+
+        printLL(deleteMiddle(head7));
     }
 
 }
