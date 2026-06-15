@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
 
 public class Week5 {
 
@@ -157,6 +158,39 @@ public class Week5 {
         }
         return oneStep;
     }
+    //////////////// Simplify Path \\\\\\\\\\\\\\\\
+
+    public static String simplifyPath(String path) {
+        Stack<String> st= new Stack<>();
+
+        String [] folder = path.split("/");
+
+        for(String str : folder){
+            if(str.equals("") || str.equals(".")){
+                continue;
+            }
+            if(str.equals("..")){
+                if(!st.isEmpty()){
+                    st.pop();
+                }
+            }else{
+                st.push(str);
+            }
+
+        }
+        StringBuilder ans = new StringBuilder();
+
+        for(String str : st){
+            ans.append("/");
+            ans.append(str);
+        }
+        if(ans.length() == 0){
+            return "/";
+        }
+        else{
+            return ans.toString();
+        }
+    }
 
 
 
@@ -181,6 +215,9 @@ public class Week5 {
 
         int n2 = 5;
         System.out.println(climbStairs(n2));
+
+        String path = "/home/user/Documents/../Pictures";
+        System.out.println(simplifyPath(path));
 
         
     }
