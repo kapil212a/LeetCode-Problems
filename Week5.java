@@ -140,6 +140,25 @@ public class Week5 {
         return ans;
     }
 
+    ///////////// CLIMBING STAIR \\\\\\\\\\\\\\\\
+
+    public static int climbStairs(int n) {
+        if(n <= 2){
+            return n;
+        }
+        int oneStep = 2;
+        int twoStep = 1;
+
+        for(int i = 3; i <= n; i++){
+            int curr = oneStep + twoStep;
+
+            twoStep = oneStep;
+            oneStep = curr;
+        }
+        return oneStep;
+    }
+
+
 
     public static void main(String[] args) {
         int n = 3;
@@ -159,5 +178,10 @@ public class Week5 {
 
         int x = 10;
         System.out.println(mySqrt(x));
+
+        int n2 = 5;
+        System.out.println(climbStairs(n2));
+
+        
     }
 }
