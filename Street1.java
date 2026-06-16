@@ -211,5 +211,8 @@ public class Street1 {
         String words[] = {"abcd","def","xyz"};
         int weight[] = {5,3,12,14,1,2,3,2,10,6,6,9,7,8,7,10,8,9,6,9,9,8,3,7,7,2};
         System.out.println(mapWordWeights(words, weight));
+
+        String  s = "a#b%*";
+        System.out.println(processStr(s));
     }
 }
