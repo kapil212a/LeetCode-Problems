@@ -189,6 +189,25 @@ public class Street1 {
         return res.toString();
     }
 
+    ///////////////// Construct the Minimum Bitwise Array I \\\\\\\\\\\\\\
+
+    public static int[] minBitwiseArray(List<Integer> nums) {
+        int n = nums.size();
+        int [] temp = new int[n];
+
+        for(int i = 0; i < n; i++){
+            int target = nums.get(i);
+            temp[i] = -1;
+
+            for(int j = 0; j <= target; j++){
+                if((j | (j + 1)) == target){
+                    temp[i] = j;
+                    break;
+                }
+            }
+        }
+        return temp;
+    }
 
 
 
@@ -214,5 +233,10 @@ public class Street1 {
 
         String  s = "a#b%*";
         System.out.println(processStr(s));
+
+        List<Integer> nums4 = Arrays.asList(2,3,5,7);
+        int x[] = minBitwiseArray(nums4);
+        printArray(x);
+        
     }
 }
