@@ -237,6 +237,8 @@ public class Week5 {
         String path = "/home/user/Documents/../Pictures";
         System.out.println(simplifyPath(path));
 
+        int nums5[] = {3,5,2,3};
+        System.out.println(minPairSum(nums5));
         
     }
 }
