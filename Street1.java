@@ -268,24 +268,7 @@ public class Street1 {
         return temp;
     }
 
-    ///////////////  Minimize Maximum Pair Sum in Array \\\\\\\\\\\\\
-
-    public static int minPairSum(int[] nums) {
-        Arrays.sort(nums);
-        int i = 0;
-        int j = nums.length - 1;
-
-        int ans = 0;
-
-        while(i < j){
-            int sum = nums[i] + nums[j];
-            ans = Math.max(ans ,sum);
-
-            i++;
-            j--;
-        }
-        return ans;
-    }
+    
 
 
 
