@@ -293,9 +293,14 @@ public class Street1 {
         String  s = "a#b%*";
         System.out.println(processStr(s));
 
+        String s1 = "a#b%*";
+        int k = 1;   
+        System.out.println(processStr(s1, k));
+
         List<Integer> nums4 = Arrays.asList(2,3,5,7);
         int x[] = minBitwiseArray(nums4);
         printArray(x);
-        
+
+            
     }
 }
