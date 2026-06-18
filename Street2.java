@@ -58,6 +58,10 @@ public class Street2 {
         int nums[] = {9,4,1,7};
         int k = 4;
         System.out.println(minimumDifference(nums, k));
+
+        int arr[] = {3,8,-10,23,19,-4,-14,27};
+        List<List<Integer>> list = minimumAbsDifference(arr);
+        System.out.println(list);
     }
 
 }
