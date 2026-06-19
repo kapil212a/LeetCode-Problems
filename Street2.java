@@ -92,6 +92,40 @@ public class Street2 {
     }
 
 
+    ////////////// Set Matrix To Zero If Any Row And Col Contains Zero \\\\\\\\\\\\\\
+
+    public static void setZeroes(int[][] matrix) {
+        int n = matrix.length;
+        int m = matrix[0].length;
+
+        boolean[] zeroRow = new boolean[n];
+        boolean[] zeroCol = new boolean[m];
+
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < m; j++){
+                if(matrix[i][j] == 0){
+                    zeroRow[i] = true;
+                    zeroCol[j] = true;
+                }
+            }
+        }
+        for(int i = 0; i < n; i++){
+            if(zeroRow[i]){
+                for(int j = 0; j < m; j++){
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+        for(int j = 0; j < m; j++){
+            if(zeroCol[j]){
+                for(int i = 0; i < n; i++){
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+    }
+
+
 
     public static void main(String[] args) {
         int hour = 12;
@@ -111,6 +145,11 @@ public class Street2 {
 
         String word1 = "horse", word2 = "ros";
         System.out.println(minDistance(word1, word2));
+
+        int matrix[][] = {{0,1,2,0},
+                          {3,4,5,2},
+                          {1,3,1,5}};
+        pritn2dMtrix(setZeroes(matrix));
     }
 
 }
