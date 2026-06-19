@@ -47,6 +47,18 @@ public class Street2 {
         return list;
     }
 
+    ////////////// Find the Highest Atitude \\\\\\\\\\\\\\\\\\
+
+    public static int largestAltitude(int[] gain) {
+        int max = 0;
+        int curr = 0;
+
+        for(int x : gain){
+            curr += x;
+            max = Math.max(max, curr);
+        }
+        return max;
+    }
 
 
 
@@ -62,6 +74,9 @@ public class Street2 {
         int arr[] = {3,8,-10,23,19,-4,-14,27};
         List<List<Integer>> list = minimumAbsDifference(arr);
         System.out.println(list);
+
+        int gain[] = {-5,1,5,0,-7};
+        System.out.println(largestAltitude(gain));
     }
 
 }
