@@ -3,6 +3,18 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Street2 {
+
+    ////////////////// Print 2D Matrix \\\\\\\\\\\\\\\\\
+
+    public static void pritn2dMtrix(int matrix[][]){
+        for(int i = 0; i < matrix.length; i++){
+            System.out.print("[");
+            for(int j = 0; j < matrix.length; j++){
+                System.out.print(matrix[i][j] + " ");
+            }System.out.println("]");
+        }
+    }
+
     //////////// Angle Between Hands Of Clock \\\\\\\\\\\\\\\\
     
     public static double angleClock(int hour, int minutes) {
@@ -149,7 +161,8 @@ public class Street2 {
         int matrix[][] = {{0,1,2,0},
                           {3,4,5,2},
                           {1,3,1,5}};
-        pritn2dMtrix(setZeroes(matrix));
+        setZeroes(matrix);
+        pritn2dMtrix(matrix);
     }
 
 }
