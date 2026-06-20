@@ -199,7 +199,7 @@ public class Street2 {
                             {23,30,34,60},
                         };
         int targte = 3;
-        
+        searchMatrix(matrix1, targte);
     }
 
 }
