@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Week6 {
 
@@ -56,6 +58,27 @@ public class Week6 {
         return bars;
     }
 
+    ///////////////////// Combination \\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+    public static List<List<Integer>> combine(int n, int k) {
+        List<List<Integer>> ans = new ArrayList<>();
+
+        helper(1, n, k, new ArrayList<>(), ans);
+        return ans;
+    }
+    private static void helper(int start, int n, int k, List<Integer>list, List<List<Integer>>ans){
+        if(list.size() == k){
+            ans.add(new ArrayList<>(list));
+            return;
+        }
+        for(int i = start; i <= n; i++){
+            list.add(i);
+            helper(i + 1, n, k, list, ans);
+            list.remove(list.size() - 1);
+        }
+    }
+
+
 
 
     public static void main(String[] args) {
@@ -66,6 +89,10 @@ public class Week6 {
         int costs[] = {1,3,2,4,1};
         int coins = 7;
         System.out.println(maxIceCream(costs, coins));
+
+        int n = 4, k = 2;
+        List<List<Integer>> list = combine(n, k);
+        System.out.println(list);
         
     }
 
