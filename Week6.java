@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Week6 {
 
     ///////////////// Print Arrays \\\\\\\\\\\\\\\\\\\\
@@ -6,7 +8,7 @@ public class Week6 {
         System.out.print("[");
         for(int num : arr){
             System.out.print(num + " ");
-        }System.out.print("]");
+        }System.out.println("]");
     }
 
 
@@ -37,11 +39,34 @@ public class Week6 {
         nums[j] = temp;
     }
 
+    ///////////////////// Maximum Ice Cream Bars \\\\\\\\\\\\\\\\\\\
     
+    public static int maxIceCream(int[] costs, int coins) {
+        Arrays.sort(costs);
+
+        int bars = 0;
+
+        for(int cost : costs){
+            if(coins < cost){
+                break;
+            }
+            coins -= cost;
+            bars++;
+        }
+        return bars;
+    }
+
+
+
     public static void main(String[] args) {
         int nums[] = {2,0,2,1,1,0};
         sortColors(nums);
         printArr(nums);
+
+        int costs[] = {1,3,2,4,1};
+        int coins = 7;
+        System.out.println(maxIceCream(costs, coins));
+        
     }
 
 }
