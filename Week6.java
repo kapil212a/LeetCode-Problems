@@ -1,4 +1,15 @@
 public class Week6 {
+
+    ///////////////// Print Arrays \\\\\\\\\\\\\\\\\\\\
+
+    public static void printArr(int arr[]){
+        System.out.print("[");
+        for(int num : arr){
+            System.out.print(num + " ");
+        }System.out.print("]");
+    }
+
+
     ////////////////// Sort The color \\\\\\\\\\\\\\\\\\ 
     public static void sortColors(int[] nums) {
         int low = 0;
@@ -29,7 +40,8 @@ public class Week6 {
     
     public static void main(String[] args) {
         int nums[] = {2,0,2,1,1,0};
-        
+        sortColors(nums);
+        printArr(nums);
     }
 
 }
