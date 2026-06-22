@@ -226,6 +226,9 @@ public class Street2 {
                         };
         int targte = 3;
         System.out.println(searchMatrix(matrix1, targte));
+
+        String text = "loonbalxballpoon";
+        System.out.println(maxNumberOfBalloons(text));
     }
 
 }
