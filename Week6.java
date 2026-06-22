@@ -99,6 +99,23 @@ public class Week6 {
     }
 
 
+    ///////////////////// REmove Dublicates from sorted array \\\\\\\\\\\\\\\\\
+
+    public static int removeDuplicates(int[] nums) {
+        if(nums.length == 0){
+            return 0;
+        }
+
+        int j = 0;
+        for(int num : nums){
+            if(j < 2 || num != nums[j - 2]){
+                nums[j] = num;
+                j++;
+            }
+        }
+        return j;
+    }
+
 
     public static void main(String[] args) {
         int nums[] = {2,0,2,1,1,0};
@@ -116,6 +133,9 @@ public class Week6 {
         int nums1[] = {1,2,3};
         List<List<Integer>> list1 = subsets(nums1);
         System.out.println(list1);
+
+        int arr[] = {1,1,1,2,2,3};
+        System.out.println(removeDuplicates(arr));
     }
 
 }
