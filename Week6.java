@@ -172,6 +172,10 @@ public class Week6 {
 
         int arr[] = {1,1,1,2,2,3};
         System.out.println(removeDuplicates(arr));
+
+        int arr1[] = {2,5,6,0,0,1,2};
+        int target = 0;
+        System.out.println(search(arr1, target));
     }
 
 }
