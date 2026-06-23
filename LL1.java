@@ -8,6 +8,17 @@ public class LL1 {
         }
 
     }
+    //////////////// Print Linked List \\\\\\\\\\\\\\\\\\\\\\\\\
+    
+    public static void printLL(ListNode head){
+        ListNode temp = head;
+        while(temp != null){
+            System.out.print(temp.val + "-->");
+            temp = temp.next;
+        }System.out.println("null");
+    }
+
+    //////////////// Remove Dublicates from List II \\\\\\\\\\\\\\\\ 
 
     public static ListNode deleteDuplicates(ListNode head) {
         ListNode dummy  = new ListNode(0);
@@ -40,6 +51,8 @@ public class LL1 {
         head.next.next.next = new ListNode(3);
         head.next.next.next.next = new ListNode(3);
         head.next.next.next.next.next = new ListNode(4);
+        printLL(head);
+        deleteDuplicates(head);
         printLL(head);
     }
 }
