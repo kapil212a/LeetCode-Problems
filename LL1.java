@@ -18,7 +18,7 @@ public class LL1 {
         }System.out.println("null");
     }
 
-    //////////////// Remove Dublicates from List II \\\\\\\\\\\\\\\\ 
+    //////////////// Remove all element which are Dublicates from List II \\\\\\\\\\\\\\\\ 
 
     public static ListNode deleteDuplicates(ListNode head) {
         ListNode dummy  = new ListNode(0);
@@ -44,6 +44,24 @@ public class LL1 {
         return dummy.next;
     }
 
+    ////////////// Remove Duplicates From Sorted List \\\\\\\\\\\\\\\\\\\
+    
+    public static ListNode deleteDuplicates1(ListNode head) {
+        ListNode curr = head;
+
+        while(curr != null){
+            if(curr.next != null && curr.val == curr.next.val){
+                curr.next = curr.next.next;
+            }
+            else{
+                curr = curr.next;
+            }
+        }
+        return head;
+    }
+
+
+
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
         head.next = new ListNode(2);
@@ -54,5 +72,15 @@ public class LL1 {
         printLL(head);
         deleteDuplicates(head);
         printLL(head);
+
+         ListNode head1 = new ListNode(1);
+        head1.next = new ListNode(2);
+        head1.next.next = new ListNode(2);
+        head1.next.next.next = new ListNode(3);
+        head1.next.next.next.next = new ListNode(3);
+        head1.next.next.next.next.next = new ListNode(4);
+        printLL(head1);
+        deleteDuplicates1(head1);
+        printLL(head1);
     }
 }
