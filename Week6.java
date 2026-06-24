@@ -222,6 +222,9 @@ public class Week6 {
         int m = 3, n1 = 3;
         merge(nums2, m, nums3, n1);
         printArr(nums2);
+
+        int n2 = 4;
+        System.out.println(grayCode(n2));
     }
 
 }
