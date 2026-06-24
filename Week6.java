@@ -151,6 +151,30 @@ public class Week6 {
         return false;
     }
 
+    ////////////////// Merge Sorted Arrays \\\\\\\\\\\\\\\\\\\\\\
+    
+    public static void merge(int[] nums1, int m, int[] nums2, int n) {
+        int i = m-1, j = n -1, k = m + n - 1;
+        while(i >= 0 && j >= 0){
+            if(nums1[i] > nums2[j]){
+                nums1[k] = nums1[i];
+                i--;
+            }
+            else{
+                nums1[k] = nums2[j];
+                j--;
+            }
+            k--;
+        }
+        while(j >= 0){
+            nums1[k] = nums2[j];
+            k--;
+            j--;
+        }
+
+    }
+
+
 
 
     public static void main(String[] args) {
@@ -176,6 +200,12 @@ public class Week6 {
         int arr1[] = {2,5,6,0,0,1,2};
         int target = 0;
         System.out.println(search(arr1, target));
+
+        int nums2[] = {1,2,3,0,0,0};
+        int nums3[] = {2,5,6};
+        int m = 3, n1 = 3;
+        merge(nums2, m, nums3, n1);
+        printArr(nums2);
     }
 
 }
