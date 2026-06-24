@@ -32,7 +32,7 @@ public class Week1 {
             map.put(ch , i);
             length = Math.max(length , i - left + 1);
         }
-       // System.out.println(map);
+        System.out.println(map);
         return length;
     }
 

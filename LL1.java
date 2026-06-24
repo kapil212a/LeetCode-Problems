@@ -60,6 +60,31 @@ public class LL1 {
         return head;
     }
 
+    ////////////////////// Partition The element are less Then x In \\\\\\\\\\\\\\\\\
+
+    public static ListNode partition(ListNode head, int x) {
+        ListNode smallNew = new ListNode(0);
+        ListNode largeNew = new ListNode(0);
+
+        ListNode small = smallNew;
+        ListNode large = largeNew;
+
+        while(head != null){
+            if(head.val < x){
+                small.next = head;
+                small = small.next;
+            }
+            else{
+                large.next = head;
+                large = large.next;
+            }
+            head = head.next;
+        }
+        large.next = null;
+        small.next = largeNew.next;
+
+        return smallNew.next;
+    }
 
 
     public static void main(String[] args) {
@@ -73,7 +98,7 @@ public class LL1 {
         deleteDuplicates(head);
         printLL(head);
 
-         ListNode head1 = new ListNode(1);
+        ListNode head1 = new ListNode(1);
         head1.next = new ListNode(2);
         head1.next.next = new ListNode(2);
         head1.next.next.next = new ListNode(3);
@@ -82,5 +107,19 @@ public class LL1 {
         printLL(head1);
         deleteDuplicates1(head1);
         printLL(head1);
+
+        ListNode head2 = new ListNode(1);
+        head2.next = new ListNode(4);
+        head2.next.next = new ListNode(3);
+        head2.next.next.next = new ListNode(2);
+        head2.next.next.next.next = new ListNode(5);
+        head2.next.next.next.next.next = new ListNode(2);
+        int x = 3;
+        printLL(head2);
+        partition(head2, x);
+        printLL(head2);
+
+
+
     }
 }
