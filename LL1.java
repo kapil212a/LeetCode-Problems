@@ -86,6 +86,31 @@ public class LL1 {
         return smallNew.next;
     }
 
+    /////////////////// Reverse List from given left and Right size \\\\\\\\\\\\\\
+
+    public static ListNode reverseBetween(ListNode head, int left, int right) {
+        if(head == null || left == right){
+            return head;
+        }
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode prev = dummy;
+
+        for(int i = 1; i < left; i++){
+            prev = prev.next;
+        }
+
+        ListNode curr = prev.next;
+
+        for(int i = 0; i < right - left; i++){
+            ListNode nextNode = curr.next;
+            curr.next = nextNode.next;
+            nextNode.next = prev.next;
+            prev.next = nextNode;
+        }
+        return dummy.next;
+    }
+
 
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
@@ -119,7 +144,15 @@ public class LL1 {
         partition(head2, x);
         printLL(head2);
 
-
-
+        ListNode head3 = new ListNode(1);
+        head3.next = new ListNode(2);
+        head3.next.next = new ListNode(3);
+        head3.next.next.next = new ListNode(4);
+        head3.next.next.next.next = new ListNode(5);
+        int left = 2, right = 4;
+        printLL(head3);
+        reverseBetween(head3, left, right);
+        printLL(head3);
+        
     }
 }
