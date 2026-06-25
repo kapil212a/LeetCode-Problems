@@ -253,6 +253,7 @@ public class Street2 {
 
         int nums4[] = {1,2,2,3};
         int target = 2;
+        System.out.println(countMajoritySubarrays(nums4, target));
     }
 
 }

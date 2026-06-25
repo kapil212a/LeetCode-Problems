@@ -191,6 +191,30 @@ public class Week6 {
         return result;
     }
 
+    ////////////////////// Subset II \\\\\\\\\\\\\\\\\\\\
+
+    static List<List<Integer>> ans = new ArrayList<>();
+    public static List<List<Integer>> subsetsWithDup(int[] nums) {
+        Arrays.sort(nums);
+        backtrack(nums, 0, new ArrayList<>());
+
+        return ans;
+    }
+
+    private static void backtrack(int nums[] , int idx, List<Integer> curr){
+        ans.add(new ArrayList<>(curr));
+
+        for(int i = idx; i < nums.length; i++){
+            if(i > idx && nums[i] == nums[i -1]){
+                continue;
+            }
+
+            curr.add(nums[i]);
+            backtrack(nums, i + 1, curr);
+            curr.remove(curr.size() - 1);
+        }
+    }
+
 
 
     public static void main(String[] args) {
@@ -225,6 +249,10 @@ public class Week6 {
 
         int n2 = 4;
         System.out.println(grayCode(n2));
+
+        int[] nums5 = {1,2,2};
+        List<List<Integer>> x = subsetsWithDup(nums5);
+        System.out.println(x);
     }
 
 }
