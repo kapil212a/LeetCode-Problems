@@ -75,6 +75,22 @@ public class Tree {
         return dp[n];
     }
 
+    ////////////////////// Valid Binary Search Tree \\\\\\\\\\\\\\\\\\\\
+
+    public static boolean isValidBST(TreeNode root) {
+        //long min = Integer.MIN_VALUE, max = Integer.MAX_VALUE;
+        return valid(root, Long.MIN_VALUE, Long.MAX_VALUE);
+    }
+    private static boolean valid(TreeNode node, long min, long max){
+        if(node == null){
+            return true;
+        }
+        if(node.val <= min || node.val >= max){
+            return false;
+        }
+        return valid(node.left, min, node.val) && valid(node.right , node.val, max);
+    }
+
 
 
     public static void main(String[] args) {
@@ -107,6 +123,12 @@ public class Tree {
 
            int n1 = 3;
            System.out.println(numTrees(n1));
+
+
         }
+        TreeNode node1 = new TreeNode(2);
+        node1.left = new TreeNode(1);
+        node1.right = new TreeNode(3);
+        System.out.println(isValidBST(node1));
     }
 }
