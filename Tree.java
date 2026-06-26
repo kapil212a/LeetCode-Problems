@@ -11,7 +11,7 @@ public class Tree {
             this.right = null;
         }        
     }
-
+    /////////////////// Inorder traversal on tree /\\\\\\\\\\\\\
     public static List<Integer> inorderTraversal(TreeNode root){
         List<Integer> ans = new ArrayList<>();
         inorder(root , ans);
