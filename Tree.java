@@ -133,6 +133,22 @@ public class Tree {
         inorder(root.right);
     }
 
+    //////////////////// Check The Two Tree Are Same \\\\\\\\\\\\\\\\\\
+
+    public static boolean isSameTree(TreeNode p, TreeNode q) {
+        if(p == null && q == null){
+            return true;
+        }
+        if(p == null || q == null){
+            return false;
+        }
+        if(p.val != q.val){
+            return false;
+        }
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    }
+
+
 
     public static void main(String[] args) {
         TreeNode node = new TreeNode(1);
@@ -177,5 +193,7 @@ public class Tree {
         node3.left.right = new TreeNode(2);
         recoverTree(node3);
         printTree(node3);
+
+        System.out.println(isSameTree(node1, node3));
     }
 }
