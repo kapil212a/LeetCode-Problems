@@ -17,12 +17,13 @@ public class Tree {
         if(root == null){
             return;
         }
-        System.out.println(root);
+        
+        System.out.print(root.val + " ");
         printTree(root.left);
         printTree(root.right);
     }
 
-    
+
     /////////////////// Inorder traversal on tree /\\\\\\\\\\\\\
     public static List<Integer> inorderTraversal(TreeNode root){
         List<Integer> ans = new ArrayList<>();
