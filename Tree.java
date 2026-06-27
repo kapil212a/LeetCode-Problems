@@ -230,12 +230,14 @@ public class Tree {
 
         System.out.println(isSameTree(node1, node3));
 
-        int value[] = {1,2,2,3,4,4,3};
-        TreeNode root = null;
-        for(int i = 0; i < value.length; i++){
-            root = buildBST(root, value[i]);
-        }
-        printTree(root);
-        System.out.println(isSymmetric(root));
+        TreeNode node4 = new TreeNode(1);
+        node4.left = new TreeNode(2);
+        node4.left.left = new TreeNode(3);
+        node4.left.right = new TreeNode(4);
+        node4.right = new TreeNode(2);
+        node4.right.left = new TreeNode(4);
+        node4.right.right = new TreeNode(3);
+
+        System.out.println(isSymmetric(node4));
     }
 }
