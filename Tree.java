@@ -11,6 +11,18 @@ public class Tree {
             this.right = null;
         }        
     }
+
+    ////////////// Print Tree \\\\\\\\\\\\\\\\\\\
+    public static void printTree(TreeNode root){
+        if(root == null){
+            return;
+        }
+        System.out.println(root);
+        printTree(root.left);
+        printTree(root.right);
+    }
+
+    
     /////////////////// Inorder traversal on tree /\\\\\\\\\\\\\
     public static List<Integer> inorderTraversal(TreeNode root){
         List<Integer> ans = new ArrayList<>();
@@ -159,6 +171,10 @@ public class Tree {
         node1.right = new TreeNode(3);
         System.out.println(isValidBST(node1));
 
-        
+        TreeNode node3 = new TreeNode(1);
+        node3.left = new TreeNode(3);
+        node3.left.right = new TreeNode(2);
+        recoverTree(node3);
+        printTree(node3);
     }
 }
