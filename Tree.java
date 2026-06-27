@@ -23,6 +23,21 @@ public class Tree {
         printTree(root.right);
     }
 
+    ///////////////// Build BST \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+    public static TreeNode buildBST(TreeNode root , int value){
+        if(root == null){
+            root = new TreeNode(value);
+            return root;
+        }
+        if(root.val > value){
+            root.left = buildBST(root.left , value);
+        }
+        else{
+            root.right = buildBST(root.right , value);
+        }
+        return root;
+    }
 
     /////////////////// Inorder traversal on tree /\\\\\\\\\\\\\
     public static List<Integer> inorderTraversal(TreeNode root){
@@ -214,5 +229,13 @@ public class Tree {
         printTree(node3);
 
         System.out.println(isSameTree(node1, node3));
+
+        int value[] = {1,2,2,3,4,4,3};
+        TreeNode root = null;
+        for(int i = 0; i < value.length; i++){
+            root = buildBST(root, value[i]);
+        }
+        printTree(root);
+        System.out.println(isSymmetric(root));
     }
 }
