@@ -91,6 +91,34 @@ public class Tree {
         return valid(node.left, min, node.val) && valid(node.right , node.val, max);
     }
 
+    /////////////// Recover BInary Search Tree \\\\\\\\\\\\\\\\\\\\\
+
+    static TreeNode first = null;
+    static TreeNode second = null;
+    static TreeNode prev = null;
+
+    public static void recoverTree(TreeNode root) {
+        inorder(root);
+
+        int temp = first.val;
+        first.val = second.val;
+        second.val = temp;
+
+    }
+    private static void inorder(TreeNode root){
+        if(root == null){
+            return;
+        }
+        inorder(root.left);
+        if(prev != null && prev.val > root.val){
+            if(first == null){
+                first = prev;
+            }
+            second  = root;
+        }
+        prev = root;
+        inorder(root.right);
+    }
 
 
     public static void main(String[] args) {
@@ -130,5 +158,7 @@ public class Tree {
         node1.left = new TreeNode(1);
         node1.right = new TreeNode(3);
         System.out.println(isValidBST(node1));
+
+        
     }
 }
