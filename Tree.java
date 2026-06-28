@@ -272,5 +272,7 @@ public class Tree {
         node4.right.right = new TreeNode(3);
 
         System.out.println(isSymmetric(node4));
+
+        
     }
 }
