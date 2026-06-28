@@ -182,6 +182,39 @@ public class Tree {
         return miror(left.left , right.right) && miror(left.right, right.left);
     }
 
+    ///////////////////// Level Order Treversal In BST \\\\\\\\\\\\\\\\\\\\
+
+    public static List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> ans = new ArrayList<>();
+        
+        if(root == null){
+            return ans;
+        }
+
+        Queue<TreeNode> qu = new LinkedList<>();
+        qu.offer(root);
+
+        while(!qu.isEmpty()){
+            int size = qu.size();
+
+            List<Integer> level = new ArrayList<>();
+
+            for(int i = 0; i < size; i++){
+                TreeNode curr = qu.poll();
+                level.add(curr.val);
+
+                if(curr.left != null){
+                    qu.offer(curr.left);
+                }
+                if(curr.right != null){
+                    qu.offer(curr.right);
+                }
+            }
+            ans.add(level);
+        }
+        return ans;
+    }
+
 
 
     public static void main(String[] args) {
