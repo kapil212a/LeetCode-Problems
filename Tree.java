@@ -215,6 +215,34 @@ public class Tree {
         return ans;
     }
 
+    /////////////////////// Construct Binary Tree from Preorder and Inorder Traversal \\\\\\\\\\
+
+    static int idx = 0;
+    public static TreeNode buildTree(int[] preorder, int[] inorder) {
+        return helper(preorder , inorder , 0 , inorder.length - 1);
+    }
+    private static TreeNode helper(int [] preorder , int[] inorder , int left, int right){
+        if(left > right){
+            return null;
+        }
+
+        int rootVal = preorder[idx];
+        idx++;
+        TreeNode root = new TreeNode(rootVal);
+
+        int x = left;
+        for(int i = left; i <= right; i++){
+            if(inorder[i] == rootVal){
+                x = i;
+                break;
+            }
+        }
+
+        root.left = helper(preorder , inorder, left , x - 1);
+        root.right = helper(preorder, inorder, x + 1, right);
+        return root;
+    }
+
 
 
     public static void main(String[] args) {
@@ -272,6 +300,10 @@ public class Tree {
         node4.right.right = new TreeNode(3);
 
         System.out.println(isSymmetric(node4));
+
+        int inorder[] = {3,9,20,15,7};
+        int preorder[] = {9,3,15,20,7};
+        System.out.println(buildTree(preorder, inorder));
 
         
     }
