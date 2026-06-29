@@ -226,6 +226,24 @@ public class Week6 {
         return letters[0];
     }
 
+    /////////////////// Divide an Array Into Subarrays With Minimum Cost I \\\\\\\\\\\\
+
+    public static int minimumCost(int[] nums) {
+        int firstMin = Integer.MAX_VALUE;
+        int secMin = Integer.MAX_VALUE;
+
+        for(int i = 1; i < nums.length; i++){
+            if(nums[i] < firstMin){
+                secMin = firstMin;
+                firstMin = nums[i];
+            }
+            else if(nums[i] < secMin){
+                secMin = nums[i];
+            }
+        }
+        return nums[0] + firstMin + secMin;
+    }
+
 
     public static void main(String[] args) {
         int nums[] = {2,0,2,1,1,0};
