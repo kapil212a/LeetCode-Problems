@@ -286,6 +286,9 @@ public class Week6 {
         char target1 = 'a';
         System.out.println(nextGreatestLetter(letters, target1));
 
+        int num6[] = {10,3,1,1};
+        System.out.println(minimumCost(nums5));
+
     }
 
 }
