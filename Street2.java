@@ -214,6 +214,18 @@ public class Street2 {
         return ans;
     }
 
+    ///////////////////////// Number of Strings That Appear as Substrings in Word\\\\\\\\\\\\\
+
+     public static int numOfStrings(String[] patterns, String word) {
+        int count = 0;
+
+        for(int i = 0; i < patterns.length; i++){
+            if(word.contains(patterns[i])){
+                count++;
+            }
+        }
+        return count;
+    }
 
 
     public static void main(String[] args) {
@@ -254,6 +266,10 @@ public class Street2 {
         int nums4[] = {1,2,2,3};
         int target = 2;
         System.out.println(countMajoritySubarrays(nums4, target));
+
+        String patterns[] = {"a","abc","bc","d"};
+        String word = "abc";
+        System.out.println(numOfStrings(patterns, word));
     }
 
 }
