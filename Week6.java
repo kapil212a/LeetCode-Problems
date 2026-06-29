@@ -215,6 +215,16 @@ public class Week6 {
         }
     }
 
+    //////////// Find Smallest Letter Greater then Target \\\\\\\\\\\\\\\\\\\\
+
+    public static char nextGreatestLetter(char[] letters, char target) {
+        for(int i = 0;  i < letters.length; i++){
+            if(letters[i] - target > 0){
+                return letters[i];
+            }
+        }
+        return letters[0];
+    }
 
 
     public static void main(String[] args) {
