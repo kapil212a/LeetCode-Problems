@@ -263,6 +263,11 @@ public class Week6 {
         int[] nums5 = {1,2,2};
         List<List<Integer>> x = subsetsWithDup(nums5);
         System.out.println(x);
+
+        char letters[] = {'c','f','j'};
+        char target1 = 'a';
+        System.out.println(nextGreatestLetter(letters, target1));
+
     }
 
 }
