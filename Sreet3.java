@@ -1,4 +1,5 @@
 public class Sreet3 {
+    
     /////////////////////// Number of Substrings Containing All Three Characters\\\\\\\\\\\\
 
     public static int numberOfSubstrings(String s) {
