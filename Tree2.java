@@ -157,7 +157,7 @@ public class Tree2 {
 
         System.out.println(minDepth(root));
 
-        System.out.println(root);
+        System.out.println(hasPathSum(root, 12));
     }
 
 }
