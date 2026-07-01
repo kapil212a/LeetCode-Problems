@@ -13,6 +13,14 @@ public class Tree2 {
         }
     }
 
+    public static void preorder(TreeNode root){
+        if(root == null){
+            return;
+        }
+        System.out.print(root.val + " ");
+        preorder(root.left);
+        preorder(root.right);
+    }
     //////////////// Binary Tree Level Order Traversal II (Bottom -------->  Root)\\\\\\\\\\\\\\\
     public static List<List<Integer>> levelOrderBottom(TreeNode root) {
         List<List<Integer>> ans = new ArrayList<>();
@@ -61,6 +69,33 @@ public class Tree2 {
         return root;
     }
 
+    /////////////////////// determine if it is height-balanced \\\\\\\\\\\\\\\\\
+
+    public static boolean isBalanced(TreeNode root) {
+        return height(root) != -1;
+    }
+    public static int height(TreeNode root){
+        if(root == null){
+            return 0;
+        }
+
+        int left  = height(root.left);
+        if(left == -1){
+            return -1;
+        }
+
+        int right = height(root.right);
+        if(right == -1){
+            return -1;
+        }
+
+        if(Math.abs(left - right) > 1){
+            return -1;
+        }
+        return Math.max(left , right) + 1;
+    }
+
+
 
     public static void main(String[] args) {
 
@@ -73,8 +108,15 @@ public class Tree2 {
         System.out.println(x);
 
         int nums[] = {-10,-3,0,5,9};
-        System.out.println(sortedArrayToBST(nums));
+        sortedArrayToBST(nums);
+        preorder(sortedArrayToBST(nums));
 
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(9);
+        root.right = new TreeNode(20);            ///3,9,20,null,null,15,7
+        root.right.left = new TreeNode(15);
+        root.right.right = new TreeNode(7);
+        System.out.println(isBalanced(root));
     }
 
 }
