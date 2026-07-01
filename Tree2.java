@@ -95,6 +95,27 @@ public class Tree2 {
         return Math.max(left , right) + 1;
     }
 
+    //////////// Minimum depth of binary tree \\\\\\\\\\\\\\\
+
+    public static int minDepth(TreeNode root) {
+        if(root == null){
+            return 0;
+        }
+
+        if(root.left == null){
+            return minDepth(root.right) + 1;
+        }
+        if(root.right == null){
+
+            return minDepth(root.left) + 1;
+        }
+
+        int left = minDepth(root.left);
+        int right = minDepth(root.right);
+
+        return Math.min(left , right) + 1;
+    }
+
 
 
     public static void main(String[] args) {
@@ -113,10 +134,12 @@ public class Tree2 {
 
         TreeNode root = new TreeNode(3);
         root.left = new TreeNode(9);
-        root.right = new TreeNode(20);            ///3,9,20,null,null,15,7
+        root.right = new TreeNode(20);           
         root.right.left = new TreeNode(15);
         root.right.right = new TreeNode(7);
         System.out.println(isBalanced(root));
+
+        System.out.println(minDepth(root));
     }
 
 }
