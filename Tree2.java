@@ -131,9 +131,10 @@ public class Tree2 {
 
         return hasPathSum(root.left , targetSum) || hasPathSum(root.right , targetSum);
     }
+
     //////////////// Path Sum II \\\\\\\\\\\\\\\\
 
-    public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
+    public static List<List<Integer>> pathSum(TreeNode root, int targetSum) {
         List<List<Integer>> ans = new ArrayList<>();
         List<Integer> path = new ArrayList<>();
 
@@ -185,6 +186,7 @@ public class Tree2 {
         System.out.println(minDepth(root));
 
         System.out.println(hasPathSum(root, 12));
+        System.out.println(pathSum(root, 12));
     }
 
 }
