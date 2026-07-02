@@ -160,6 +160,29 @@ public class Tree2 {
         path.remove(path.size() - 1);
     }
 
+    /////////////////// Binary Tree to LinkedList\\\\\\\\\\\\\
+
+    public static void flatten(TreeNode root) {
+        if(root == null){
+            return;
+        }
+
+        flatten(root.left);
+        flatten(root.right);
+
+        if(root.left != null){
+
+            TreeNode temp = root.left;
+
+            while(temp.right != null){
+                temp = temp.right;
+            }
+            temp.right = root.right;
+            root.right = root.left;
+            root.left = null;
+        }
+
+    }
 
 
     public static void main(String[] args) {
@@ -187,6 +210,11 @@ public class Tree2 {
 
         System.out.println(hasPathSum(root, 12));
         System.out.println(pathSum(root, 12));
+
+
+        flatten(root);
+        preorder(root);
+
     }
 
 }
