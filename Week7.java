@@ -56,5 +56,9 @@ public class Week7 {
     public static void main(String[] args) {
        String s = "rabbbit", t = "rabbit";
        System.out.println(numDistinct(s, t));
+
+       int numRows = 5;
+         List<List<Integer>> ans = generate(numRows);
+       System.out.println(ans);
     }
 }
