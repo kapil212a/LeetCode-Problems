@@ -57,7 +57,7 @@ public class Week7 {
         int minPrice = prices[0];
         int maxProfit = 0;
 
-        for(int i = 0; i < prices.length; i++){
+        for(int i = 1; i < prices.length; i++){
             if(prices[i] < minPrice){
                 minPrice = prices[i];
             }
@@ -68,6 +68,19 @@ public class Week7 {
             }
         }
         return maxProfit;
+    }
+
+    ////////////////// Best Time to Buy and Sell Stock\\\\\\\\\\\\\\\\\\\
+
+    public static int maxProfitII(int[] prices) {
+        int profit = 0;
+
+        for(int i = 1; i < prices.length; i++){
+            if(prices[i] > prices[i - 1]){
+                profit += prices[i] - prices[i - 1];
+            }
+        }
+        return profit;
     }
 
 
@@ -81,7 +94,9 @@ public class Week7 {
        System.out.println(ans);
 
        int prices[] = {7,1,5,3,6,4};
-       System.out.println(maxProfit(prices));
+       System.out.println(maxProfit(prices)); 
+       
+       System.out.println(maxProfitII(prices));
        
     }
 }
