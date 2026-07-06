@@ -148,6 +148,9 @@ public class Week7 {
 
        String s1 = "A man, a plan, a canal: Panama";
        System.out.println(isPalindrome(s1));
+
+       int intervals [][] = {{1,4},{3,6},{2,8}};
+       System.out.println(removeCoveredIntervals(intervals));
        
     }
 }
