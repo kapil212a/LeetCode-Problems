@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Week7 {
@@ -83,6 +84,53 @@ public class Week7 {
         return profit;
     }
 
+    //////////////// Valid Palindrom \\\\\\\\\\\\\\\\\\\\\\
+
+    public static boolean isPalindrome(String s) {
+        int left = 0;
+        int right = s.length() - 1;
+
+        while(left < right){
+            while(left < right && !Character.isLetterOrDigit(s.charAt(left))){
+                left++;
+            }
+            while(left < right && !Character.isLetterOrDigit(s.charAt(right))){
+                right--;
+            }
+            char ch1 = Character.toLowerCase(s.charAt(left));
+            char ch2 = Character.toLowerCase(s.charAt(right));
+
+            if(ch1 != ch2){
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+    ///////////////// Remove covered Intervals \\\\\\\\\\\\\\\\\
+
+    public static int removeCoveredIntervals(int[][] intervals) {
+        Arrays.sort(intervals , (a, b) ->{
+            if(a[0] == b[0]){
+                return b[1] - a[1];
+            }
+            return a[0] - b[0];
+        });
+
+        int count = 0;
+        int max = 0;
+
+        for(int[] num : intervals){
+            if(num[1] > max){
+                count++;
+                max = num[1];
+            }
+        }
+        return count;
+    }
+
 
 
     public static void main(String[] args) {
@@ -97,6 +145,9 @@ public class Week7 {
        System.out.println(maxProfit(prices)); 
        
        System.out.println(maxProfitII(prices));
+
+       String s1 = "A man, a plan, a canal: Panama";
+       System.out.println(isPalindrome(s1));
        
     }
 }
