@@ -177,6 +177,18 @@ public class Week7 {
         return ans;
     }
 
+    ///////////// FInd The Single Number That Is Not Repeated \\\\\\\\\\\\\\
+
+    public static int singleNumber(int[] nums) {
+        int find = 0;
+
+        for(int i = 0; i < nums.length; i++){
+            find = find ^ nums[i];
+
+        }
+        return find;
+    }
+
 
 
     public static void main(String[] args) {
@@ -203,5 +215,8 @@ public class Week7 {
        
        int nums[] = {2,5,4,3};
        System.out.println(longestBalanced(nums));
+
+       int nums1[] = {4,1,2,1,2};
+       System.out.println(singleNumber(nums1));
     }
 }
