@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 public class Week7 {
@@ -149,6 +150,33 @@ public class Week7 {
         return 1L * total * sum;
     }
 
+    ////////////// Longest Balence SubArrays I \\\\\\\\\\\\\\\\\\
+
+    public static int longestBalanced(int[] nums) {
+        int ans = 0;
+
+        for(int i = 0; i < nums.length; i++){
+            HashSet<Integer> seen = new HashSet<>();
+
+            int even = 0, odd = 0;
+            for(int j = i; j < nums.length; j++){
+                if(!seen.contains(nums[j])){
+                    seen.add(nums[j]);
+                    if(nums[j] % 2 == 0){
+                        even++;
+                    }
+                    else{
+                        odd++;
+                    }
+                }
+                if(even == odd){
+                    ans = Math.max(ans, j - i + 1);
+                }
+            }
+        }
+        return ans;
+    }
+
 
 
     public static void main(String[] args) {
@@ -173,5 +201,7 @@ public class Week7 {
        int n = 10203004;
        System.out.println(sumAndMultiply(n));
        
+       int nums[] = {2,5,4,3};
+       System.out.println(longestBalanced(nums));
     }
 }
