@@ -131,6 +131,24 @@ public class Week7 {
         return count;
     }
 
+    ////////////////////Concatenate Non-Zero Digits and Multiply by Sum I \\\\\\\\\\\\
+
+    public static long sumAndMultiply(int n) {
+        int sum = 0;
+        int total = 0;
+        int place = 1;
+        while(n > 0){
+            int digit = n % 10;
+            if(digit != 0){
+                total = total + digit * place;
+                sum += digit;
+                place = place * 10;
+            }
+            n = n / 10;
+        }
+        return 1L * total * sum;
+    }
+
 
 
     public static void main(String[] args) {
@@ -151,6 +169,9 @@ public class Week7 {
 
        int intervals [][] = {{1,4},{3,6},{2,8}};
        System.out.println(removeCoveredIntervals(intervals));
+
+       int n = 10203004;
+       System.out.println(sumAndMultiply(n));
        
     }
 }
