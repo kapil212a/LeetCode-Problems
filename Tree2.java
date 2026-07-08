@@ -184,6 +184,25 @@ public class Tree2 {
 
     }
 
+    ////////////// PreOrder Traversal \\\\\\\\\\\\\
+    
+    static List<Integer> node = new ArrayList<>();
+    public static List<Integer> preorderTraversal(TreeNode root) {
+        
+        preorder1(root);
+        return node;
+    }
+
+    private static void preorder1(TreeNode root){
+        if(root == null){
+            return ;
+        }
+
+        node.add(root.val);
+        preorderTraversal(root.left);
+        preorderTraversal(root.right);
+    }
+
 
     public static void main(String[] args) {
 
