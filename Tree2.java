@@ -230,9 +230,11 @@ public class Tree2 {
         System.out.println(hasPathSum(root, 12));
         System.out.println(pathSum(root, 12));
 
-
         flatten(root);
         preorder(root);
+
+        List<Integer> y = preorderTraversal(root);
+        System.out.println(y);
 
     }
 
