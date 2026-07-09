@@ -205,7 +205,20 @@ public class Tree2 {
 
     /////////////// Binary Tree Postorder Traversal\\\\\\\\\\\\\\\
 
-    
+    static List<Integer> ans = new ArrayList<>();
+    public static List<Integer> postorderTraversal(TreeNode root) {
+        postOrder(root);
+        return ans;
+    }
+
+    private static void postOrder(TreeNode root){
+        if(root == null){
+            return;
+        }
+        postOrder(root.left);
+        postOrder(root.right);
+        ans.add(root.val);
+    }
 
 
     public static void main(String[] args) {
