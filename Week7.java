@@ -189,6 +189,26 @@ public class Week7 {
         return find;
     }
 
+    /////////////// Majority Element \\\\\\\\\\\\\\\\\\\
+
+    public static int majorityElement(int[] nums) {
+        int ele = 0;
+        int count = 0;
+
+        for(int num : nums){
+            if(count == 0){
+                ele = num;
+            }
+
+            if(ele == num){
+                count++;
+            }
+            else{
+                count--;
+            }
+        }
+        return ele;
+    }
 
 
     public static void main(String[] args) {
