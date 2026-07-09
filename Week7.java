@@ -238,5 +238,8 @@ public class Week7 {
 
        int nums1[] = {4,1,2,1,2};
        System.out.println(singleNumber(nums1));
+
+       int nums3[] = {2,2,1,1,1,2,2};
+       System.out.println(majorityElement(nums3));
     }
 }
