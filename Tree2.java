@@ -203,6 +203,10 @@ public class Tree2 {
         preorderTraversal(root.right);
     }
 
+    /////////////// Binary Tree Postorder Traversal\\\\\\\\\\\\\\\
+
+    
+
 
     public static void main(String[] args) {
 
@@ -235,6 +239,9 @@ public class Tree2 {
 
         List<Integer> y = preorderTraversal(root);
         System.out.println(y);
+
+        List<Integer> z = postorderTraversal(root);
+        System.out.println(z);
 
     }
 
