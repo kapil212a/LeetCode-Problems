@@ -26,7 +26,7 @@ public class week8 {
         return sum;
     }
 
-    /////////////////////////Longest Balance Substring I \\\\\\\\\\\\\\\\\\\\\
+    /////////////////////Longest Balance Substring I \\\\\\\\\\\\\\\\\\\\\
     
     public static int longestBalanced(String s) {
         int n = s.length();
@@ -57,6 +57,7 @@ public class week8 {
         return ans;
     }
 
+    
 
     public static void main(String[] args) {
         int num[] = {100,4,200,1,3,2};
