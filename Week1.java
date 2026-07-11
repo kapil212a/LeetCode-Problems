@@ -26,7 +26,9 @@ public class Week1 {
             char ch = s.charAt(i);
 
             if(map.containsKey(ch)){
-                left = Math.max(left , map.get(ch) +1);
+                int x = map.get(ch) + 1;
+                
+                left = Math.max(left , x);
             }
 
             map.put(ch , i);
@@ -269,7 +271,7 @@ public class Week1 {
         int start = 3;
         System.out.println(getMinDistance(nums , target , start));
 
-        String s = "abccbabac";
+        String s = "abcdcbabac";
         System.out.println(lengthOfLongestSubstring(s));
 
         int nums1[] = {1,2};
