@@ -1,6 +1,14 @@
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class week8 {
+    public static void printArr(int arr[]){
+        System.out.print("[");
+        for(int num : arr){
+            System.out.print(num + " ");
+        }System.out.println("]");
+    }
     /////////////// Longest Consecutive Sequence \\\\\\\\\\\\\\\
     
     public static int longestConsecutive(int[] nums) {
@@ -57,7 +65,34 @@ public class week8 {
         return ans;
     }
 
-    
+    ////////////////// Rank Transform Of an Array \\\\\\\\\\\\\\\
+
+    public static int[] arrayRankTransform(int[] arr) {
+        int [] temp = new int[arr.length];
+
+        int newTemp[] = new int[arr.length];
+
+        for(int i = 0; i < arr.length; i++){
+            newTemp[i] = arr[i];
+        }
+
+        Arrays.sort(newTemp);
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int rank = 1;
+        for(int num : newTemp){
+            if(!map.containsKey(num)){
+                map.put(num , rank);
+                rank++;
+            }
+        }
+
+        for(int i = 0; i < arr.length; i++){
+            temp[i] = map.get(arr[i]);
+        }
+        return temp;
+    }
+
 
     public static void main(String[] args) {
         int num[] = {100,4,200,1,3,2};
@@ -65,5 +100,8 @@ public class week8 {
 
         String s = "abbac";
         System.out.println(longestBalanced(s));
+
+        int arr[] = {40, 10, 20, 30};
+        printArr(arrayRankTransform(arr));
     }
 }

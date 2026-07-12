@@ -22,7 +22,7 @@ public class Week1 {
         Map <Character , Integer> map = new HashMap<>();
         int left = 0 ,length = 0;
 
-         for(int i = 0; i<s.length(); i++){
+        for(int i = 0; i < s.length(); i++){
             char ch = s.charAt(i);
 
             if(map.containsKey(ch)){
@@ -85,7 +85,8 @@ public class Week1 {
     public static String longestPalindrome(String s) {
         int start = 0 , end = 0;
         
-        for(int i = 0; i<s.length(); i++){
+        for(int i = 0; i < s.length(); i++){
+
             int len1 = expand(s,i,i);
             int len2 = expand(s,i,i+1);
 
@@ -184,7 +185,7 @@ public class Week1 {
         int num = 0;
         while(indx < s.length() && Character.isDigit(s.charAt(indx))){
             int digit = s.charAt(indx) - '0';
-
+            
             if(num > Integer.MAX_VALUE /10 || (num == Integer.MAX_VALUE / 10 && digit > 7)){
                 if(sign == 1){
                     return Integer.MAX_VALUE;
