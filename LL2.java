@@ -110,13 +110,13 @@ public class LL2 {
 
 
     public static void main(String[] args) {
-        ListNode head = new ListNode(1);
+        ListNode head = new ListNode(4);
         head.next = new ListNode(2);
         head.next.next = new ListNode(2);
         head.next.next.next = new ListNode(3);
         head.next.next.next.next = new ListNode(3);
-        head.next.next.next.next.next = new ListNode(4);
-        System.out.println(hasCycle(head));
+        head.next.next.next.next.next = new ListNode(1);
+        //System.out.println(hasCycle(head));
 
         ListNode head1 = new ListNode(-1);
         head1.next = new ListNode(2);
@@ -124,7 +124,11 @@ public class LL2 {
         head1.next.next.next = new ListNode(3);
         head1.next.next.next.next = new ListNode(4);
         head1.next.next.next.next.next = new ListNode(0); 
-        insertion(head1);
+        //insertion(head1);
+        //printll(head1);
+
+       
+        printll(sortList(head1));
         printll(head1);
 
     }
