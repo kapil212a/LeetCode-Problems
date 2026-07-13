@@ -34,7 +34,7 @@ public class LL2 {
         return false;
     } 
 
-    //////////////////////// Insertion Sort in Tree \\\\\\\\\\\\\\\\\\\\\\\\
+    //////////////////////// Insertion Sort in List \\\\\\\\\\\\\\\\\\\\\\\\
 
     public static ListNode insertion(ListNode head){
         ListNode dummy = new ListNode(0);
@@ -53,6 +53,61 @@ public class LL2 {
         }
         return dummy.next;
     }
+
+    ///////////////////// merge Sort in List \\\\\\\\\\\\\\\\\\\\\\\
+
+    public static ListNode sortList(ListNode head) {
+
+        if(head == null || head.next == null){
+            return head;
+        }
+
+        ListNode mid = findMid(head);
+        ListNode midNext = mid.next;
+        mid.next = null;
+
+        ListNode left = sortList(head);
+        ListNode right = sortList(midNext);
+
+        return merge(left , right);
+    }
+    
+    public static ListNode merge(ListNode a, ListNode b){
+        ListNode dummy = new ListNode(0);
+        ListNode curr = dummy;
+
+        while(a != null && b != null){
+            if(a.val < b.val){
+                curr.next = a;
+                a = a.next;
+            }
+            else{
+                curr.next = b;
+                b = b.next;
+            }
+            curr = curr.next;
+        }
+        if(a != null){
+            curr.next = a;
+            
+        }
+        if(b != null){
+            curr.next = b;
+            
+        }
+        return dummy.next;
+    }
+
+    public static ListNode findMid(ListNode head){
+        ListNode fast = head.next , slow = head;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
 
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
