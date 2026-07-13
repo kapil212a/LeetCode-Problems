@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Stack;
 
 public class week8 {
     public static void printArr(int arr[]){
@@ -93,6 +94,39 @@ public class week8 {
         return temp;
     }
 
+    //////////////////////// Evaluate Reverse Polish Notation \\\\\\\\\\\\\\\\\\\
+
+    public static int evalRPN(String[] tokens) {
+        Stack<Integer> st = new Stack<>();
+
+        for(String str : tokens){
+            if(str.equals("+")){
+                int b = st.pop();
+                int a = st.pop();
+                st.push(a + b);
+            }
+            else if(str.equals("-")){
+                int b = st.pop();
+                int a = st.pop();
+                st.push(a - b);
+            }
+            else if(str.equals("*")){
+                int b = st.pop();
+                int a = st.pop();
+                st.push(a * b);
+            }
+            else if(str.equals("/")){
+                int b = st.pop();
+                int a = st.pop();
+                st.push(a / b);
+            }
+            else{
+                st.push(Integer.parseInt(str));
+            }
+        }
+        return st.pop();
+    }
+
 
     public static void main(String[] args) {
         int num[] = {100,4,200,1,3,2};
@@ -103,5 +137,8 @@ public class week8 {
 
         int arr[] = {40, 10, 20, 30};
         printArr(arrayRankTransform(arr));
+
+        String []tokens = {"2","1","+","3","*"};
+        System.out.println(evalRPN(tokens));
     }
 }
