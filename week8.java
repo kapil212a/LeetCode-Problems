@@ -142,6 +142,27 @@ public class week8 {
         return newStr.toString();
     }
 
+    /////////////////////// Maximum Product SubArray \\\\\\\\\\\\\\\\\
+
+    public static int maxProduct(int[] nums) {
+        int max = nums[0];
+        int min = nums[0];
+        int ans = nums[0];
+
+        for(int i = 1; i < nums.length; i++){
+            if(nums[i] < 0){
+                int temp = max;
+                max = min;
+                min = temp;
+            }
+            
+            max = Math.max(nums[i], max * nums[i]);
+            min = Math.min(nums[i] , min * nums[i]);
+            ans = Math.max(ans , max);
+        }
+        return ans;
+    }
+
 
     public static void main(String[] args) {
         int num[] = {100,4,200,1,3,2};
@@ -158,5 +179,8 @@ public class week8 {
 
         String str = "the sky is blue";
         System.out.println(reverseWords(str)); 
+
+        int arr1[] = {2,3,-2,4};
+        System.out.println(maxProduct(num));
     }
 }
