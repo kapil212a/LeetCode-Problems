@@ -127,6 +127,21 @@ public class week8 {
         return st.pop();
     }
 
+    ////////////////// Reverse the Word in the string \\\\\\\\\\\\\\\\\\
+
+    public static String reverseWords(String s) {
+        String str[] = s.trim().split("\\s+");
+        StringBuilder newStr = new StringBuilder();
+
+        for(int i = str.length -1; i >= 0; i--){
+            newStr.append(str[i]);
+            if(i != 0){
+                newStr.append(" ");
+            }
+        }
+        return newStr.toString();
+    }
+
 
     public static void main(String[] args) {
         int num[] = {100,4,200,1,3,2};
@@ -140,5 +155,8 @@ public class week8 {
 
         String []tokens = {"2","1","+","3","*"};
         System.out.println(evalRPN(tokens));
+
+        String str = "the sky is blue";
+        System.out.println(reverseWords(str)); 
     }
 }
