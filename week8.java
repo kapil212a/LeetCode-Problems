@@ -163,6 +163,25 @@ public class week8 {
         return ans;
     }
 
+    ////////////////// Least Number In rotated Sorted Array \\\\\\\\\\\\\\\\
+    
+    public static int findMin(int[] nums) {
+        int left = 0 , right = nums.length -1;
+
+        while(left < right){
+            int mid = left + (right - left) /2;
+
+            if(nums[mid] > nums[right]){
+                left = mid + 1;
+            }
+            else{
+                right = mid;
+            }
+        }
+        return nums[left];
+    }
+
+
 
     public static void main(String[] args) {
         int num[] = {100,4,200,1,3,2};
@@ -182,5 +201,8 @@ public class week8 {
 
         int arr1[] = {2,3,-2,4};
         System.out.println(maxProduct(num));
+
+        int arr2[] = {4,5,6,7,0,1,2};
+        System.out.println(findMin(arr2));
     }
 }
