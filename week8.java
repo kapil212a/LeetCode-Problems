@@ -181,6 +181,26 @@ public class week8 {
         return nums[left];
     }
 
+    ///////////////////// Find Minimum in Rotated Sorted Arrays II \\\\\\\\\\\\\\\\
+
+    public static int findMinII(int[] nums) {
+        int left = 0 , right = nums.length - 1;
+
+        while(left < right){
+            int mid = left + (right - left) / 2;
+
+            if(nums[mid] > nums[right]){
+                left = mid + 1;
+            }
+            else if(nums[mid] < nums[right]){
+                right = mid;
+            }
+            else{
+                right--;
+            }
+        }
+        return nums[left];
+    }
 
 
     public static void main(String[] args) {
@@ -204,5 +224,8 @@ public class week8 {
 
         int arr2[] = {4,5,6,7,0,1,2};
         System.out.println(findMin(arr2));
+
+        int arr3[] = {2,2,2,0,1};
+        System.out.println(findMinII(arr3));
     }
 }
