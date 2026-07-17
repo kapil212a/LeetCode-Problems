@@ -1,6 +1,8 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Stack;
 
 public class week8 {
@@ -202,6 +204,25 @@ public class week8 {
         return nums[left];
     }
 
+     public static boolean wordBreak(String s, List<String> wordDict) {
+        HashSet < String> set = new HashSet<>(wordDict);
+
+        int n = s.length();
+
+        boolean dp[] = new boolean[n + 1];
+
+        dp[0] = true;
+
+        for(int i = 1; i <= n; i++){
+            for(int j = 0; j < i; j++){
+                if(dp[j] && set.contains(s.substring(j, i))){
+                    dp[i] = true;
+                    break;
+                }
+            }
+        } 
+        return dp[n];
+    }
 
     public static void main(String[] args) {
         int num[] = {100,4,200,1,3,2};
@@ -227,5 +248,13 @@ public class week8 {
 
         int arr3[] = {2,2,2,0,1};
         System.out.println(findMinII(arr3));
+
+        String s1 = "leetcode";
+        List<String> wordDict = new ArrayList<>();
+        wordDict.add("leet");
+        wordDict.add("code");
+
+        System.out.println(wordBreak(s1, wordDict));
+        
     }
 }
