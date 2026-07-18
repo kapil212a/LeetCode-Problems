@@ -99,7 +99,7 @@ public class week3 {
             map.put(word , map.getOrDefault(word , 0) + 1);
             
         }
-        for(int i = 0; i<= s.length() - windowSize; i++){
+        for(int i = 0; i <= s.length() - windowSize; i++){
 
             HashMap <String , Integer> seen = new HashMap<>();
 
