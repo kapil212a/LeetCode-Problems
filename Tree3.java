@@ -36,6 +36,9 @@ public class Tree3 {
     }
     
     public static int[] sum( TreeNode root){
+        if(root == null){
+            return new int[]{0 , 0};
+        }
         int[] left = sum(root.left);
         int[] right = sum(root.right);
         int sum = left[0] + right[0] + root.val;
@@ -59,5 +62,6 @@ public class Tree3 {
         root1.right = new TreeNode(20);           
         root1.right.left = new TreeNode(15);
         root1.right.right = new TreeNode(7);
+        System.out.println(pairSum(root1));
     }
 }
