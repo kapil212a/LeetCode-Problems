@@ -53,5 +53,11 @@ public class Tree3 {
         root.right.left = new TreeNode(15);
         root.right.right = new TreeNode(7);
         System.out.println(sumNumbers(root));
+
+        TreeNode root1 = new TreeNode(3);
+        root1.left = new TreeNode(9);
+        root1.right = new TreeNode(20);           
+        root1.right.left = new TreeNode(15);
+        root1.right.right = new TreeNode(7);
     }
 }
