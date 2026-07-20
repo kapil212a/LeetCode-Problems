@@ -29,6 +29,21 @@ public class Tree3 {
         return dfs(root.left , curr) + dfs(root.right, curr);
     }
 
+    static int max = Integer.MIN_VALUE;
+    public static int pairSum(TreeNode root){
+        sum(root);
+        return max;
+    }
+    
+    public static int[] sum( TreeNode root){
+        int[] left = sum(root.left);
+        int[] right = sum(root.right);
+        int sum = left[0] + right[0] + root.val;
+        int count = left[1] + right[1] + 1;
+        max = Math.max(max , sum/count);
+
+        return new int[]{sum, count};
+    }
     
 
     public static void main(String[] args) {
