@@ -9,7 +9,7 @@ public class Stacks{
         minStack = new Stack<>();
     }
     
-    public static void push(int value) {
+    public void push(int value) {
         stack.push(value);
         
         if(minStack.isEmpty()){
@@ -20,16 +20,16 @@ public class Stacks{
         }
     }
     
-    public static void pop() {
+    public void pop() {
         stack.pop();
         minStack.pop();
     }
     
-    public static int top() {
+    public int top() {
         return stack.peek();
     }
     
-    public static int getMin() {
+    public int getMin() {
         return minStack.peek();
     }
 
@@ -42,5 +42,7 @@ public class Stacks{
         obj.pop();
         System.out.println(obj.top());
         System.out.println(obj.getMin());
+
+        
     }
 }
