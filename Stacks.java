@@ -1,15 +1,15 @@
 import java.util.Stack;
 
 public class Stacks{
-    Stack <Integer> stack;
-    Stack <Integer> minStack;
+    static Stack <Integer> stack;
+    static Stack <Integer> minStack;
 
-    public void MinStack() {
+    public Stacks() {
         stack = new Stack<>();
         minStack = new Stack<>();
     }
     
-    public void push(int value) {
+    public static void push(int value) {
         stack.push(value);
         
         if(minStack.isEmpty()){
@@ -20,20 +20,27 @@ public class Stacks{
         }
     }
     
-    public void pop() {
+    public static void pop() {
         stack.pop();
         minStack.pop();
     }
     
-    public int top() {
+    public static int top() {
         return stack.peek();
     }
     
-    public int getMin() {
+    public static int getMin() {
         return minStack.peek();
     }
 
     public static void main(String[] args) {
-        
+        Stacks obj = new Stacks();
+
+        obj.push(5);
+        obj.push(9);
+        obj.push(4);
+        obj.pop();
+        System.out.println(obj.top());
+        System.out.println(obj.getMin());
     }
 }
