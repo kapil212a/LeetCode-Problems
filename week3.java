@@ -329,7 +329,7 @@ public class week3 {
         int res[] = searchRange(nums1, target);
         printArr(res);
 
-        int nums2 [] = {1,3,5,6};
+        int nums2 [] = {1,3,4,6};
         int target1 = 5;
         System.out.println(searchInsert(nums2, target1));
 
