@@ -131,27 +131,65 @@ public class LL2 {
         return a;
     }
 
-    public static void main(String[] args) {
-        ListNode head = new ListNode(4);
-        head.next = new ListNode(2);
-        head.next.next = new ListNode(2);
-        head.next.next.next = new ListNode(3);
-        head.next.next.next.next = new ListNode(3);
-        head.next.next.next.next.next = new ListNode(1);
-        //System.out.println(hasCycle(head));
+    ///////////////////////// Find The Min Average Of the Kth Node In Linked List \\\\\\\\\\\\\\\\\\\\\
 
-        ListNode head1 = new ListNode(-1);
-        head1.next = new ListNode(2);
-        head1.next.next = new ListNode(5);
-        head1.next.next.next = new ListNode(3);
-        head1.next.next.next.next = new ListNode(4);
-        head1.next.next.next.next.next = new ListNode(0); 
-        //insertion(head1);
-        //printll(head1);
+    public static long slide(ListNode head, int k){
+        long sum = 0;
+        ListNode temp = head;
+        ListNode end = head;
+
+        for(int i = 1; i <= k; i++){
+
+            if(temp == null){
+                return 0;
+            }
+            sum += temp.val;
+            temp = temp.next;
+           
+        }
+        long min = sum / k;
+        while(temp != null){
+            sum += temp.val;
+            sum -= end.val;
+
+            temp = temp.next;
+            end = end.next;
+            min = Math.min(min ,(long) sum / k);
+        }
+        return min;
+        
+    }
+
+    public static void main(String[] args) {
+        // ListNode head = new ListNode(4);
+        // head.next = new ListNode(2);
+        // head.next.next = new ListNode(2);
+        // head.next.next.next = new ListNode(3);
+        // head.next.next.next.next = new ListNode(3);
+        // head.next.next.next.next.next = new ListNode(1);
+        // //System.out.println(hasCycle(head));
+
+        // ListNode head1 = new ListNode(-1);
+        // head1.next = new ListNode(2);
+        // head1.next.next = new ListNode(5);
+        // head1.next.next.next = new ListNode(3);
+        // head1.next.next.next.next = new ListNode(4);
+        // head1.next.next.next.next.next = new ListNode(0); 
+        // //insertion(head1);
+        // //printll(head1);
 
        
-        printll(sortList(head1));
-        printll(head1);
+        // printll(sortList(head1));
+        // printll(head1);
+
+        ListNode head1 = new ListNode(1);
+        head1.next = new ListNode(3);
+        head1.next.next = new ListNode(2);
+        head1.next.next.next = new ListNode(6);
+        head1.next.next.next.next = new ListNode(1);
+        head1.next.next.next.next.next = new ListNode(4);
+        int k = 3;
+        System.out.println(slide(head1, k)); 
 
     }
 }

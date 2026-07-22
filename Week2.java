@@ -53,7 +53,7 @@ public class Week2 {
     public static int romanToInt(String s) {
         int total = 0;
 
-        for(int i = 0; i< s.length(); i++){
+        for(int i = 0; i < s.length(); i++){
             int curr = value(s.charAt(i));
 
             if(i+1 < s.length() && curr < value(s.charAt(i+1))){
@@ -71,10 +71,10 @@ public class Week2 {
     public static String longestCommonPrefix(String[] strs) {
         String first = strs[0];
 
-        for(int i = 0; i<first.length(); i++){
+        for(int i = 0; i < first.length(); i++){
             char ch = first.charAt(i);
 
-            for(int j = 1; j<strs.length; j++){
+            for(int j = 1; j < strs.length; j++){
                 if(i >= strs[j].length() || strs[j].charAt(i) != ch){
                     return first.substring(0,i);
                 }

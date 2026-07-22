@@ -236,7 +236,7 @@ public class week3 {
     }
 
     ///////// VALID SUDOKU \\\\\\\\
-       public static boolean isValidSudoku(char[][] board) {
+    public static boolean isValidSudoku(char[][] board) {
         for(int i = 0; i < 9; i++){
             HashSet<Character> map = new HashSet<>();
             
