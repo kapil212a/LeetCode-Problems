@@ -17,8 +17,43 @@ public class week9 {
         return max;
     }
 
+    ///////////////// Compaire Version Number \\\\\\\\\\\\\\\\\ 
+
+    public static int compareVersion(String version1, String version2) {
+        String [] a = version1.split("\\.");
+        String [] b = version2.split("\\.");
+
+        int n = Math.max(a.length , b.length);
+
+        for(int i = 0; i < n; i++){
+            int x = 0;
+            int y = 0;
+
+            if(i < a.length){
+                x = Integer.parseInt(a[i]);
+            }
+
+            if(i < b.length){
+                y = Integer.parseInt(b[i]);
+            }
+
+            if(x < y){
+                return -1;
+            }
+            if(x > y){
+                return 1;
+            }
+        }
+        return 0;
+    }
+
+
     public static void main(String[] args) {
         int num[] = {3,6,9,1};
         System.out.println(maximumGap(num));
+
+        String version1 = "1.2";
+        String version2 = "1.10";
+        System.out.println(compareVersion(version1, version2));
     }
 }
