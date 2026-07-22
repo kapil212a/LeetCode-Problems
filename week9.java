@@ -79,8 +79,9 @@ public class week9 {
         int numbers[] = {2,7,11,15};
         int target = 9;
         int nums[] = twoSum(numbers, target);
+        System.out.print("[");
         for(int n : nums){
             System.out.print(n + " ");
-        }
+        }System.out.println("]");
     }
 }
