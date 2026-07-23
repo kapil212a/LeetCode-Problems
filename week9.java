@@ -67,7 +67,23 @@ public class week9 {
         return new int[]{-1,-1};
     }
 
+    /////////////////////// Excel Sheet Column Title --> 28 => 'AB' \\\\\\\\\\\\\\
 
+    public String convertToTitle(int columnNumber) {
+        StringBuilder ans = new StringBuilder();
+
+        while(columnNumber > 0){
+            columnNumber--;
+
+            int rem = columnNumber % 26;
+            char ch = (char) ('A' + rem);
+            ans.append(ch);
+            columnNumber = columnNumber / 26;
+        }
+        return ans.reverse().toString();
+    }
+
+    
     public static void main(String[] args) {
         int num[] = {3,6,9,1};
         System.out.println(maximumGap(num));
