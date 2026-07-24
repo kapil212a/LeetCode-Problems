@@ -82,6 +82,21 @@ public class week9 {
         }
         return ans.reverse().toString();
     }
+
+    /////////////////////// Excel Sheet Column Title -->'AB' => 28  \\\\\\\\\\\\\\
+
+    public int titleToNumber(String columnTitle) {
+        int ans = 0;
+
+        for(int i = 0; i < columnTitle.length(); i++){
+            ans = ans * 26 + (columnTitle.charAt(i) - 'A' + 1);
+
+            //ans = ans * 26 + value;
+        }
+        return ans;
+    }
+
+
     ///////////////////// Majority Element In a Array \\\\\\\\\\\\\\\\\\\\\
 
     public static int majorityElement(int[] nums) {
