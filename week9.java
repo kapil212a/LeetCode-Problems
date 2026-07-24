@@ -118,6 +118,17 @@ public class week9 {
         return majority;
     }
 
+    ///////////////////////// Factorial Trilling Zeros \\\\\\\\\\\\\\\\\\\
+
+    public static int trailingZeroes(int n) {
+        int count = 0;
+        while(n > 0){
+            n = n / 5;
+            count += n;
+        }
+        return count;
+    }
+
 
 
     public static void main(String[] args) {
@@ -142,6 +153,8 @@ public class week9 {
         String s = "AB";
         System.out.println(titleToNumber(s));
 
+        int n = 23;
+        System.out.println(trailingZeroes(n));
         
     }
 }
