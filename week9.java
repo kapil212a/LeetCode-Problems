@@ -82,6 +82,27 @@ public class week9 {
         }
         return ans.reverse().toString();
     }
+    ///////////////////// Majority Element In a Array \\\\\\\\\\\\\\\\\\\\\
+
+    public static int majorityElement(int[] nums) {
+        int count = 0;
+        int majority = 0;
+
+        for(int num : nums){
+            if(count == 0){
+                majority = num;
+            }
+
+            if(num == majority) {
+                count++;
+            }
+            else{
+                count--;
+            }
+        }
+        return majority;
+    }
+
 
 
     public static void main(String[] args) {
