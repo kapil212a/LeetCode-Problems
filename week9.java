@@ -85,7 +85,7 @@ public class week9 {
 
     /////////////////////// Excel Sheet Column Title -->'AB' => 28  \\\\\\\\\\\\\\
 
-    public int titleToNumber(String columnTitle) {
+    public static int titleToNumber(String columnTitle) {
         int ans = 0;
 
         for(int i = 0; i < columnTitle.length(); i++){
@@ -137,7 +137,11 @@ public class week9 {
         }System.out.println("]");
 
         int columnNumber = 28;
-
         System.out.println(convertToTitle(columnNumber));
+
+        String s = "AB";
+        System.out.println(titleToNumber(s));
+
+        
     }
 }
