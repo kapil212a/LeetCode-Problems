@@ -141,6 +141,28 @@ public class week9 {
         return max;
     }
 
+    /////////////////////////Largest Number From combining all Number In arrays \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+    public static String largestNumber(int[] nums) {
+        String arr[] = new String[nums.length];
+
+        for(int i = 0; i < nums.length; i++){
+            arr[i] = String.valueOf(nums[i]);
+        }
+        Arrays.sort(arr, (a , b) -> (b + a).compareTo(a + b));
+
+        if(arr[0].equals("0")){
+            return "0";
+        }
+        StringBuilder ans = new StringBuilder();
+
+        for(String s : arr){
+            ans.append(s);
+        }
+        return ans.toString();
+    }
+
+
     public static void main(String[] args) {
         int num[] = {3,6,9,1};
         System.out.println(maximumGap(num));
@@ -169,5 +191,7 @@ public class week9 {
         int nums1[] = {-100 , -98, -1, 2, 3, 4};
         System.out.println(maximumProduct(nums1));
         
+        int nums2[] = {3,30,34,5,9};
+        System.out.println(largestNumber(nums2));
     }
 }
