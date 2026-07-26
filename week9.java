@@ -1,4 +1,7 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 public class week9 {
     /////////////////////// Maximum Gap Between Numbers \\\\\\\\\\\\\\\\\\  
@@ -162,6 +165,24 @@ public class week9 {
         return ans.toString();
     }
 
+    ////////////////// Return More Then One DNA Sequence From The Given Array \\\\\\\\\\\\\\\\\\\
+
+    public static List<String> findRepeatedDnaSequences(String s) {
+        HashMap<String , Integer> map = new HashMap<>();
+        List<String> ans = new ArrayList<>();
+
+        for(int i = 0; i <= s.length() - 10; i++){
+            String str = s.substring(i , i + 10);
+            map.put(str , map.getOrDefault(str,0) + 1);
+
+            if(map.get(str) == 2){
+                ans.add(str);
+            }
+        }
+        return ans;
+    }
+
+
 
     public static void main(String[] args) {
         int num[] = {3,6,9,1};
@@ -193,5 +214,10 @@ public class week9 {
         
         int nums2[] = {3,30,34,5,9};
         System.out.println(largestNumber(nums2));
+
+        String s1 = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT";
+        List<String> dna = findRepeatedDnaSequences(s1);
+
+        System.out.println(dna);
     }
 }
