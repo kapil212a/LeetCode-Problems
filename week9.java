@@ -166,7 +166,8 @@ public class week9 {
         int n = 23;
         System.out.println(trailingZeroes(n));
 
-        
+        int nums1[] = {-100 , -98, -1, 2, 3, 4};
+        System.out.println(maximumProduct(nums1));
         
     }
 }
