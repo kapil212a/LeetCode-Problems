@@ -129,7 +129,17 @@ public class week9 {
         return count;
     }
 
+    /////////////////////// Maximum Product of three number in Array \\\\\\\\\\\\\\\\\\\
 
+    public static int maximumProduct(int[] nums) {
+        Arrays.sort(nums);
+        int n = nums.length;
+        int max = 0;
+
+        max = Math.max(nums[0] * nums[1] * nums[n - 1], nums[n - 1] * nums[n - 2] * nums[n - 3]);
+
+        return max;
+    }
 
     public static void main(String[] args) {
         int num[] = {3,6,9,1};
@@ -155,6 +165,8 @@ public class week9 {
 
         int n = 23;
         System.out.println(trailingZeroes(n));
+
+        
         
     }
 }
