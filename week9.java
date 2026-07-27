@@ -234,5 +234,8 @@ public class week9 {
         List<String> dna = findRepeatedDnaSequences(s1);
 
         System.out.println(dna);
+
+        int arr[] = {3,4,5,2};
+        System.out.println(maxProduct(arr));
     }
 }
