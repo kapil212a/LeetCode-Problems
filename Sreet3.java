@@ -85,5 +85,8 @@ public class Sreet3 {
 
         int n = 520;
         System.out.println(maxProduct(n));
+
+        String s1 = "babab";
+        System.out.println(smallestPalindrome(s1));
     }
 }
