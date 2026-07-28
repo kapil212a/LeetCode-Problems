@@ -44,6 +44,39 @@ public class Sreet3 {
         return max1 * max2;
     }
 
+    //////////////////Smallest Palindromic Rearrangement I \\\\\\\\\\\\\\\\\\\
+
+
+    public static String smallestPalindrome(String s) {
+        int frq[] = new int [26];
+
+        for(char ch : s.toCharArray()){
+            frq[ch - 'a']++;
+        }
+
+        StringBuilder ans = new StringBuilder();
+        char mid = 0;
+
+        for(int i = 0; i < 26; i++){
+            for(int j = 0; j < frq[i] / 2; j++){
+                ans.append((char)('a' + i));
+            }
+
+            if(frq[i] % 2 == 1){
+                mid = (char)('a' + i);
+            }
+        }
+        String right = new StringBuilder(ans).reverse().toString();
+
+        if(mid == 0){
+            return ans.toString() + right;
+        }
+        else{
+            return ans.toString() + mid + right;
+        }
+    }
+
+
 
 
     public static void main(String[] args) {

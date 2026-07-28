@@ -280,7 +280,7 @@ public class Week2 {
     
     /////// REMOVE DUBLICATE FROM SORTED ARRAY AND RETURN COUNT  \\\\\\\\\\
     
-     public static int removeDuplicates(int[] nums) {
+    public static int removeDuplicates(int[] nums) {
         int i =0;
 
         for(int j = 1; j<nums.length; j++){
