@@ -32,7 +32,16 @@ public class week10 {
 
     /////////////////////// Robery in not adjucent house and return max money \\\\\\\\\\\\\\\\\\\\\\\\\
 
-    
+    public static int rob(int[] nums) {
+        //Arrays.sort(nums);
+        int money1 = 0 , money2 = 0;
+        for(int i = 0; i < nums.length; i++){
+           int max = Math.max(money1 , money2 + nums[i]);
+           money2 = money1;
+           money1 = max;
+        }
+        return money1;
+    }
 
 
     public static void main(String[] args) {
