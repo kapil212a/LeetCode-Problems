@@ -51,6 +51,9 @@ public class week10 {
         int arr[] = {-1,-100,3,99};
         int k = 2;
         rotate(arr, k);
+
+        int houses[] = {2,7,9,3,1};
+        System.out.println(rob(houses));
         
     }
 }
