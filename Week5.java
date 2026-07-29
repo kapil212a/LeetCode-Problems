@@ -220,8 +220,9 @@ public class Week5 {
         int n1 = 3, m1 = 7;
         System.out.println(uniquePaths(m1, n1));
 
-        int digits[] = {4,3,2,1};
+        int digits[] = {4,3,2,9};
         printArray(plusOne(digits));
+        // printArray(plusOne(digits));
 
         String a = "1010";
         String b = "1011";

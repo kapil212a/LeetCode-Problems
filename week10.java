@@ -30,6 +30,10 @@ public class week10 {
         }
     }
 
+    /////////////////////// Robery in not adjucent house and return max money \\\\\\\\\\\\\\\\\\\\\\\\\
+
+    
+
 
     public static void main(String[] args) {
         int n = 3;
