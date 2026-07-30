@@ -101,6 +101,13 @@ public class week10 {
         String word = "xycdefghij";
         System.out.println(minimumPushes(word));
 
+        int mat[][] = {
+            {1,0,0},
+            {0,0,1},
+            {1,0,0}
+        };
+        System.out.println(numSpecial(mat));
+
         
     }
 }
