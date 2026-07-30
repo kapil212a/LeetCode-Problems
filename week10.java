@@ -114,6 +114,18 @@ public class week10 {
         return Math.min(count1, count2);
     }
 
+    /////////////////Check if Binary String Has at Most One Segment of Ones \\\\\\\\\\\\\\\\\\\\
+
+    public static boolean checkOnesSegment(String s) {
+        int n = s.length();
+        for(int i = 0; i < n - 1; i++){
+            if(s.charAt(i) == '0' && s.charAt(i + 1) == '1'){
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 
     public static void main(String[] args) {
@@ -140,6 +152,9 @@ public class week10 {
 
         String s1 = "1111";
         System.out.println(minOperations(s1));
+
+        String s2 = "1100";
+        System.out.println(checkOnesSegment(s2));
 
         
     }
