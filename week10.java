@@ -83,6 +83,36 @@ public class week10 {
         return count; 
     }
 
+    ///////////////////////Make Alternate Binary String return no. of operation \\\\\\\\\\\\\\\\\\\\\\\\
+
+    public static int minOperations(String s) {
+        int n = s.length();
+        int count1 = 0 , count2 = 0;
+        
+        for(int i = 0; i < n; i++){
+            if(i % 2 == 0){
+                if(s.charAt(i) == '1'){
+                    count1++;
+                }
+            }
+            else{
+                if(s.charAt(i) == '0'){
+                    count1++;
+                }
+            }
+            if(i % 2 == 0){
+                if(s.charAt(i) == '0'){
+                    count2++;
+                }
+            }
+            else{
+                if(s.charAt(i) == '1'){
+                    count2++;
+                }
+            }
+        }
+        return Math.min(count1, count2);
+    }
 
 
 
@@ -107,6 +137,9 @@ public class week10 {
             {1,0,0}
         };
         System.out.println(numSpecial(mat));
+
+        String s1 = "1111";
+        System.out.println(minOperations(s1));
 
         
     }
