@@ -43,6 +43,16 @@ public class week10 {
         return money1;
     }
 
+    ///////////////////// Count the no. of pushes to type word in keypad \\\\\\\\\\\\\\\\\\\\\
+
+    public static int minimumPushes(String word) {
+        int count = 0;
+        for(int i = 0; i < word.length(); i++){
+            count += (i / 8) + 1;
+        }
+        return count;
+    }
+
 
     public static void main(String[] args) {
         int n = 3;
@@ -53,7 +63,12 @@ public class week10 {
         rotate(arr, k);
 
         int houses[] = {2,7,9,3,1};
-        System.out.println(rob(houses));
+        int house[] = {2, 7, 9, 3, 1};
+        System.out.println(rob(house));
+
+        String word = "xycdefghij";
+        System.out.println(minimumPushes(word));
+
         
     }
 }
