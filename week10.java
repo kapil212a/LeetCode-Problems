@@ -209,6 +209,8 @@ public class week10 {
         String s2 = "1100";
         System.out.println(checkOnesSegment(s2));
 
+        String nums[] = {"10", "01"};
+        System.out.println(findDifferentBinaryString(nums));
         
     }
 }
