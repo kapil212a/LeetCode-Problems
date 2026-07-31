@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class week10 {
     /////////////////Concatenation of Consecutive Binary Numbers \\\\\\\\\\\\\\\\\
@@ -149,7 +150,31 @@ public class week10 {
         return true;
     }
 
-    //////////////////// 
+    //////////////////// find unique binary string \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+    public static String findDifferentBinaryString(String[] nums) {
+        int n = nums.length;
+
+        HashSet<String> set = new HashSet<>();
+
+        for(String str : nums){
+            set.add(str);
+        }
+
+        for(int i = 0; i < (1 << n); i++){
+            String binary = Integer.toBinaryString(i);
+
+            while(binary.length() < n){
+                binary = "0" + binary;
+            }
+
+            if(!set.contains(binary)){
+                return binary;
+            }
+        }
+        return "";
+    }
+
 
 
     public static void main(String[] args) {
@@ -182,6 +207,9 @@ public class week10 {
 
         String s2 = "1100";
         System.out.println(checkOnesSegment(s2));
+
+        String nums[] = {"10", "01"};
+        System.out.println(findDifferentBinaryString(nums));
 
         
     }
