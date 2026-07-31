@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class week10 {
     /////////////////Concatenation of Consecutive Binary Numbers \\\\\\\\\\\\\\\\\
     public static int concatenatedBinary(int n) {
@@ -52,6 +54,27 @@ public class week10 {
         }
         return count;
     }
+
+    ////////////////////Count the no. of pushes to type word in keypad II \\\\\\\\\\\\\\\\\\\\\\
+
+    public static int minimumPushesII(String word) {
+        int count = 0;
+        int frq[] = new int[26];
+
+        for(int i = 0; i < word.length(); i++){
+            frq[word.charAt(i) - 'a']++;
+        }
+
+        Arrays.sort(frq);
+        int push = 0;
+
+        for(int i = 25; i >= 0; i--){
+            push += frq[i] * ((count / 8) + 1);
+            count++;
+        }
+        return push;
+    }
+
 
     /////////////////// Spacial Position In Binary Matrix \\\\\\\\\\\\\\\\\\\\\\
 
@@ -126,6 +149,7 @@ public class week10 {
         return true;
     }
 
+    //////////////////// 
 
 
     public static void main(String[] args) {
@@ -142,6 +166,9 @@ public class week10 {
 
         String word = "xycdefghij";
         System.out.println(minimumPushes(word));
+
+        String word2 = "xyzxyzxyzxyz";
+        System.out.println(minimumPushesII(word2));
 
         int mat[][] = {
             {1,0,0},
