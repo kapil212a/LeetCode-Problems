@@ -150,7 +150,8 @@ public class week10 {
         return true;
     }
 
-    //////////////////// find unique binary string \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    
+    
 
     public static String findDifferentBinaryString(String[] nums) {
         int n = nums.length;
