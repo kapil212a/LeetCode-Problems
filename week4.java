@@ -354,6 +354,7 @@ public class week4 {
         int intervals[][] = {{1,3},{2,6},{8,10},{15,18}};
 
         int x[][] = merge(intervals);
+        print2d(x);
 
         int n = 3;
         print2d(generateMatrix(n));

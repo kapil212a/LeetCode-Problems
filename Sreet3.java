@@ -1,4 +1,4 @@
-import java.util.HashSet;
+//import java.util.HashSet;
 
 public class Sreet3 {
     
@@ -98,7 +98,7 @@ public class Sreet3 {
     }
 
 
-    
+
     public static void main(String[] args) {
         String s = "abcabc";
         System.out.println(numberOfSubstrings(s));

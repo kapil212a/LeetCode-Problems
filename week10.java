@@ -185,7 +185,7 @@ public class week10 {
         int k = 2;
         rotate(arr, k);
 
-        int houses[] = {2,7,9,3,1};
+        //int houses[] = {2,7,9,3,1};
         int house[] = {2, 7, 9, 3, 1};
         System.out.println(rob(house));
 

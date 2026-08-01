@@ -258,7 +258,7 @@ public class week8 {
         System.out.println(reverseWords(str)); 
 
         int arr1[] = {2,3,-2,4};
-        System.out.println(maxProduct(num));
+        System.out.println(maxProduct(arr1));
 
         int arr2[] = {4,5,6,7,0,1,2};
         System.out.println(findMin(arr2));
