@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 public class Tree3 {
     public static class TreeNode{
         int val;
@@ -48,6 +53,41 @@ public class Tree3 {
         return new int[]{sum, count};
     }
     
+    ////////////////////////// Right side View Of the Tree \\\\\\\\\\\\\\\\\\\\\\\\\
+    
+    public static List<Integer> rightSideView(TreeNode root) {
+        List<Integer> ans = new ArrayList<>();
+
+        if(root == null){
+            return ans;
+        }
+
+        Queue<TreeNode> qu = new LinkedList<>();
+        qu.offer(root);
+
+        
+
+        while(!qu.isEmpty()){
+            int size = qu.size();
+
+            for(int i = 0; i < size; i++){
+                TreeNode node = qu.poll();
+
+                if(i == size - 1){
+                    ans.add(node.val);
+                }
+                if(node.left != null){
+                    qu.offer(node.left);
+                }
+                if(node.right != null){
+                    qu.offer(node.right);
+                }
+
+            }
+        }
+        return ans;
+    }
+    
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3);
@@ -63,5 +103,8 @@ public class Tree3 {
         root1.right.left = new TreeNode(15);
         root1.right.right = new TreeNode(7);
         System.out.println(pairSum(root1));
+
+        List<Integer > list = rightSideView(root1);
+        System.out.println(list);
     }
 }
