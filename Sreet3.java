@@ -97,6 +97,29 @@ public class Sreet3 {
         return Math.max(pickleft, pickright);
     }
 
+    //////////////////////// Piles Stone Game \\\\\\\\\\\\\\\\\\\\\\\\\
+
+    static Integer dp[][];
+    public static boolean stoneGame(int[] piles) {
+        int n = piles.length;
+        dp = new Integer[n][n];
+        return solve1(piles , 0, piles.length - 1) > 0;
+    }
+
+    private static int solve1(int piles[], int left, int right){
+        if(right == left){
+            return piles[left];
+        }
+        if(dp[left][right] != null){
+            return dp[left][right];
+        }
+
+       int leftMax = piles[left] - solve1(piles, left + 1, right);
+       int rightMax = piles[right] - solve1(piles, left, right - 1);
+
+       return dp[left][right] =  Math.max(leftMax, rightMax);
+    }
+
 
 
     public static void main(String[] args) {
@@ -111,5 +134,8 @@ public class Sreet3 {
 
         int score[] = {1,5,233,7};
         System.out.println(predictTheWinner(score));
+
+        int piles[] = {5,3,4,5};
+        System.out.println(stoneGame(piles));
     }
 }
