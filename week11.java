@@ -68,5 +68,13 @@ public class week11 {
     public static void main(String[] args) {
         int n = 1 , k = 3;
         System.out.println(getHappyString(n, k));
+
+        char [][]grid = {
+            {'1','1','1','1','0'},
+            {'1','1','0','1','0'},
+            {'1','1','0','0','0'},
+            {'0','0','0','0','0'}
+        };
+        System.out.println(numIslands(grid));
     }
 }
