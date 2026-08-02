@@ -35,6 +35,36 @@ public class week11 {
         }
     }
 
+    ////////////////// Number Of Island in Matrix \\\\\\\\\\\\\\\\\\\\\\\\\
+
+    public static int numIslands(char[][] grid) {
+        int count = 0;
+        int n = grid.length, m = grid[0].length;
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < m; j++){
+                if(grid[i][j] == '1'){
+                    count++;
+                    dfs(grid, i , j);
+                }
+            }
+        }
+        return count;
+    }
+
+    private static void dfs(char[][] grid, int row, int col){
+        if(row < 0 || col < 0 || row >= grid.length || col >= grid[0].length || grid[row][col] == '0'){
+            return;
+        }
+
+        grid[row][col] = '0';
+
+        dfs(grid, row + 1, col);
+        dfs(grid, row - 1, col);
+        dfs(grid, row, col + 1);
+        dfs(grid, row, col - 1);
+    }
+
+
     public static void main(String[] args) {
         int n = 1 , k = 3;
         System.out.println(getHappyString(n, k));
