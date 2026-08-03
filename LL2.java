@@ -159,6 +159,25 @@ public class LL2 {
         return min;
         
     }
+    /////////////////////// Remove LinkedList Element \\\\\\\\\\\\\\\\\\\\\\
+    
+    public static ListNode removeElements(ListNode head, int val) {
+        ListNode curr = head;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode prev = dummy;
+
+        while(curr != null){
+            if(curr.val == val){
+                prev.next = curr.next;
+            }
+            else{
+                prev = curr;
+            }
+            curr = curr.next;
+        }
+        return dummy.next;
+    }
 
     public static void main(String[] args) {
         // ListNode head = new ListNode(4);
