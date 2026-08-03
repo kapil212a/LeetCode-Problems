@@ -100,5 +100,8 @@ public class week11 {
             {'0','0','0','0','0'}
         };
         System.out.println(numIslands(grid));
+
+        int n1 = 19;
+        System.out.println(isHappy(n1));
     }
 }
