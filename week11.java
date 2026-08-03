@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class week11 {
@@ -62,6 +63,29 @@ public class week11 {
         dfs(grid, row - 1, col);
         dfs(grid, row, col + 1);
         dfs(grid, row, col - 1);
+    }
+
+    ////////////////////////// Happy Number \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    
+    public static boolean isHappy(int n) {
+        HashSet <Integer> set = new HashSet<>();
+        while( n != 1){
+            if(set.contains(n)){
+                return false;
+            }
+            set.add(n);
+            n = getNext(n);
+        }
+        return true;
+    }
+    private static int getNext(int n){
+        int sum = 0;
+        while(n > 0){
+            int last = n % 10;
+            sum += last * last;
+            n = n / 10;
+        }
+        return sum;
     }
 
 
