@@ -89,7 +89,7 @@ public class week11 {
         return sum;
     }
 
-    //////////////////// Count the prime Number \\\\\\\\\\\\\\\\\\\
+    //////////////////// Count the prime Number   \\\\\\\\\\\\\\\\\\\
 
     public static int countPrimes(int n) {
         int count = 0;
@@ -110,6 +110,7 @@ public class week11 {
                 }
             }
         }
+        
         for(int i = 0; i < n; i++){
             if(prime[i]){
                 count++;
