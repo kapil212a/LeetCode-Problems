@@ -210,5 +210,9 @@ public class LL2 {
         int k = 3;
         System.out.println(slide(head1, k)); 
 
+        int val = 1;
+        removeElements(head1, val);
+        printll(head1);
+
     }
 }
