@@ -133,5 +133,8 @@ public class week11 {
 
         int n1 = 19;
         System.out.println(isHappy(n1));
+
+        int number = 10;
+        System.out.println(countPrimes(number));
     }
 }
