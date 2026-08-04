@@ -119,6 +119,29 @@ public class week11 {
         return count;
     }
 
+    ///////////////////// Finding Missing elements in List \\\\\\\\\\\\\\\\\\
+
+    public static List<Integer> findMissingElements(int[] nums) {
+        List<Integer> ans = new ArrayList<>();
+        Arrays.sort(nums);
+        int small = nums[0];
+        int large = nums[nums.length - 1];
+
+        HashSet<Integer> set = new HashSet<>();
+
+         for(int i = 0; i < nums.length; i++){
+           set.add(nums[i]);
+        }
+        
+        for(int i = small; i <= large; i++){
+            if(!set.contains(i)){
+                ans.add(i);
+            }
+        }
+       
+        return ans;
+    }
+
 
     public static void main(String[] args) {
         int n = 1 , k = 3;
