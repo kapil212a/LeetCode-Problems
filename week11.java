@@ -161,7 +161,7 @@ public class week11 {
         int number = 10;
         System.out.println(countPrimes(number));
 
-        int num[] = {1,4,2,5};
+        int num[] = {1,2,5};
         List<Integer> ans =  findMissingElements(num);
         System.out.println(ans);
     }
