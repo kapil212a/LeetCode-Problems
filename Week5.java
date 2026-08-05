@@ -141,7 +141,7 @@ public class Week5 {
         return ans;
     }
 
-    ///////////// CLIMBING STAIR \\\\\\\\\\\\\\\\
+    ////////////////////// CLIMBING STAIR \\\\\\\\\\\\\\\\\\\\\\\\\\\
 
     public static int climbStairs(int n) {
         if(n <= 2){

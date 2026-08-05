@@ -179,6 +179,23 @@ public class LL2 {
         return dummy.next;
     }
 
+    //////////////////// Reverse the LinkedList \\\\\\\\\\\\\\\\\\\\\\\\\
+
+     public static ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = head;
+
+        while(curr != null){
+            ListNode next = curr.next;
+            curr.next = prev;
+
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
+
+
     public static void main(String[] args) {
         // ListNode head = new ListNode(4);
         // head.next = new ListNode(2);
@@ -212,6 +229,9 @@ public class LL2 {
 
         int val = 1;
         removeElements(head1, val);
+        printll(head1);
+
+        reverseList(head1);
         printll(head1);
 
     }
