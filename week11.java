@@ -174,7 +174,28 @@ public static boolean isIsomorphic(String s, String t) {
         return true;
     }
 
+    //////////////////// Minimum Size Subarray \\\\\\\\\\\\\\\\\\\\\\
     
+    public static int minSubArrayLen(int target, int[] nums) {
+        int sum = 0;
+        int min = Integer.MAX_VALUE;
+        int j = 0;
+        for(int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+
+            while(sum >= target){
+                min = Math.min(min, i - j + 1);
+                sum -= nums[j];
+                j++;
+            }
+        }
+        if(min == Integer.MAX_VALUE){
+            return 0;
+        }
+        return min;
+    }
+
+
     public static void main(String[] args) {
         int n = 1 , k = 3;
         System.out.println(getHappyString(n, k));
@@ -199,5 +220,7 @@ public static boolean isIsomorphic(String s, String t) {
 
         String s = "paper", t = "title";
         System.out.println(isIsomorphic(s,t));  
+
+        int arr[] = {2,3,1,2,4,3};
     }
 }
