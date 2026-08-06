@@ -120,6 +120,26 @@ public class Sreet3 {
        return dp[left][right] =  Math.max(leftMax, rightMax);
     }
 
+    ////////////////// Small Divisibility digit product \\\\\\\\\\\\\\\\\
+
+    public static int smallestNumber(int n, int t) {
+        while(n > 0){
+            int num = n;
+            int sum = 1;
+            while(num > 0){
+                int last = num % 10;
+                sum = sum * last;
+                num = num / 10;
+            }
+            if(sum % t == 0){
+                return n;
+            }
+            else{
+                n++;
+            }
+        }
+        return -1;
+    }
 
 
     public static void main(String[] args) {
@@ -137,5 +157,8 @@ public class Sreet3 {
 
         int piles[] = {5,3,4,5};
         System.out.println(stoneGame(piles));
+
+        int digit = 10, t = 2;
+        System.out.println(smallestNumber(digit, t));
     }
 }
