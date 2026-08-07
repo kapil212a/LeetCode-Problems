@@ -195,6 +195,37 @@ public static boolean isIsomorphic(String s, String t) {
         return min;
     }
 
+    ///////////////////////// House Robery II \\\\\\\\\\\\\\\\\\\\\
+
+    public static int rob(int[] nums) {
+        int n = nums.length;
+
+        if(n == 1){
+            return nums[0];
+        }
+        int sec = robing(nums, 0, n -2);
+        int first = robing(nums, 1, n-1);
+        
+
+        return Math.max(first, sec);
+    }
+
+    private static int robing(int nums[], int start, int end){
+        int prev = 0;
+        int curr = 0;
+
+        for(int i = start; i <= end; i++){
+            int sum = prev + nums[i];
+            int skip = curr;
+
+            int high = Math.max(sum, skip);
+
+            prev = curr;
+            curr = high;
+        }
+        return curr;
+    }
+
 
     public static void main(String[] args) {
         int n = 1 , k = 3;
@@ -223,5 +254,8 @@ public static boolean isIsomorphic(String s, String t) {
 
         int arr[] = {2,3,1,2,4,3};
         System.out.println(minSubArrayLen(number, num));
+
+        int[] nums = {1,2,3,1};
+        System.out.println(rob(nums));
     }
 }
