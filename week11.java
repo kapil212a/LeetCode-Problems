@@ -253,7 +253,7 @@ public static boolean isIsomorphic(String s, String t) {
         System.out.println(isIsomorphic(s,t));  
 
         int arr[] = {2,3,1,2,4,3};
-        System.out.println(minSubArrayLen(number, num));
+        System.out.println(minSubArrayLen(number, arr));
 
         int[] nums = {1,2,3,1};
         System.out.println(rob(nums));
