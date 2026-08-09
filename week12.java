@@ -35,7 +35,7 @@ public class week12 {
             if(target == 0){
                 ans.add(new ArrayList(sum));
             }
-            return;    
+            return;
         }
 
         for(int i = start; i <= 9; i++){
