@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.PriorityQueue;
@@ -60,6 +61,25 @@ public class week12 {
         return false;
     }
 
+    ///////////////////// Check The Array Contains Dublicates \\\\\\\\\\\\\
+
+    public static boolean containsNearbyDuplicate(int[] nums, int k) {
+        HashMap<Integer , Integer> map = new HashMap<>();
+
+        for(int i = 0; i < nums.length; i++){
+            if(map.containsKey(nums[i])){
+                int prev = map.get(nums[i]);
+
+                if(i - prev <= k){
+                    return true;
+                }
+            }
+            map.put(nums[i], i);
+        }
+        return false;
+    }
+
+
 
     public static void main(String[] args) {
        int nums[] = {3,2,1,5,6,4};
@@ -72,5 +92,9 @@ public class week12 {
 
        int arr[] = {1,1,1,3,3,4,3,2,4,2};
        System.out.println(containsDuplicate(arr));
+
+       int arr1[] =  {1,2,3,1};
+       int k2 = 3;
+       System.out.println(containsNearbyDuplicate(arr1, k2));
     }
 }
