@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.PriorityQueue;
 
@@ -45,6 +46,19 @@ public class week12 {
         }
     }
 
+    //////////////// Check The Array Contains Dublicates \\\\\\\\\\\\\\\\\\
+
+    public static boolean containsDuplicate(int[] nums) {
+        HashSet<Integer> set = new HashSet<>();
+
+        for(int num : nums){
+            if(set.contains(num)){
+                return true;
+            }
+            set.add(num);
+        }
+        return false;
+    }
 
 
     public static void main(String[] args) {
@@ -55,5 +69,8 @@ public class week12 {
        int k1 = 3, n = 7;
        List<List<Integer>> ans = combinationSum3(k1, n);
        System.out.println(ans);
+
+       int arr[] = {1,1,1,3,3,4,3,2,4,2};
+       System.out.println(containsDuplicate(arr));
     }
 }
