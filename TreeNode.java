@@ -75,9 +75,12 @@ class BSTIterator {
         root.right.left = new TreeNode(9);
         root.right.right = new TreeNode(20);
 
+        System.out.println(countNodes(root));
+        
         BSTIterator obj = new BSTIterator(root);
         while (obj.hasNext()) {
             System.out.print(obj.next() + " ");
         }
+        System.out.println(countNodes(root));
     }
 }
