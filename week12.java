@@ -79,33 +79,7 @@ public class week12 {
         return false;
     }
 
-    /////////////// Count the Complete tree Node \\\\\\\\\\\\\\\\\\\\
-
-    public static int countNodes(TreeNode root) {
-        if(root == null){
-            return 0;
-        }
-        
-        int left = height(root.left);
-        int right = height(root.right);
-
-        if(left == right){
-            return (1 << left) + countNodes(root.right);
-        }
-        else{
-            return (1 << right) + countNodes(root.left);
-        }
-    }
-
-    private static int height(TreeNode root){
-        int count = 0;
-        while(root != null){
-            count++;
-            root = root.left;
-        }
-        return count;
-    }
-
+   
 
 
     public static void main(String[] args) {
@@ -123,5 +97,7 @@ public class week12 {
        int arr1[] =  {1,2,3,1};
        int k2 = 3;
        System.out.println(containsNearbyDuplicate(arr1, k2));
+
+
     }
 }
