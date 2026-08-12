@@ -98,7 +98,7 @@ public class week12 {
 
     //////////////// Length of Longest Subarray With at Most K Frequency \\\\\\\\\\
 
-    public int maxSubarrayLength(int[] nums, int k) {
+    public static int maxSubarrayLength(int[] nums, int k) {
         HashMap<Integer , Integer> map = new HashMap<>();
 
         int j = 0;
@@ -116,7 +116,7 @@ public class week12 {
         return ans;
     }
 
-    
+
     public static void main(String[] args) {
        int nums[] = {3,2,1,5,6,4};
        int k = 2;
@@ -135,6 +135,9 @@ public class week12 {
 
        int ax1 = -3, ay1 = 0, ax2 = 3, ay2 = 4, bx1 = 0, by1 = -1, bx2 = 9, by2 = 2;
        System.out.println(computeArea(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2));
+
+       int num[] = {1,2,3,1,2,3,1,2}, k3 = 2;
+       System.out.println(maxSubarrayLength(nums, k3));
 
     }
 }
