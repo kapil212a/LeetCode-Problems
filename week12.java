@@ -5,6 +5,12 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 public class week12 {
+    public static void printarr(int arr[]){
+        System.out.print("[");
+        for(int num : arr){
+            System.out.print(num + " ");
+        }System.out.println("]");
+    }
     /////////////// Kth Largest Element in an Array \\\\\\\\\\\\\\
 
     public static int findKthLargest(int[] nums, int k) {
@@ -151,7 +157,11 @@ public class week12 {
        System.out.println(computeArea(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2));
 
        int num[] = {1,2,3,1,2,3,1,2}, k3 = 2;
-       System.out.println(maxSubarrayLength(nums, k3));
+       System.out.println(maxSubarrayLength(num, k3));
+
+       int nums1[] = {0,1,0,3,12};
+       moveZeroes(nums1);
+       printarr(nums1);
 
     }
 }
