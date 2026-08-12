@@ -96,6 +96,27 @@ public class week12 {
         return area1 + area2 - overlap;
     }
 
+    //////////////// Length of Longest Subarray With at Most K Frequency \\\\\\\\\\
+
+    public int maxSubarrayLength(int[] nums, int k) {
+        HashMap<Integer , Integer> map = new HashMap<>();
+
+        int j = 0;
+        int ans = 0;
+
+        for(int i = 0; i < nums.length; i++){
+            map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
+
+            while(map.get(nums[i]) > k){
+                map.put(nums[j], map.get(nums[j]) - 1);
+                j++;
+            }
+            ans = Math.max(ans, i - j + 1);
+        }
+        return ans;
+    }
+
+    
     public static void main(String[] args) {
        int nums[] = {3,2,1,5,6,4};
        int k = 2;
