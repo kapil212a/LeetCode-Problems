@@ -163,6 +163,25 @@ public class week12 {
         return ans;
     }
 
+    /////////////////////////////// Majority Element \\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+     public static List<Integer> majorityElement(int[] nums) {
+        List<Integer> ans = new ArrayList<>();
+        int n = nums.length;
+        int size = n / 3;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        
+        for(int i = 0; i < n; i++){
+            map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
+
+            if(map.get(nums[i]) > size && !ans.contains(nums[i])){
+                ans.add(nums[i]);
+            }
+        }
+        return ans;
+    }
+
+
 
     public static void main(String[] args) {
        int nums[] = {3,2,1,5,6,4};
@@ -193,6 +212,10 @@ public class week12 {
        int nums2[] = {0,1,2,4,5,7};
        List<String> ans1 = summaryRanges(nums2);
        System.out.println(ans1);
+
+       int nums3[] = {3,2,3};
+       List<Integer> majority =  majorityElement(nums3);
+       System.out.println(majority);
 
     }
 }
