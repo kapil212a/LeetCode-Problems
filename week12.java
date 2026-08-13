@@ -199,7 +199,7 @@ public class week12 {
     }
 
 
-    
+
 
     public static void main(String[] args) {
        int nums[] = {3,2,1,5,6,4};
@@ -234,6 +234,10 @@ public class week12 {
        int nums3[] = {3,2,3};
        List<Integer> majority =  majorityElement(nums3);
        System.out.println(majority);
+
+      int []citations = {3,0,6,1,5};
+      System.out.println(hIndex(citations));
+
 
     }
 }
