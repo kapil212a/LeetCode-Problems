@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -181,7 +182,24 @@ public class week12 {
         return ans;
     }
 
+    ////////////////////////// H - Index \\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+    public static int hIndex(int[] citations) {
+        Arrays.sort(citations);
+        int n = citations.length;
+
+        for(int i = 0; i < n; i++){
+            int index = n - i;
+
+            if(citations[i] >= index){
+                return index;
+            }
+        }
+        return 0;
+    }
+
+
+    
 
     public static void main(String[] args) {
        int nums[] = {3,2,1,5,6,4};
