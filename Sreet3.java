@@ -143,7 +143,7 @@ public class Sreet3 {
 
     ///////////////////Maximum Length Substring With Two Occurrences \\\\\\\\\\\\\
 
-    public int maximumLengthSubstring(String s) {
+    public static int maximumLengthSubstring(String s) {
         int ans = 0;
         int j = 0;
         int fq[] = new int[26];
@@ -160,7 +160,7 @@ public class Sreet3 {
         return ans;
     }
 
-    
+
     public static void main(String[] args) {
         String s = "abcabc";
         System.out.println(numberOfSubstrings(s));
@@ -179,5 +179,8 @@ public class Sreet3 {
 
         int digit = 10, t = 2;
         System.out.println(smallestNumber(digit, t));
+
+        String s2 = "bcbbbcba";
+        System.out.println(maximumLengthSubstring(s2));
     }
 }
