@@ -79,7 +79,7 @@ public class Week6 {
         }
     }
 
-    ///////////////////////////// Subset Of Given Nums \\\\\\\\\\\\\\\\\\\\\\
+    /////////////////////////// Subset Of Given Nums \\\\\\\\\\\\\\\\\\\\\\
 
     public static List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
@@ -98,7 +98,6 @@ public class Week6 {
             curr.remove(curr.size() - 1);
         }
     }
-
 
     ///////////////////// REmove Dublicates from sorted array \\\\\\\\\\\\\\\\\
 
@@ -219,12 +218,12 @@ public class Week6 {
     //////////// Find Smallest Letter Greater then Target \\\\\\\\\\\\\\\\\\\\
 
     public static char nextGreatestLetter(char[] letters, char target) {
+        int min = Integer.MAX_VALUE;
         for(int i = 0;  i < letters.length; i++){
-            if(letters[i] - target > 0){
-                return letters[i];
-            }
+            min = Math.min(min, letters[i] - target);
         }
-        return letters[0];
+        //return letters[0];
+        return (char)(target + min);
     }
 
     /////////////////// Divide an Array Into Subarrays With Minimum Cost I \\\\\\\\\\\\
@@ -283,7 +282,7 @@ public class Week6 {
         List<List<Integer>> x = subsetsWithDup(nums5);
         System.out.println(x);
 
-        char letters[] = {'c','f','j'};
+        char letters[] = {'h','c','f','j'};
         char target1 = 'a';
         System.out.println(nextGreatestLetter(letters, target1));
 

@@ -141,7 +141,26 @@ public class Sreet3 {
         return -1;
     }
 
+    ///////////////////Maximum Length Substring With Two Occurrences \\\\\\\\\\\\\
 
+    public int maximumLengthSubstring(String s) {
+        int ans = 0;
+        int j = 0;
+        int fq[] = new int[26];
+
+        for(int i = 0; i < s.length(); i++){
+            fq[s.charAt(i) - 'a']++;
+
+            while(fq[s.charAt(i) - 'a'] > 2){
+                fq[s.charAt(j) - 'a']--;
+                j++; 
+            }
+            ans = Math.max(ans, i - j + 1);
+        }
+        return ans;
+    }
+
+    
     public static void main(String[] args) {
         String s = "abcabc";
         System.out.println(numberOfSubstrings(s));
