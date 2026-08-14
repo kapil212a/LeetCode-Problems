@@ -87,7 +87,31 @@ public class Tree3 {
         }
         return ans;
     }
+
+    ///////////////////// Path Of Binary Tree \\\\\\\\\\\\\\\\\
     
+    public static List<String> binaryTreePaths(TreeNode root) {
+        List<String> ans = new ArrayList<>();
+        preorder(root ,"", ans);
+        return ans;
+    }
+
+    private static void preorder(TreeNode root, String s, List<String>ans){
+        if(root == null){
+            return;
+        }
+        s += root.val;
+        
+        if(root.left == null && root.right == null){
+            ans.add(s);
+            return;
+        }
+        s += "->";
+        preorder(root.left, s, ans);
+        preorder(root.right, s, ans);
+    }
+
+
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3);
@@ -106,5 +130,7 @@ public class Tree3 {
 
         List<Integer > list = rightSideView(root1);
         System.out.println(list);
+
+       System.out.println(binaryTreePaths(root1));
     }
 }
