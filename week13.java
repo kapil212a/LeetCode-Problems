@@ -81,6 +81,9 @@ public class week13 {
         int[][]grid = {{7,6,3},{6,6,1}};
         int k = 18;
         System.out.println(countSubmatrices(grid, k));
+
+        String s = "(1+(4+5+2)-3)+(6+8)";
+        System.out.println(calculate(s));
     }
     
 }
