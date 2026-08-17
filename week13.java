@@ -123,6 +123,26 @@ public class week13 {
         return count;
     }
 
+    //////////////////// Single Number III Once At A time In Array\\\\\\\\\\\\\\\\\\\
+
+    public static int[] singleNumber(int[] nums) {
+        int []count = new int[2];
+        HashMap <Integer, Integer> map = new HashMap<>();
+
+        for(int i = 0; i < nums.length; i++){
+            map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
+        }
+        int j = 0;
+        
+        for(int num : map.keySet()){
+            if(map.get(num) == 1){
+                count[j++] = num;
+            }
+        }
+        return count;
+    }
+
+
     public static void main(String[] args) {
         int[][]grid = {{7,6,3},{6,6,1}};
         int k = 18;
@@ -137,6 +157,10 @@ public class week13 {
         int arr[] = {-2, 0, 1, 3};
         int target = 2;
         System.out.println(smallest3Sum(arr, target));
+
+        int nums[] = {1,2,1,3,2,5};
+        System.out.println(singleNumber(nums));
+
     }
     
 }
