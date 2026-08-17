@@ -75,7 +75,7 @@ public class week13 {
         return result;
     }
 
-    ////////////////// Add Digit \\\\\\\\\\\\\\\\\\\
+    ////////////////// Add Digit up to single digit  \\\\\\\\\\\\\\\\\\\
  
     public static int addDigits(int num) {
         int add = digitSum(num);
@@ -105,6 +105,9 @@ public class week13 {
 
         String s = "(1+(4+5+2)-3)+(6+8)";
         System.out.println(calculate(s));
+
+        int digit = 56;
+        System.out.println(addDigits(digit));
     }
     
 }
