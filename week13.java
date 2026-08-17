@@ -112,7 +112,7 @@ public class week13 {
                 int sum = arr[i] + arr[left] + arr[right];
 
                 if(sum > target){
-                    count = right - left;
+                    count += right - left;
                     left++;
                 }
                 else{
