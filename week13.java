@@ -75,6 +75,27 @@ public class week13 {
         return result;
     }
 
+    ////////////////// Add Digit \\\\\\\\\\\\\\\\\\\
+ 
+    public static int addDigits(int num) {
+        int add = digitSum(num);
+        if(add >= 10){
+            return addDigits(add);
+        }else{
+             return add;
+        }
+    }
+
+    private static int digitSum(int n){
+        int sum = 0;
+        while(n > 0){
+            int last = n % 10;
+            sum += last;
+            n = n / 10;
+        }
+        return sum;
+    }
+
 
 
     public static void main(String[] args) {
