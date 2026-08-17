@@ -1,4 +1,4 @@
-import java.util.Stack;
+import java.util.*;
 
 public class week13 {
     ///////Count Submatrices with Top-Left Element and Sum Less Than k\\\\\\\
@@ -96,7 +96,32 @@ public class week13 {
         return sum;
     }
 
+    //////////////////// 3 Smallest Sum in Array \\\\\\\\\\\\\\\\
 
+    public static int smallest3Sum(int arr[], int target){
+        Arrays.sort(arr);
+        int n = arr.length;
+        int count = 0;
+
+        for(int i = 0; i < n - 2; i++){
+
+            int left = i + 1;
+            int right = n - 1;
+
+            while(left < right){
+                int sum = arr[i] + arr[left] + arr[right];
+
+                if(sum > target){
+                    count = right - left;
+                    left++;
+                }
+                else{
+                    right--;
+                }
+            }
+        }
+        return count;
+    }
 
     public static void main(String[] args) {
         int[][]grid = {{7,6,3},{6,6,1}};
@@ -108,6 +133,10 @@ public class week13 {
 
         int digit = 56;
         System.out.println(addDigits(digit));
+
+        int arr[] = {-2, 0, 1, 3};
+        int target = 2;
+        System.out.println(smallest3Sum(arr, target));
     }
     
 }
