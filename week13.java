@@ -142,6 +142,38 @@ public class week13 {
         return count;
     }
 
+    ////////////////// Cenema Seat Allowcation \\\\\\\\\\\\\\\\\\\\
+
+    public static int maxNumberOfFamilies(int n, int[][] reservedSeats) {
+        
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for(int[] num : reservedSeats){
+            int row = num[0];
+            int seat = num[1];
+
+            map.put(row, map.getOrDefault(row, 0) | (1 << seat));
+        }
+        int ans = (n - map.size()) * 2;
+       
+        for(int mask : map.values()){
+            boolean left = (mask & 60) == 0;
+            boolean mid = (mask & 240) == 0;
+            boolean right = (mask & 960) == 0;
+
+            if(left && right){
+                ans += 2;
+            }
+        
+            else if(left || mid || right){
+                ans += 1;
+            }
+            
+        }
+        return ans;
+    }
+
+
 
     public static void main(String[] args) {
         int[][]grid = {{7,6,3},{6,6,1}};
@@ -160,6 +192,10 @@ public class week13 {
 
         int nums[] = {1,2,1,3,2,5};
         System.out.println(singleNumber(nums));
+
+        int n = 3;
+        int [][] reservedSeats = {{1,2},{1,3},{1,8},{2,6},{3,1},{3,10}};
+        System.out.println(maxNumberOfFamilies(n, reservedSeats));
 
     }
     
