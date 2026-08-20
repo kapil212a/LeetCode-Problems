@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Stack;
 
 public class Tree3 {
     public static class TreeNode{
@@ -111,6 +112,25 @@ public class Tree3 {
         preorder(root.right, s, ans);
     }
 
+    ///////////////////Kth samllest element in BST \\\\\\\\\\\\\\\\\\
+
+    public static int kthSmallest(TreeNode root, int k) {
+        Stack<TreeNode> st = new Stack<>();
+
+        while(true){
+            while(root != null){
+                st.push(root);
+                root = root.left;
+            }
+            root = st.pop();
+            k--;
+            if(k == 0){
+                return root.val;
+            }
+            root = root.right;
+        }
+    }
+
 
 
     public static void main(String[] args) {
@@ -132,5 +152,7 @@ public class Tree3 {
         System.out.println(list);
 
        System.out.println(binaryTreePaths(root1));
+
+       kthSmallest(root1, 3);
     }
 }
