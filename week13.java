@@ -175,7 +175,7 @@ public class week13 {
 
     ////////////////////// Distribute Element into 2 part \\\\\\\\\\\\\\\\\\\\
 
-    public int[] resultArray(int[] nums) {
+    public static int[] resultArray(int[] nums) {
         List<Integer> arr1 = new ArrayList<>();
         List<Integer> arr2 = new ArrayList<>();
         int res[] = new int[nums.length];
@@ -202,7 +202,7 @@ public class week13 {
         return res;
     }
 
-    
+
 
     public static void main(String[] args) {
         int[][]grid = {{7,6,3},{6,6,1}};
@@ -225,6 +225,9 @@ public class week13 {
         int n = 3;
         int [][] reservedSeats = {{1,2},{1,3},{1,8},{2,6},{3,1},{3,10}};
         System.out.println(maxNumberOfFamilies(n, reservedSeats));
+
+        int arr1[] = {5,4,3,8};
+        System.out.println(resultArray(arr1));
 
     }
     
