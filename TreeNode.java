@@ -98,5 +98,7 @@ class BSTIterator {
             System.out.print(obj.next() + " ");
         }
         System.out.println(countNodes(root));
+
+        invertTree(root);
     }
 }
