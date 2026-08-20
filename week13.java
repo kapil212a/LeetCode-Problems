@@ -202,6 +202,12 @@ public class week13 {
         return res;
     }
 
+ 
+    ////////////////////Is the number is Power Of 2 \\\\\\\\\\\\\\\\\\\\\\\\
+
+    public static boolean isPowerOfTwo(int n) {
+        return n > 0 && (n & (n - 1)) == 0;
+    }
 
 
     public static void main(String[] args) {
@@ -228,6 +234,9 @@ public class week13 {
 
         int arr1[] = {5,4,3,8};
         System.out.println(resultArray(arr1));
+
+        int n1 = 16;
+        System.out.println(isPowerOfTwo(n1));
 
     }
     
