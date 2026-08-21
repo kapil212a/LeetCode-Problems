@@ -41,6 +41,7 @@ public class Week6 {
         nums[i] = nums[j];
         nums[j] = temp;
     }
+    
 
     ///////////////////// Maximum Ice Cream Bars \\\\\\\\\\\\\\\\\\\
     
