@@ -195,6 +195,42 @@ public class LL2 {
         return prev;
     }
 
+    /////////////////// Check the LINKED LIST is Palindrom or not \\\\\\\\\\\\\\\\\\
+
+    public static boolean isPalindrome(ListNode head) {
+        ListNode slow = head, fast = head;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        ListNode sec = reverse(slow);
+
+        ListNode newHead = head;
+        while(sec != null){
+            if(newHead.val != sec.val){
+                return false;
+            }
+            newHead = newHead.next;
+            sec = sec.next;
+        }
+        return true;
+    }
+
+    private static ListNode reverse(ListNode head){
+        ListNode prev = null;
+        ListNode curr = head;
+
+        while(curr != null){
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
+
+
 
     public static void main(String[] args) {
         // ListNode head = new ListNode(4);
@@ -233,6 +269,8 @@ public class LL2 {
 
         reverseList(head1);
         printll(head1);
+
+        isPalindrome(head1);
 
     }
 }
