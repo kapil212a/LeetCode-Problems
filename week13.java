@@ -209,6 +209,27 @@ public class week13 {
         return n > 0 && (n & (n - 1)) == 0;
     }
 
+    ///////////////// Check Divisibility by Digit Sum and Product \\\\\\\\\\\
+
+    public static boolean checkDivisibility(int n) {
+        int num = n;
+
+        int sum = 0;
+        int product = 1;
+        while(num > 0){
+            int last = num % 10;
+            sum = sum + last;
+            product = product * last;
+            num = num / 10;
+        }
+        int total = sum + product;
+        if(n % total == 0){
+            return true;
+        }
+        return false;
+    }
+
+
 
     public static void main(String[] args) {
         int[][]grid = {{7,6,3},{6,6,1}};
