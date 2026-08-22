@@ -259,6 +259,9 @@ public class week13 {
         int n1 = 16;
         System.out.println(isPowerOfTwo(n1));
 
+        int n2 = 99;
+        System.out.println(checkDivisibility(n2));
+
     }
     
 }
