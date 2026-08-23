@@ -40,7 +40,7 @@ public class LL2 {
         ListNode dummy = new ListNode(0);
         ListNode curr = head;
 
-        while(curr != null){
+        while(curr != null){    
             ListNode next = curr.next;
             ListNode prev = dummy;
 
