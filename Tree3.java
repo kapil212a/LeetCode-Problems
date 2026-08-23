@@ -133,16 +133,29 @@ public class Tree3 {
 
     //////////////////// Lowest Common Ancestor of a Binary Search Tree \\\\\\\\\\\\\
 
-     public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if(p.val < root.val && q.val < root.val){
-            return lowestCommonAncestor(root.left, p, q);
-        }
+    public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        // if(p.val < root.val && q.val < root.val){
+        //     return lowestCommonAncestor(root.left, p, q);
+        // }
 
-         if(p.val > root.val && q.val > root.val){
-            return lowestCommonAncestor(root.right, p, q);
-        }
+        //  if(p.val > root.val && q.val > root.val){
+        //     return lowestCommonAncestor(root.right, p, q);
+        // }
 
-        return root;
+        // return root;
+
+        while(root != null){
+            if(q.val < root.val && p.val < root.val){
+                root = root.left;
+            }
+            else if(q.val > root.val && p.val > root.val){
+                root = root.right;
+            }
+            else{
+                return root;
+            }
+        }
+        return null;
     }
 
 
@@ -167,6 +180,6 @@ public class Tree3 {
        System.out.println(binaryTreePaths(root1));
 
        kthSmallest(root1, 3);
-       //System.out.println(lowestCommonAncestor(root1, 2, 8));
+       //System.out.println(lowestCommonAncestor(root1, 9, 15));
     }
 }
