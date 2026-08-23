@@ -131,6 +131,19 @@ public class Tree3 {
         }
     }
 
+    //////////////////// Lowest Common Ancestor of a Binary Search Tree \\\\\\\\\\\\\
+
+     public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if(p.val < root.val && q.val < root.val){
+            return lowestCommonAncestor(root.left, p, q);
+        }
+
+         if(p.val > root.val && q.val > root.val){
+            return lowestCommonAncestor(root.right, p, q);
+        }
+
+        return root;
+    }
 
 
     public static void main(String[] args) {
@@ -154,5 +167,6 @@ public class Tree3 {
        System.out.println(binaryTreePaths(root1));
 
        kthSmallest(root1, 3);
+       //System.out.println(lowestCommonAncestor(root1, 2, 8));
     }
 }
