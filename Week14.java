@@ -70,7 +70,7 @@ public class Week14 {
         System.err.println(sumGame(num));
 
         int arr1[] = {2,5,6,0,0,1,2};
-        
+        minimumDeletions(arr1);
 
     }
 
