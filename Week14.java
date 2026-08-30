@@ -34,10 +34,44 @@ public class Week14 {
         return 2 * diff != qDiff * 9;
     }
 
+    ///////////Remove Min And Max From Array \\\\\\\\\\\\\
+    /// 
+    public static int minimumDeletions(int[] nums) {
+        int n = nums.length;
+        int min = 0;
+        int max = 0;
+
+        for(int i = 0; i < n; i++){
+            if(nums[i] < nums[min]){
+                min = i;
+            }
+
+            if(nums[i] > nums[max]){
+                max = i;
+            }
+        }
+        if(min > max){
+            int temp = min;
+            min = max;
+            max = temp;
+        }
+
+        int front = max + 1;
+        int back = n - min;
+
+        int both = (min + 1) + (n - max);
+
+        return Math.min(front, Math.min(back, both));
+    }
+
 
     public static void main(String[] args) {
         String num = "5023"; ////////// ?3295???;
         System.err.println(sumGame(num));
+
+        int arr1[] = {2,5,6,0,0,1,2};
+        
+
     }
 
 }
