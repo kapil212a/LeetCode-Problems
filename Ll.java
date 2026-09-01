@@ -20,6 +20,7 @@ public class Ll {
         }
         System.out.println("null");
     }
+
     //// Remove nth node from The Last Of LinkedList /////
     public static Node head;
     public static Node tail;
@@ -44,7 +45,6 @@ public class Ll {
     }
 
     ///// Merge Two Sorted List \\\\\\\\
-
 
     public static Node mergeTwoLists(Node list1, Node list2) {
         Node dm = new Node(-1);
