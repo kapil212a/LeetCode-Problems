@@ -67,7 +67,7 @@ public class Week14 {
 
     /////////////// Product Of Array Except Self \\\\\\\\\\\\\\\\\\\\\\\
 
-    public int[] productExceptSelf(int[] nums) {
+    public static int[] productExceptSelf(int[] nums) {
         int n = nums.length;
         int ans[] = new int[n];
         int j = 1;
@@ -84,7 +84,7 @@ public class Week14 {
         }
         return ans;
     }
-    
+
 
     public static void main(String[] args) {
         String num = "5023"; ////////// ?3295???;
@@ -92,6 +92,9 @@ public class Week14 {
 
         int arr1[] = {2,5,6,0,0,1,2};
         minimumDeletions(arr1);
+
+        int arr2[] = {1, 2, 3, 4};
+        System.out.println(productExceptSelf(arr2));
 
     }
 
