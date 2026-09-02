@@ -71,7 +71,7 @@ public class Ll {
         return dm.next;
     }
 
-    ////// Merge K Sorted List \\\\
+    ///////////////// Merge K Sorted List \\\\\\\\\\\\\\\\\\\\\
  
     public static Node mergeKLists(Node[] lists) {
         PriorityQueue<Node> pq = new PriorityQueue<>((a,b) -> a.data - b.data);
@@ -97,7 +97,7 @@ public class Ll {
         return dm.next;
     }
 
-    ///// Swip Node In pair \\\\\\
+    ////////////// Swip Node In pair \\\\\\\\\\\\\
 
     public static Node swapPairs(Node head) {
         Node dm = new Node(0);

@@ -65,6 +65,27 @@ public class Week14 {
     }
 
 
+    /////////////// Product Of Array Except Self \\\\\\\\\\\\\\\\\\\\\\\
+
+    public int[] productExceptSelf(int[] nums) {
+        int n = nums.length;
+        int ans[] = new int[n];
+        int j = 1;
+
+        for(int i = 0; i < n; i++){
+            ans[i] = j;
+            j = j * nums[i];
+        }
+
+        int k = 1;
+        for(int i = n - 1; i >= 0; i--){
+            ans[i] *= k;
+            k = k * nums[i];
+        }
+        return ans;
+    }
+    
+
     public static void main(String[] args) {
         String num = "5023"; ////////// ?3295???;
         System.err.println(sumGame(num));
