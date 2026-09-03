@@ -87,7 +87,7 @@ public class Week14 {
 
     ////////////////// Construct Uniform Parity Array II \\\\\\\\\\\\\\\
 
-    public boolean uniformArray(int[] nums1) {
+    public static boolean uniformArray(int[] nums1) {
         int min = Integer.MAX_VALUE;
         for(int x : nums1){
             min = Math.min(min, x);
@@ -116,7 +116,8 @@ public class Week14 {
         System.out.println(productExceptSelf(arr2));
 
         int arr3[] = {1,4,7};
-        
+        System.out.println(uniformArray(arr3));
+
 
     }
 
