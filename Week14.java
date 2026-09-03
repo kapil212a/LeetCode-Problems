@@ -103,7 +103,7 @@ public class Week14 {
         return true;
     }
 
-    
+
 
     public static void main(String[] args) {
         String num = "5023"; ////////// ?3295???;
@@ -114,6 +114,9 @@ public class Week14 {
 
         int arr2[] = {1, 2, 3, 4};
         System.out.println(productExceptSelf(arr2));
+
+        int arr3[] = {1,4,7};
+        
 
     }
 
