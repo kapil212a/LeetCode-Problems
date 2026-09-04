@@ -167,7 +167,7 @@ public class Week14 {
 
     ///////////////// Smallest Stable Index I \\\\\\\\\\\\\\\\\
 
-    public int firstStableIndex(int[] nums, int k) {
+    public static int firstStableIndex(int[] nums, int k) {
         int n = nums.length;
         int prefix[] = new int[n];
 
@@ -214,6 +214,10 @@ public class Week14 {
         String expression = "2-1-1";
         List<Integer> x = diffWaysToCompute(expression);
         System.out.println(x);
+
+        int arr4[] = {5,0,1,4};
+        int k = 3;
+        System.out.println(firstStableIndex(arr4, k));
     }
 
 }
