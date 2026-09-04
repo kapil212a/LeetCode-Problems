@@ -165,7 +165,31 @@ public class Week14 {
         return ans;
     }
 
+    ///////////////// Smallest Stable Index I \\\\\\\\\\\\\\\\\
 
+    public int firstStableIndex(int[] nums, int k) {
+        int n = nums.length;
+        int prefix[] = new int[n];
+
+        prefix[n - 1] = nums[n -1];
+
+        for(int i = n - 2; i >= 0; i--){
+            prefix[i] = Math.min(nums[i], prefix[i + 1]);
+        }
+
+        int max = nums[0];
+
+        for(int i = 0; i < n; i++){
+            max = Math.max(max, nums[i]);
+            int diff = max - prefix[i];
+
+            if(diff <= k){
+                return i;
+            }
+        }
+        return -1;
+
+    }
     public static void main(String[] args) {
         String num = "5023"; ////////// ?3295???;
         System.err.println(sumGame(num));
