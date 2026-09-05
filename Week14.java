@@ -193,7 +193,7 @@ public class Week14 {
 
     //////////////// Find Ugly Number \\\\\\\\\\\\\\\\\\\\\
     
-    public boolean isUgly(int n) {
+    public static boolean isUgly(int n) {
         if(n <= 0){
             return false;
         }
@@ -239,7 +239,9 @@ public class Week14 {
         int k = 3;
         System.out.println(firstStableIndex(arr4, k));
 
-        
+        int n = 14;
+        System.out.println(isUgly(n));
+
     }
 
 }
