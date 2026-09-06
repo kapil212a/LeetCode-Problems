@@ -134,7 +134,7 @@ public class Ll {
         Node prev = null , curr = head,  next = null;
         int count = 0;
 
-        while(curr != null && count < k){
+        while(curr != null && count < k){   
             next = curr.next;
             curr.next = prev;
             prev = curr;
