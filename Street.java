@@ -208,7 +208,7 @@ public class Street {
         Arrays.sort(cost);
         int n = cost.length -1;
         int totalcost = 0;
-        for(int i = n; i>=0; i -= 3){
+        for(int i = n; i >= 0; i -= 3){
             totalcost += cost[i];
 
             if(i - 1 >= 0){
