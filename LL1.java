@@ -18,7 +18,7 @@ public class LL1 {
         }System.out.println("null");
     }
 
-    //////////////// Remove all element which are Dublicates from List II \\\\\\\\\\\\\\\\ 
+    //////////////// Remove all element which are Dublicates from List II \\\\\\\\\\\\\\\\
 
     public static ListNode deleteDuplicates(ListNode head) {
         ListNode dummy  = new ListNode(0);

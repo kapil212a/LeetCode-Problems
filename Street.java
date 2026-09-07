@@ -5,7 +5,7 @@ import java.util.Queue;
 import java.util.Set;
 
 public class Street {
-    //// Search In rotated Sorted Array //////
+    ///////// Search In rotated Sorted Array /////////
    
     public static int search(int[] nums, int target) {
         int left = 0;
@@ -44,14 +44,14 @@ public class Street {
         int n = nums.length;
         int res = 0;
         int total = 0;
-        for(int i = 0; i<nums.length; i++){
+        for(int i = 0; i < nums.length; i++){
             res += nums[i];
             total += nums[i] * i;
         }
         int current = total;
         int max = total;
 
-        for(int i = 1; i<n; i++){
+        for(int i = 1; i < n; i++){
             current = current + res - n * nums[n-i];
 
             max = Math.max(current, max);
@@ -64,7 +64,7 @@ public class Street {
     public static boolean check(int[] nums) {
         int n = nums.length;
         int count = 0;
-        for(int i = 0; i<n; i++){
+        for(int i = 0; i < n; i++){
             if(nums[i] > nums[(i + 1 )% n]){
                 count++;
             }
