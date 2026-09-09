@@ -2,6 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Week14 {
+    public static void printArr(int []arr){
+        System.out.print("[");
+        for(int num : arr){
+            System.out.print(num + " ");
+        }System.out.println(']');
+    }
     ///////////////////  Sun Game \\\\\\\\\\\\\\\\\\\\\\
     
     public static boolean sumGame(String num) {
@@ -248,7 +254,7 @@ public class Week14 {
         minimumDeletions(arr1);
 
         int arr2[] = {1, 2, 3, 4};
-        System.out.println(productExceptSelf(arr2));
+        printArr(productExceptSelf(arr2));
 
         int arr3[] = {1,4,7};
         System.out.println(uniformArray(arr3));
