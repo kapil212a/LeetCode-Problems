@@ -38,7 +38,7 @@ public class Week14 {
     }
 
     ///////////Remove Min And Max From Array \\\\\\\\\\\\\
-    /// 
+
     public static int minimumDeletions(int[] nums) {
         int n = nums.length;
         int min = 0;
