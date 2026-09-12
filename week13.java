@@ -32,7 +32,7 @@ public class week13 {
 
     //////////////////// Basic Calculater \\\\\\\\\\\\\\\\\\\
 
-     public static int calculate(String s) {
+    public static int calculate(String s) {
         int result = 0;
         int num = 0;
         int sign = 1;
