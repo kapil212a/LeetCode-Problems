@@ -1,5 +1,6 @@
 import java.util.*;
 public class Week15 {
+    //////////////////////// Group the anagram Strings In a list \\\\\\\\\\\\\\\\\\\\\\\\
     public static ArrayList<ArrayList<String>> anagram(String arr[]){
         ArrayList<ArrayList<String>> res = new ArrayList<>();
         HashMap<String , Integer> map = new HashMap<>();
