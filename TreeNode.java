@@ -83,6 +83,28 @@ class BSTIterator {
         return root;
     }
 
+    //////////////// build bst from inorder and postorder treversal \\\\\\\\\\\
+
+    static int idx;
+    public static TreeNode buildTree(int[] inorder, int [] postorder){
+        idx = postorder.length - 1;
+        return build(inorder, postorder, 0, inorder.length - 1);
+    }
+    private static TreeNode build(int []inorder, int [] postorder, int left, int right){
+        if(left > right){
+            return null;
+        }
+        int root = postorder[idx--];
+        TreeNode newNode = new TreeNode(root);
+
+        int j = left;
+        while(inorder[j] != root){
+            j++;
+        }
+        newNode.right = build(inorder, postorder, j + 1, right);
+        newNode.left = build(inorder, postorder, left, j - 1);
+        return newNode;
+    }
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(7);
@@ -100,5 +122,10 @@ class BSTIterator {
         System.out.println(countNodes(root));
 
         invertTree(root);
+
+        int inorder[] = {9,3,15,20,7};
+        int postorder[] = {9,15,7,20,3};
+        buildTree(inorder, postorder);
+        
     }
 }
