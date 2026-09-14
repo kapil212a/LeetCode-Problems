@@ -133,7 +133,7 @@ public class Week14 {
         return false;
     }
 
-    ///////////// dIFFERENT wAYS TO add Paresnthesis \\\\\\\\\\\\\\
+    ///////////// DIFFERENT wAYS TO add Paresnthesis \\\\\\\\\\\\\\
 
     public static List<Integer> diffWaysToCompute(String expression) {
         List<Integer> ans = new ArrayList<>();
@@ -181,7 +181,7 @@ public class Week14 {
         for(int i = n - 2; i >= 0; i--){
             prefix[i] = Math.min(nums[i], prefix[i + 1]);
         }
-
+       // printArr(prefix);
         int max = nums[0];
 
         for(int i = 0; i < n; i++){
