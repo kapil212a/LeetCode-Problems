@@ -43,7 +43,7 @@ public class Week14 {
         return 2 * diff != qDiff * 9;
     }
 
-    ///////////Remove Min And Max From Array \\\\\\\\\\\\\
+    ///////////Remove Min And Max From Array reyurn posibility \\\\\\\\\\\\\
 
     public static int minimumDeletions(int[] nums) {
         int n = nums.length;
@@ -85,7 +85,6 @@ public class Week14 {
             ans[i] = j;
             j = j * nums[i];
         }
-
         int k = 1;
         for(int i = n - 1; i >= 0; i--){
             ans[i] *= k;
@@ -248,10 +247,11 @@ public class Week14 {
 
     public static void main(String[] args) {
         String num = "5023"; ////////// ?3295???;
-        System.err.println(sumGame(num));
+        System.out.println(sumGame(num));
 
         int arr1[] = {2,5,6,0,0,1,2};
-        minimumDeletions(arr1);
+        System.out.println(minimumDeletions(arr1));
+        //printArr(minimumDeletions(arr1));
 
         int arr2[] = {1, 2, 3, 4};
         printArr(productExceptSelf(arr2));
