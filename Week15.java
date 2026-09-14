@@ -22,9 +22,26 @@ public class Week15 {
         return res;
     }
 
+    ////////////// Rectangle overlap \\\\\\\\\\\\\\
+
+    public static  boolean isRectangleOverlap(int[] rec1, int[] rec2) {
+        int left = Math.max(rec1[0], rec2[0]);
+        int right = Math.min(rec1[2], rec2[2]);
+
+        int bottom = Math.max(rec1[1], rec2[1]);
+        int top = Math.min(rec1[3], rec2[3]);
+
+        return left < right && bottom < top;
+    }
+
+
     public static void main(String[] args) {
         String arr[] = {"act", "god", "cat", "dog", "tac"};
         ArrayList<ArrayList<String>> x = anagram(arr);
         System.out.println(x);
+
+        int rec1[] = {0,0,2,2};
+        int rec2[] = {0,0,2,2};
+        System.out.println(isRectangleOverlap(rec1, rec2));
     }
 }
