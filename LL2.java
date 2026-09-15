@@ -48,7 +48,7 @@ public class LL2 {
                 prev = prev.next;
             }
             curr.next = prev.next;
-            prev.next = curr;
+            prev.next = curr;   
             curr = next;
         }
         return dummy.next;
