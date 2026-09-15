@@ -34,6 +34,32 @@ public class Week15 {
         return left < right && bottom < top;
     }
 
+    ///////////////// Word Pattern \\\\\\\\\\\\\\\\\\\
+
+    public static  boolean wordPattern(String pattern, String s) {
+        
+        String arr[] = s.split(" ");
+        if(pattern.length() != arr.length){
+            return false;
+        }
+        HashMap<Character, String> map1 = new HashMap<>();
+        HashMap<String, Character> map2 = new HashMap<>();
+        for(int i = 0; i < pattern.length(); i++){
+            char ch = pattern.charAt(i);
+            String word = arr[i];
+
+            if(map1.containsKey(ch) && !map1.get(ch).equals(word)){
+                return false;
+            }
+            if(map2.containsKey(word) && map2.get(word) != ch ){
+                return false;
+            }
+            map1.put(ch, word);
+            map2.put(word, ch);
+        }
+        return true;
+    }
+
 
     public static void main(String[] args) {
         String arr[] = {"act", "god", "cat", "dog", "tac"};
@@ -43,5 +69,8 @@ public class Week15 {
         int rec1[] = {0,0,2,2};
         int rec2[] = {0,0,2,2};
         System.out.println(isRectangleOverlap(rec1, rec2));
+
+        String pattern = "abba", s = "dog cat cat dog";
+        System.out.println(wordPattern(pattern, s));
     }
 }

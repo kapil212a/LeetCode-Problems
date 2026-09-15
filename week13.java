@@ -1,6 +1,12 @@
 import java.util.*;
 
 public class week13 {
+    public static void printArr(int []arr){
+        System.out.print("[");
+        for(int num : arr){
+            System.out.print(num + " ");
+        }System.out.println(']');
+    }
     ///////Count Submatrices with Top-Left Element and Sum Less Than k\\\\\\\
     
     public static int countSubmatrices(int[][] grid, int k) {
@@ -247,14 +253,15 @@ public class week13 {
         System.out.println(smallest3Sum(arr, target));
 
         int nums[] = {1,2,1,3,2,5};
-        System.out.println(singleNumber(nums));
+        //System.out.println(singleNumber(nums));
+        printArr(singleNumber(nums));
 
         int n = 3;
         int [][] reservedSeats = {{1,2},{1,3},{1,8},{2,6},{3,1},{3,10}};
         System.out.println(maxNumberOfFamilies(n, reservedSeats));
 
         int arr1[] = {5,4,3,8};
-        System.out.println(resultArray(arr1));
+        printArr(resultArray(arr1));
 
         int n1 = 16;
         System.out.println(isPowerOfTwo(n1));
