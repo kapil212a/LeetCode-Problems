@@ -1,3 +1,4 @@
+package Weeks;
 import java.util.*;
     
 public class Week2 {

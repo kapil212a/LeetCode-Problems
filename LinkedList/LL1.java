@@ -1,3 +1,4 @@
+package LinkedList;
 public class LL1 {
     public static class ListNode{
         ListNode next;
