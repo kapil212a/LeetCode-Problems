@@ -1,8 +1,8 @@
 
 import java.util.*;
 
-public class Strings {
-    ////////////longest Substring with at most two  distinct character \\\\\\\\\\\\
+public class Week1 {
+    ////////////longest Substring with at most two  distinct character \\\\\\\\\\\\159
     public static int distinct(String s){
         int max = 0;
         int left = 0;
