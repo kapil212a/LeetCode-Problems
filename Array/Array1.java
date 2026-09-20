@@ -14,7 +14,7 @@ public class Array1 {
     }
 
     ////////// TRAPING RAINWATER \\\\\\\\\\
-     public static int trap(int[] height) {
+    public static int trap(int[] height) {
         int n = height.length;
 
         int left[] = new int[n];
@@ -61,7 +61,7 @@ public class Array1 {
         return maxwater;
     }
 
-     //// Minimum Distnace from target////
+    //// Minimum Distnace from target////
     
     public static int getMinDistance(int[] nums, int target, int start) {
         int minDistance = Integer.MAX_VALUE;
@@ -118,7 +118,7 @@ public class Array1 {
         }
     }
 
-     //// REMOVE ELEMENT NOT EQUAL TO N  AND RETUEN \\\\
+     //// REMOVE ELEMENT NOT EQUAL TO N  AND RETURN \\\\
     public static int removeElement(int[] nums, int val) {
        int a = 0;
 
@@ -320,8 +320,6 @@ public class Array1 {
         int arr3[] = {-1,2,1,-4};
         int target1 = 1;
         System.out.println(threeSumClosest(arr3, target1));
-
-        
 
         int arr5[] = {1,0,-1,0,-2,2};
         int target2 = 0;

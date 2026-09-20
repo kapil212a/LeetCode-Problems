@@ -70,6 +70,7 @@ public class Math3 {
         return dp[n - 1];
     }
 
+    
     public static void main(String[] args) {
         int digit = 56;
         System.out.println(addDigits(digit));
