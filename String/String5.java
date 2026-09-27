@@ -71,6 +71,30 @@ public class String5 {
         return ans.toString();
     }
 
+    ////////////////////// Reverse Substrings Between Each Pair of Parentheses \\\\\\\\\\\\\
+    
+    public static String reverseParentheses(String s) {
+        StringBuilder ans = new StringBuilder();
+        Stack <StringBuilder> st = new Stack<>();
+        for(char ch : s.toCharArray()){
+            if(ch == '('){
+                st.push(ans);
+                ans = new StringBuilder();
+            }
+            else if(ch == ')'){
+                ans.reverse();
+                StringBuilder prev = st.pop();
+                prev.append(ans);
+                ans = prev;
+            }
+            else{
+                ans.append(ch);
+            }
+        }
+        return ans.toString();
+    }
+
+
 
     public static void main(String[] args) {
         String s = "zaza";
@@ -85,5 +109,9 @@ public class String5 {
         knowledge.add(Arrays.asList("name","bob"));
         knowledge.add(Arrays.asList("age","two"));
         System.out.println(evaluate(s1, knowledge));
+
+        String s2 = "(ed(et(oc))el)";
+        System.out.println(reverseParentheses(s2));
+
     }
 }
