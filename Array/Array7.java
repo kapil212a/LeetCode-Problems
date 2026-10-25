@@ -67,7 +67,7 @@ public class Array7 {
                 else{
                     ans.add(start + "->" + nums[i - 1]);
                 }
-                 if(i < nums.length){
+                if(i < nums.length){
                     start = nums[i];
                 }
             }

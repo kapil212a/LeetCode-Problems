@@ -96,7 +96,7 @@ public class Array8 {
         int n = nums.length;
         int prefix[] = new int[n];
 
-        prefix[n - 1] = nums[n -1];
+        prefix[n - 1] = nums[n - 1];
 
         for(int i = n - 2; i >= 0; i--){
             prefix[i] = Math.min(nums[i], prefix[i + 1]);

@@ -28,7 +28,7 @@ public class Array4 {
         ans.add(new ArrayList<>(curr));
 
         for(int i = idx; i < nums.length; i++){
-            if(i > idx && nums[i] == nums[i -1]){
+            if(i > idx && nums[i] == nums[i - 1]){
                 continue;
             }
 
@@ -61,7 +61,7 @@ public class Array4 {
 
     }
 
-     //////////////////// Search In sorted Array \\\\\\\\\\\\\\\\\\\\\\\\\
+    //////////////////// Search In sorted Array \\\\\\\\\\\\\\\\\\\\\\\\\
 
     public static boolean search(int[] nums, int target) {
         int left = 0; 
@@ -113,7 +113,6 @@ public class Array4 {
         return bars;
     }
 
-   
     /////////////////////////// Subset Of Given Nums \\\\\\\\\\\\\\\\\\\\\\
 
     public static List<List<Integer>> subsets(int[] nums) {
@@ -122,7 +121,6 @@ public class Array4 {
         helper(0 , nums, new ArrayList<>() , ans);
         return ans;
     }
-
     private static void helper(int start, int []nums, List<Integer> curr, List<List<Integer>> ans){
         ans.add(new ArrayList<>(curr));
 

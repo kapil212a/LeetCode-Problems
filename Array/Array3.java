@@ -93,9 +93,7 @@ public class Array3 {
 
     public static List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
-
         solve(0 , nums,ans);
-
         return ans;
     }
     private static void solve(int idx , int [] nums , List<List<Integer>> ans){
@@ -118,7 +116,6 @@ public class Array3 {
         nums[i] = nums[j];
         nums[j] = temp;
     }
-
 
     /////////// GROUP  ANAGRAM OF STRING \\\\\\\\\
 
@@ -183,7 +180,7 @@ public class Array3 {
 
         while(mid <= high){
             if(nums[mid] == 0){
-                swap(nums, low, mid);
+                swap1(nums, low, mid);
                 low++;
                 mid++;
             }

@@ -71,7 +71,7 @@ public class String1 {
         }
 
         String result = "";
-        for(int i = 0; i<numRows; i++){
+        for(int i = 0; i < numRows; i++){
             result += row[i].toString();
         }
         return result;
