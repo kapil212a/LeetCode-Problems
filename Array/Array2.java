@@ -11,7 +11,6 @@ public class Array2 {
         System.out.println();
     }
 
-
     ///// FIND INSERTION POINT IN THE ARRAY \\\\\\\
 
     public static int searchInsert(int[] nums, int target) {
