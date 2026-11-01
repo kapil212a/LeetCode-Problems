@@ -253,7 +253,7 @@ public class Array3 {
 
         int nums3[] = {2,0,2,1,1,0};
         sortColors(nums3);
-        printArray(nums);
+        printArray(nums3);
 
          int num6[] = {10,3,1,1};
         System.out.println(minimumCost(num6));
