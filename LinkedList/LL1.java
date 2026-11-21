@@ -122,8 +122,8 @@ public class LL1 {
         head.next.next.next.next = new ListNode(3);
         head.next.next.next.next.next = new ListNode(4);
         printLL(head);
-        deleteDuplicates(head);
-        printLL(head);
+        printLL(deleteDuplicates(head));
+        //printLL(head);
 
         ListNode head1 = new ListNode(1);
         head1.next = new ListNode(2);
@@ -132,8 +132,8 @@ public class LL1 {
         head1.next.next.next.next = new ListNode(3);
         head1.next.next.next.next.next = new ListNode(4);
         printLL(head1);
-        deleteDuplicates1(head1);
-        printLL(head1);
+        printLL(deleteDuplicates1(head1));
+        //printLL(head1);
 
         ListNode head2 = new ListNode(1);
         head2.next = new ListNode(4);

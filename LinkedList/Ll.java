@@ -100,6 +100,7 @@ public class Ll {
 
     ////////////// Swip Node In pair \\\\\\\\\\\\\
 
+    
     public static Node swapPairs(Node head) {
         Node dm = new Node(0);
         dm.next = head;
@@ -148,7 +149,7 @@ public class Ll {
         return prev;
     }
 
-///////// ROTATE THE LIST FROM K \\\\\\\\\\\\
+   ///////// ROTATE THE LIST FROM K \\\\\\\\\\\\
 
     public static Node rotateRight(Node head, int k) {
         if(head == null || head.next == null || k == 0){
@@ -182,7 +183,7 @@ public class Ll {
 
     //////////// Maximum Twin Sum of a Linked List \\\\\\\\\\\\\\\
 
-     public static int pairSum(Node head) {
+    public static int pairSum(Node head) {
         Node slow = head;
         Node fast = head;
 
@@ -241,8 +242,6 @@ public class Ll {
         head.next.next = new Node(3);
         head.next.next.next = new Node(4);
         head.next.next.next.next = new Node(5);
-        printLL(head);
-
         int n = 2;
         removeNthFromEnd(head , n);
         printLL(head);
@@ -255,7 +254,6 @@ public class Ll {
         head2.next = new Node(3);
         head2.next.next = new Node(4);
 
-        
         printLL(mergeTwoLists(head1 , head2));
 
         Node l1 = new Node(1);
@@ -278,8 +276,8 @@ public class Ll {
         head3.next.next = new Node(3);
         head3.next.next.next = new Node(4);
         printLL(head3);
-        swapPairs(head3);
-        printLL(head3);
+        printLL(swapPairs(head3));
+        //printLL(head3);
 
         Node head4 = new Node(1);
         head4.next = new Node(2);
@@ -288,8 +286,8 @@ public class Ll {
         head4.next.next.next.next = new Node(5);
         printLL(head4);
         int n1 = 3;
-        reverseKGroup(head4, n1);
-        printLL(head4);
+        printLL(reverseKGroup(head4, n1));
+        //printLL(head4);
 
 
         Node head5 = new Node(1);
@@ -299,8 +297,8 @@ public class Ll {
         head5.next.next.next.next = new Node(5);
         int k = 3;
         printLL(head5);
-        rotateRight(head5, k);
-        printLL(head5);
+        printLL(rotateRight(head5, k));
+        //printLL(head5);
 
         Node head6 = new Node(5);
         head6.next = new Node(4);
@@ -312,7 +310,7 @@ public class Ll {
         head7.next = new Node(2);
         head7.next.next = new Node(3);
         head7.next.next.next = new Node(4);
-
+        printLL(head7);
         printLL(deleteMiddle(head7));
     }
 
